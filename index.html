@@ -103,132 +103,134 @@
 
 <body class="bg-surface-canvas font-sans text-on-surface antialiased selection:bg-primary/15 selection:text-primary min-h-screen flex flex-col relative tactile-grain">
 
-  <!-- ==================== FLOATING ISLAND CAPSULE HEADER ==================== -->
-  <header class="sticky top-4 z-40 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 transition-all duration-300">
-    <div class="bezel-shell p-1.5 shadow-ambient-lg backdrop-blur-xl bg-surface-canvas/90">
-      <div class="bezel-core px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4 border border-border-stone/60">
-        
-        <!-- Brand Logo -->
-        <a aria-label="Grha Vege Jawi Syariah" class="flex items-center gap-3 shrink-0 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg transition-opacity hover:opacity-90" href="#">
-          <img alt="Grha Vege Jawi Syariah Guesthouse" class="h-10 sm:h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs"/>
-        </a>
+  <!-- ==================== FLOATING TRANSPARENT ISLAND NAVBAR ==================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 px-4 sm:px-6 lg:px-10 pt-3 sm:pt-4">
+    <div id="navbar-shell" class="max-w-7xl mx-auto transition-all duration-300 rounded-full bg-white/45 backdrop-blur-md border border-white/70 shadow-ambient px-3 sm:px-5 py-2 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a aria-label="Grha Vege Jawi Syariah" class="flex items-center gap-3 shrink-0 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg transition-opacity hover:opacity-90" href="#">
+        <img alt="Grha Vege Jawi Syariah Guesthouse" class="h-9 sm:h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs"/>
+      </a>
 
-        <!-- Desktop Navigation Pill -->
-        <nav class="hidden lg:flex items-center gap-1 bg-surface-subtle/90 px-3 py-1.5 rounded-full border border-border-stone/80 text-xs font-medium">
-          <a class="px-3 py-1 rounded-full bg-white text-primary shadow-xs border border-border-stone/40" href="#">Beranda</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#filosofi">Cerita &amp; Syariah</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#kamar">Kamar &amp; Denah</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#tarif">Tarif Bersih</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#fasilitas">Fasilitas</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#galeri">Galeri</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#lokasi">Akses</a>
-          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#adab">Adab &amp; FAQ</a>
-        </nav>
+      <!-- Desktop Navigation Pill -->
+      <nav class="hidden lg:flex items-center gap-1 bg-surface-subtle/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-border-stone/60 text-xs font-medium">
+        <a class="px-3 py-1 rounded-full bg-white/90 text-primary shadow-xs border border-border-stone/40" href="#">Beranda</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#filosofi">Cerita &amp; Syariah</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#kamar">Kamar &amp; Denah</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#tarif">Tarif Bersih</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#fasilitas">Fasilitas</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#galeri">Galeri</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#lokasi">Akses</a>
+        <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/60 transition-all" href="#adab">Adab &amp; FAQ</a>
+      </nav>
 
-        <!-- Right Action: Room Pulse & Button-in-Button WhatsApp CTA -->
-        <div class="flex items-center gap-3">
-          <div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-primary-light text-[11px] font-mono text-primary font-medium border border-primary/20">
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-            <span>Menerima Tamu Harian &amp; Bulanan</span>
-          </div>
-
-          <!-- Button-in-Button Nested CTA -->
-          <a class="group inline-flex items-center gap-2 bg-primary hover:bg-primary-deep text-on-primary text-xs font-medium pl-4 pr-1.5 py-1.5 rounded-full transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98]" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
-            <span class="font-mono text-xs tracking-tight">Kontak Ibu Agnesia</span>
-            <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-syariah-gold text-white">
-              <span class="material-symbols-outlined text-[15px]">chat</span>
-            </div>
-          </a>
-
-          <!-- Mobile Hamburger Toggle -->
-          <button id="mobile-menu-btn" aria-label="Buka Menu Navigasi" class="lg:hidden w-10 h-10 rounded-full bg-surface-subtle border border-border-stone flex flex-col items-center justify-center gap-1.5 focus:outline-none text-primary">
-            <span class="w-5 h-0.5 bg-primary transition-transform duration-300" id="hamb-line-1"></span>
-            <span class="w-5 h-0.5 bg-primary transition-opacity duration-300" id="hamb-line-2"></span>
-            <span class="w-5 h-0.5 bg-primary transition-transform duration-300" id="hamb-line-3"></span>
-          </button>
+      <!-- Right Action: Room Pulse & Button-in-Button WhatsApp CTA -->
+      <div class="flex items-center gap-3">
+        <div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 backdrop-blur-sm text-[11px] font-mono text-primary font-medium border border-primary/20 shadow-xs">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span>Menerima Tamu Harian &amp; Bulanan</span>
         </div>
 
+        <!-- Button-in-Button Nested CTA -->
+        <a class="group inline-flex items-center gap-2 bg-primary hover:bg-primary-deep text-on-primary text-xs font-medium pl-4 pr-1.5 py-1.5 rounded-full transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98]" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
+          <span class="font-mono text-xs tracking-tight">Kontak Ibu Agnesia</span>
+          <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-syariah-gold text-white">
+            <span class="material-symbols-outlined text-[15px]">chat</span>
+          </div>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobile-menu-btn" aria-label="Buka Menu Navigasi" class="lg:hidden w-9 h-9 rounded-full bg-white/80 border border-border-stone flex flex-col items-center justify-center gap-1 focus:outline-none text-primary shadow-xs">
+          <span class="w-4 h-0.5 bg-primary transition-transform duration-300" id="hamb-line-1"></span>
+          <span class="w-4 h-0.5 bg-primary transition-opacity duration-300" id="hamb-line-2"></span>
+          <span class="w-4 h-0.5 bg-primary transition-transform duration-300" id="hamb-line-3"></span>
+        </button>
       </div>
+
     </div>
 
     <!-- Mobile Drawer Overlay -->
-    <div id="mobile-drawer" class="hidden lg:hidden mt-2 bezel-shell p-2 backdrop-blur-2xl bg-surface-canvas/98 border border-border-stone shadow-2xl transition-all duration-300">
-      <div class="bezel-core p-5 flex flex-col gap-3">
-        <div class="flex items-center justify-between pb-3 border-b border-border-stone/60">
-          <span class="text-[11px] font-mono text-syariah-gold uppercase tracking-wider font-semibold">Navigasi Cepat</span>
-          <span class="text-[11px] font-mono text-primary bg-primary-light px-2.5 py-0.5 rounded-full">● 6 Kamar Tidur</span>
-        </div>
-        <div class="flex flex-col gap-1.5 text-sm font-medium text-on-surface">
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#">
-            <span>Beranda Utama</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#filosofi">
-            <span>Cerita &amp; Nilai Syariah</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#kamar">
-            <span>Rincian 6 Kamar &amp; Denah</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#tarif">
-            <span>Skema Tarif Bersih</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#fasilitas">
-            <span>Fasilitas Penginapan</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#galeri">
-            <span>Galeri Foto Suasana</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#lokasi">
-            <span>Transit &amp; Akses Kampus</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#adab">
-            <span>Tata Tertib &amp; FAQ</span>
-            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
-          </a>
-        </div>
-        <div class="pt-3 border-t border-border-stone/60 flex flex-col gap-2">
-          <a class="w-full py-3 bg-primary hover:bg-primary-deep text-white text-center text-xs font-mono font-medium rounded-xl flex items-center justify-center gap-2" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" target="_blank">
-            <span class="material-symbols-outlined text-[17px]">chat</span>
-            <span>WhatsApp Ibu Agnesia (0812-2729-637)</span>
-          </a>
-        </div>
+    <div id="mobile-drawer" class="hidden lg:hidden mt-2 max-w-7xl mx-auto rounded-3xl p-4 backdrop-blur-2xl bg-surface-canvas/98 border border-border-stone shadow-2xl transition-all duration-300">
+      <div class="flex items-center justify-between pb-3 border-b border-border-stone/60">
+        <span class="text-[11px] font-mono text-syariah-gold uppercase tracking-wider font-semibold">Navigasi Cepat</span>
+        <span class="text-[11px] font-mono text-primary bg-primary-light px-2.5 py-0.5 rounded-full">● 6 Kamar Tidur</span>
+      </div>
+      <div class="flex flex-col gap-1.5 text-sm font-medium text-on-surface pt-3">
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#">
+          <span>Beranda Utama</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#filosofi">
+          <span>Cerita &amp; Nilai Syariah</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#kamar">
+          <span>Rincian 6 Kamar &amp; Denah</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#tarif">
+          <span>Skema Tarif Bersih</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#fasilitas">
+          <span>Fasilitas Penginapan</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#galeri">
+          <span>Galeri Foto Suasana</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#lokasi">
+          <span>Transit &amp; Akses Kampus</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+        <a class="mobile-nav-link px-3 py-2 rounded-xl hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#adab">
+          <span>Tata Tertib &amp; FAQ</span>
+          <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+        </a>
+      </div>
+      <div class="pt-3 mt-2 border-t border-border-stone/60 flex flex-col gap-2">
+        <a class="w-full py-3 bg-primary hover:bg-primary-deep text-white text-center text-xs font-mono font-medium rounded-xl flex items-center justify-center gap-2" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" target="_blank">
+          <span class="material-symbols-outlined text-[17px]">chat</span>
+          <span>WhatsApp Ibu Agnesia (0812-2729-637)</span>
+        </a>
       </div>
     </div>
   </header>
 
   <main class="flex-1 w-full">
 
-    <!-- ==================== HERO SECTION: EDITORIAL ARCHITECTURAL HOSPITALITY ==================== -->
-    <section class="relative min-h-[calc(100dvh-90px)] flex flex-col justify-between pt-8 pb-12 overflow-hidden border-b border-border-stone/80">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full my-auto py-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+    <!-- ==================== HERO SECTION: FULL SCREEN EDITORIAL LUXURY ==================== -->
+    <section class="relative min-h-[100dvh] lg:h-screen lg:min-h-[100dvh] flex flex-col justify-between pt-24 sm:pt-28 pb-6 sm:pb-8 overflow-hidden border-b border-border-stone/80 bg-gradient-to-b from-[#F7F2E8] via-surface-canvas to-surface-canvas">
+      
+      <!-- Subtle Ambient Decorative Glow -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-syariah-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Main Hero Content Container -->
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full flex-1 flex flex-col justify-center my-auto py-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <!-- Left Column: Editorial Headline & High-Agency Actions -->
           <div class="lg:col-span-6 flex flex-col items-start">
             
             <!-- Sharia Eyebrow Badge -->
-            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gold-subtle border border-syariah-gold/40 text-[11px] font-mono text-primary font-medium tracking-wider uppercase mb-6 shadow-xs">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-subtle/90 border border-syariah-gold/40 text-[11px] font-mono text-primary font-medium tracking-wider uppercase mb-5 shadow-xs">
               <span class="text-syariah-gold text-xs">●</span>
               <span>Akomodasi Syariah Resmi • Bantul, D.I. Yogyakarta</span>
             </div>
 
             <!-- Main Editorial Heading -->
-            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-normal text-on-surface leading-[1.16] tracking-tight">
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-normal text-on-surface leading-[1.14] tracking-tight">
               Kenyamanan Istirahat Penuh <em class="italic font-normal font-serif text-primary">Tentrem</em> &amp; <em class="italic font-normal font-serif text-secondary">Berkah</em> di Yogyakarta
             </h1>
 
-            <p class="font-sans text-base sm:text-lg text-on-surface-variant font-normal mt-6 leading-relaxed max-w-xl">
-              Hunian singgah bersahaja dengan suasana damai, higienis, dan terawat rapi. Berada di lingkungan pemukiman asri perbatasan Bantul–Kota Yogyakarta, hanya beberapa menit dari Jogja Expo Center (JEC), UIN Sunan Kalijaga, dan Universitas Atma Jaya.
+            <p class="font-sans text-sm sm:text-base md:text-lg text-on-surface-variant font-normal mt-4 sm:mt-5 leading-relaxed max-w-xl">
+              Hunian singgah bersahaja dengan suasana damai, higienis, dan terawat rapi. Berada di lingkungan pemukiman asri perbatasan Bantul–Kota Yogyakarta, hanya beberapa menit dari JEC, UIN Sunan Kalijaga, dan Atma Jaya.
             </p>
 
             <!-- Dual Action CTAs -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mt-8">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mt-6 sm:mt-7">
               <!-- Button-in-Button Main Action -->
               <a class="group inline-flex items-center justify-between gap-4 bg-primary hover:bg-primary-deep text-on-primary font-medium pl-6 pr-2 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-sm active:scale-[0.98]" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
                 <span>Reservasi via WhatsApp Ibu Agnes</span>
@@ -238,26 +240,24 @@
               </a>
 
               <!-- Secondary Explore Button -->
-              <a class="inline-flex items-center justify-center gap-2 bg-white hover:bg-surface-subtle text-on-surface font-medium px-6 py-3.5 rounded-full border border-border-stone shadow-xs transition-colors text-sm hover:border-primary/40" href="#kamar">
+              <a class="inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-on-surface font-medium px-6 py-3.5 rounded-full border border-border-stone shadow-xs transition-all text-sm hover:border-primary/40" href="#kamar">
                 <span>Eksplor 6 Kamar &amp; Fasilitas</span>
                 <span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
               </a>
             </div>
 
             <!-- Trust Micro Credentials -->
-            <div class="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 text-xs text-on-surface-variant font-mono">
-              <span class="inline-flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-syariah-gold text-[17px]">verified</span>
+            <div class="flex flex-wrap items-center gap-3 sm:gap-5 mt-6 sm:mt-7 text-xs text-on-surface-variant font-mono">
+              <span class="inline-flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-full border border-border-stone/60">
+                <span class="material-symbols-outlined text-syariah-gold text-[16px]">verified</span>
                 Khusus Pasangan Sah &amp; Keluarga
               </span>
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-border-strong"></span>
-              <span class="inline-flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-primary text-[17px]">eco</span>
+              <span class="inline-flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-full border border-border-stone/60">
+                <span class="material-symbols-outlined text-primary text-[16px]">eco</span>
                 Bebas Asap Rokok &amp; Miras
               </span>
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-border-strong"></span>
-              <span class="inline-flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-secondary text-[17px]">nest_doorbell_visitor</span>
+              <span class="inline-flex items-center gap-1.5 bg-white/70 px-2.5 py-1 rounded-full border border-border-stone/60">
+                <span class="material-symbols-outlined text-secondary text-[16px]">nest_doorbell_visitor</span>
                 Suasana Asri &amp; Hening
               </span>
             </div>
@@ -266,7 +266,7 @@
 
           <!-- Right Column: Layered Double-Bezel Architectural Photo Composition -->
           <div class="lg:col-span-6 relative">
-            <div class="relative grid grid-cols-12 gap-3.5 items-end">
+            <div class="relative grid grid-cols-12 gap-3 sm:gap-3.5 items-end">
               
               <!-- Main Hero Image (Kamar Tidur Utama) with Double-Bezel -->
               <div class="col-span-8 bezel-shell p-1.5 shadow-ambient-lg group">
@@ -275,21 +275,21 @@
                   <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent"></div>
                   
                   <div class="absolute top-3.5 left-3.5">
-                    <span class="bg-black/50 backdrop-blur-md text-white text-[10px] font-mono px-3 py-1 rounded-full border border-white/20">
+                    <span class="bg-black/55 backdrop-blur-md text-white text-[10px] font-mono px-3 py-1 rounded-full border border-white/20">
                       ● Total 6 Kamar Tidur
                     </span>
                   </div>
 
-                  <div class="absolute bottom-5 left-5 right-5 text-white">
+                  <div class="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 text-white">
                     <span class="text-[10px] font-mono uppercase tracking-widest text-gold-soft font-semibold">Suasana Kamar Tidur</span>
-                    <p class="font-serif text-lg font-normal leading-snug mt-0.5">Kamar Bersih, Tenang &amp; Wangi</p>
+                    <p class="font-serif text-base sm:text-lg font-normal leading-snug mt-0.5">Kamar Bersih, Tenang &amp; Wangi</p>
                     <p class="text-xs text-white/80 font-sans mt-0.5">AC Dingin, KM Dalam &amp; Kasur Empuk</p>
                   </div>
                 </div>
               </div>
 
               <!-- Secondary Floating Stacks (Mushola & Kamar Mandi) -->
-              <div class="col-span-4 flex flex-col gap-3.5">
+              <div class="col-span-4 flex flex-col gap-3 sm:gap-3.5">
                 
                 <!-- Mushola Tile -->
                 <div class="bezel-shell p-1 shadow-ambient group">
@@ -297,8 +297,8 @@
                     <img alt="Mushola Representatif Khusus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxffUU-novAVuW6Bwq41fJq5v5WcS9vtMHkahBeYJHQoNnic8_fFCCI0LcVdYMGaDIWPwDFGTb-RNr9kHM8idNgk7w3QVz_omicyggC-CrsRq5QOHFopK-h0XAfalj9yOzivE00DVnO5hiQRaHuLpZlnODGDjWByBOrBuE0VCWBNeYvi9DieywUwuFOxld_qyad8ZalwbFcYRhioe2ag4X0jNvrEe4C2DDawDI_d2sYGQpm8uzlFOvxg"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div class="absolute bottom-2.5 left-2.5 text-white">
-                      <p class="text-[11px] font-mono font-medium">Mushola Khusus</p>
-                      <span class="text-[9px] text-gold-soft block font-sans">Wudhu Air Mengalir</span>
+                      <p class="text-[11px] font-mono font-medium leading-tight">Mushola Khusus</p>
+                      <span class="text-[9px] text-gold-soft block font-sans">Wudhu Air Jernih</span>
                     </div>
                   </div>
                 </div>
@@ -309,7 +309,7 @@
                     <img alt="Kamar Mandi Dalam dengan Shower Air Panas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaulSxTWSsGRc2HNEjlDwY8sOVEde7npoHXBQIzQDoGE9QBNGpy0Hrg12KATcwqP7Wmj57fENiuF7C5tZv9XVzdg2jKbkv_wx44NwLLOKRHKKPj4Ogn7y8_16si7FnWqUxKbx6hkLftiUE0esVw-ygbYk_E8JUqZP9vUOdiL3-ufKv8uYZncuLtoR6jh0bxNKC7sZG-TXaGyNiNQ9VZ7bT4g8I0Sl9DtKG5DDWTJW1dDcNA_g5BHicmA"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div class="absolute bottom-2.5 left-2.5 text-white">
-                      <p class="text-[11px] font-mono font-medium">Water Heater</p>
+                      <p class="text-[11px] font-mono font-medium leading-tight">Water Heater</p>
                       <span class="text-[9px] text-white/80 block font-sans">Shower Hangat 24 Jam</span>
                     </div>
                   </div>
@@ -323,34 +323,34 @@
         </div>
       </div>
 
-      <!-- Monolithic Key Info Strip Ribbon -->
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full pt-4">
+      <!-- Monolithic Key Info Strip Ribbon & Subtle Scroll Prompt -->
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full pt-2 relative z-10">
         <div class="bezel-shell p-1.5 shadow-ambient">
-          <div class="bezel-core p-4 sm:p-5 border border-border-stone/60">
+          <div class="bezel-core p-3.5 sm:p-4.5 border border-border-stone/60">
             <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border-stone/80">
               
-              <div class="p-3 sm:px-6 flex flex-col">
-                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Kapasitas Properti</span>
-                <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">6 Kamar Tidur</span>
-                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">2 Lantai Bawah • 4 Lantai Atas</span>
+              <div class="p-2 sm:px-4 flex flex-col">
+                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Kapasitas Properti</span>
+                <span class="font-serif text-lg sm:text-2xl font-medium text-primary mt-0.5">6 Kamar Tidur</span>
+                <span class="text-[11px] text-on-surface-variant/80 font-sans">2 Lantai Bawah • 4 Lantai Atas</span>
               </div>
 
-              <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
-                <span class="text-[11px] font-mono uppercase tracking-wider text-syariah-gold font-medium">Kenyamanan Ibadah</span>
-                <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">Mushola Khusus</span>
-                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">Kran Wudhu Mengalir Jernih</span>
+              <div class="p-2 sm:px-4 flex flex-col pt-3 md:pt-2">
+                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-syariah-gold font-medium">Kenyamanan Ibadah</span>
+                <span class="font-serif text-lg sm:text-2xl font-medium text-primary mt-0.5">Mushola Khusus</span>
+                <span class="text-[11px] text-on-surface-variant/80 font-sans">Kran Wudhu Mengalir Jernih</span>
               </div>
 
-              <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
-                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Aksesibilitas</span>
-                <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">Bantul &amp; JEC</span>
-                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">Dekat UIN Sunan Kalijaga &amp; UAJY</span>
+              <div class="p-2 sm:px-4 flex flex-col pt-3 md:pt-2">
+                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Aksesibilitas</span>
+                <span class="font-serif text-lg sm:text-2xl font-medium text-primary mt-0.5">Bantul &amp; JEC</span>
+                <span class="text-[11px] text-on-surface-variant/80 font-sans">Dekat UIN Sunan Kalijaga &amp; UAJY</span>
               </div>
 
-              <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
-                <span class="text-[11px] font-mono uppercase tracking-wider text-secondary font-medium">Tarif Bersih Harian</span>
-                <span class="font-serif text-xl sm:text-2xl font-medium text-secondary mt-1">Mulai Rp 165.000</span>
-                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">All-Inclusive Tanpa Biaya Tersembunyi</span>
+              <div class="p-2 sm:px-4 flex flex-col pt-3 md:pt-2">
+                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-secondary font-medium">Tarif Bersih Harian</span>
+                <span class="font-serif text-lg sm:text-2xl font-medium text-secondary mt-0.5">Mulai Rp 165.000</span>
+                <span class="text-[11px] text-on-surface-variant/80 font-sans">All-Inclusive Tanpa Biaya Tersembunyi</span>
               </div>
 
             </div>
@@ -1505,6 +1505,21 @@
 
   <!-- ==================== CLIENT INTERACTION ENGINE ==================== -->
   <script>
+    // 0. Dynamic Navbar Transparency on Scroll
+    const navbarShell = document.getElementById('navbar-shell');
+    function handleNavbarScroll() {
+      if (!navbarShell) return;
+      if (window.scrollY > 30) {
+        navbarShell.classList.remove('bg-white/45', 'border-white/70');
+        navbarShell.classList.add('bg-surface-canvas/92', 'backdrop-blur-xl', 'border-border-stone/80', 'shadow-ambient-lg');
+      } else {
+        navbarShell.classList.remove('bg-surface-canvas/92', 'border-border-stone/80', 'shadow-ambient-lg');
+        navbarShell.classList.add('bg-white/45', 'backdrop-blur-md', 'border-white/70');
+      }
+    }
+    window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+    handleNavbarScroll();
+
     // 1. Mobile Menu Drawer Engine
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileDrawer = document.getElementById('mobile-drawer');
