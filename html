@@ -4,8 +4,17 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Grha Vege Jawi Syariah - Penginapan Tenang &amp; Penuh Berkah di Bantul, Yogyakarta</title>
+  <meta name="description" content="Guesthouse syariah resmi di Bantul, D.I. Yogyakarta. 6 kamar tidur ber-AC dengan kamar mandi dalam air panas, mushola representatif, mini pantry bersama, dan parkir aman dalam pagar. Khusus pasangan sah & keluarga."/>
+  
+  <!-- Google Fonts: Editorial Serif + Modern Grotesk + Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
@@ -16,173 +25,350 @@
             "surface-canvas": "#FDFBF7",
             "surface-subtle": "#F7F4EC",
             "surface-muted": "#EFE9DB",
-            "border-subtle": "#E4DDD0",
-            "border-stone": "#E6DED5",
+            "border-subtle": "#ECE6D8",
+            "border-stone": "#E2D9CB",
             "border-strong": "#C5BCAB",
             "primary": "#334436",
             "primary-container": "#4A5B4C",
-            "primary-light": "#E9EFE9",
-            "primary-deep": "#28362B",
+            "primary-light": "#EAF0EA",
+            "primary-deep": "#243227",
             "on-primary": "#FFFFFF",
             "secondary": "#885039",
+            "secondary-dark": "#70412E",
             "syariah-gold": "#C89D4B",
-            "gold-soft": "#DFBA73",
-            "on-surface": "#1C1B1A",
-            "on-surface-variant": "#4A4D49",
+            "gold-soft": "#E2C382",
+            "gold-subtle": "#F7EED9",
+            "on-surface": "#1A1918",
+            "on-surface-variant": "#494C48",
             "warm-sage": "#3E4F40"
           },
           fontFamily: {
-            serif: ["'Source Serif 4'", "serif"],
-            sans: ["'Hanken Grotesk'", "sans-serif"],
+            serif: ["'Source Serif 4'", "Georgia", "serif"],
+            sans: ["'Plus Jakarta Sans'", "sans-serif"],
             mono: ["'JetBrains Mono'", "monospace"],
+          },
+          boxShadow: {
+            'ambient': '0 20px 40px -15px rgba(26, 25, 24, 0.05)',
+            'ambient-lg': '0 30px 60px -20px rgba(40, 54, 43, 0.08)',
+            'inner-glow': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.6)',
+            'gold-glow': '0 10px 25px -5px rgba(200, 157, 75, 0.3)',
+          },
+          transitionTimingFunction: {
+            'spring': 'cubic-bezier(0.16, 1, 0.3, 1)',
+            'magnetic': 'cubic-bezier(0.32, 0.72, 0, 1)',
           }
         }
       }
     };
   </script>
+  
+  <style>
+    /* Subtle tactile film grain overlay */
+    .tactile-grain {
+      background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    
+    /* Double-bezel concentric enclosure styles */
+    .bezel-shell {
+      padding: 0.375rem;
+      border-radius: 1.75rem;
+      background: rgba(230, 222, 213, 0.45);
+      border: 1px solid rgba(210, 200, 185, 0.7);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+    }
+    
+    .bezel-core {
+      border-radius: calc(1.75rem - 0.375rem);
+      background: #FFFFFF;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Custom smooth scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F7F4EC;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5BCAB;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #885039;
+    }
+  </style>
 </head>
-<body class="bg-surface-canvas font-sans text-on-surface antialiased selection:bg-primary/10 selection:text-primary min-h-screen flex flex-col">
-  <!-- ==================== FLOATING ORGANIC HEADER ==================== -->
-  <header class="sticky top-0 z-50 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-border-stone/90 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-6">
-      <!-- Brand Logo -->
-      <a aria-label="Grha Vege Jawi Syariah" class="flex items-center gap-3 shrink-0 focus:outline-none focus:ring-2 focus:ring-primary rounded-sm transition-opacity hover:opacity-90" href="#">
-        <img alt="Grha Vege Jawi Syariah Guesthouse" class="h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs"/>
-      </a>
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex items-center gap-1 bg-surface-subtle/80 px-3 py-1.5 rounded-full border border-border-stone text-xs tracking-wide">
-        <a class="px-3.5 py-1.5 rounded-full font-medium bg-white text-primary shadow-xs" href="#">Beranda</a>
-        <a class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors" href="#filosofi">Cerita &amp; Syariah</a>
-        <a class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors" href="#kamar">Kamar &amp; Denah</a>
-        <a class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors" href="#tarif">Tarif Bersih</a>
-        <a class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors" href="#fasilitas">Fasilitas</a>
-        <a class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors" href="#lokasi">Akses</a>
-        <a class="px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors" href="#adab">Adab Bertamu</a>
-      </nav>
-      <!-- Right Actions: Status & WhatsApp Ibu Agnesia -->
-      <div class="flex items-center gap-3">
-        <div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-subtle text-[11px] font-mono text-primary border border-border-stone">
-          <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-          <span>Menerima Reservasi Harian &amp; Bulanan</span>
-        </div>
-        <a class="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-container text-on-primary text-xs tracking-wide font-medium px-4 py-2.5 rounded-full transition-all shadow-sm hover:shadow" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
-          <span class="material-symbols-outlined text-[18px]">chat</span>
-          <span class="font-mono text-xs">Kontak Ibu Agnesia</span>
+
+<body class="bg-surface-canvas font-sans text-on-surface antialiased selection:bg-primary/15 selection:text-primary min-h-screen flex flex-col relative tactile-grain">
+
+  <!-- ==================== FLOATING ISLAND CAPSULE HEADER ==================== -->
+  <header class="sticky top-4 z-40 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 transition-all duration-300">
+    <div class="bezel-shell p-1.5 shadow-ambient-lg backdrop-blur-xl bg-surface-canvas/90">
+      <div class="bezel-core px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4 border border-border-stone/60">
+        
+        <!-- Brand Logo -->
+        <a aria-label="Grha Vege Jawi Syariah" class="flex items-center gap-3 shrink-0 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg transition-opacity hover:opacity-90" href="#">
+          <img alt="Grha Vege Jawi Syariah Guesthouse" class="h-10 sm:h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs"/>
         </a>
+
+        <!-- Desktop Navigation Pill -->
+        <nav class="hidden lg:flex items-center gap-1 bg-surface-subtle/90 px-3 py-1.5 rounded-full border border-border-stone/80 text-xs font-medium">
+          <a class="px-3 py-1 rounded-full bg-white text-primary shadow-xs border border-border-stone/40" href="#">Beranda</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#filosofi">Cerita &amp; Syariah</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#kamar">Kamar &amp; Denah</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#tarif">Tarif Bersih</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#fasilitas">Fasilitas</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#galeri">Galeri</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#lokasi">Akses</a>
+          <a class="px-3 py-1 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/50 transition-all" href="#adab">Adab &amp; FAQ</a>
+        </nav>
+
+        <!-- Right Action: Room Pulse & Button-in-Button WhatsApp CTA -->
+        <div class="flex items-center gap-3">
+          <div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-primary-light text-[11px] font-mono text-primary font-medium border border-primary/20">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>Menerima Tamu Harian &amp; Bulanan</span>
+          </div>
+
+          <!-- Button-in-Button Nested CTA -->
+          <a class="group inline-flex items-center gap-2 bg-primary hover:bg-primary-deep text-on-primary text-xs font-medium pl-4 pr-1.5 py-1.5 rounded-full transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98]" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
+            <span class="font-mono text-xs tracking-tight">Kontak Ibu Agnesia</span>
+            <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-syariah-gold text-white">
+              <span class="material-symbols-outlined text-[15px]">chat</span>
+            </div>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-btn" aria-label="Buka Menu Navigasi" class="lg:hidden w-10 h-10 rounded-full bg-surface-subtle border border-border-stone flex flex-col items-center justify-center gap-1.5 focus:outline-none text-primary">
+            <span class="w-5 h-0.5 bg-primary transition-transform duration-300" id="hamb-line-1"></span>
+            <span class="w-5 h-0.5 bg-primary transition-opacity duration-300" id="hamb-line-2"></span>
+            <span class="w-5 h-0.5 bg-primary transition-transform duration-300" id="hamb-line-3"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-drawer" class="hidden lg:hidden mt-2 bezel-shell p-2 backdrop-blur-2xl bg-surface-canvas/98 border border-border-stone shadow-2xl transition-all duration-300">
+      <div class="bezel-core p-5 flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-3 border-b border-border-stone/60">
+          <span class="text-[11px] font-mono text-syariah-gold uppercase tracking-wider font-semibold">Navigasi Cepat</span>
+          <span class="text-[11px] font-mono text-primary bg-primary-light px-2.5 py-0.5 rounded-full">● 6 Kamar Tidur</span>
+        </div>
+        <div class="flex flex-col gap-1.5 text-sm font-medium text-on-surface">
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#">
+            <span>Beranda Utama</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#filosofi">
+            <span>Cerita &amp; Nilai Syariah</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#kamar">
+            <span>Rincian 6 Kamar &amp; Denah</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#tarif">
+            <span>Skema Tarif Bersih</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#fasilitas">
+            <span>Fasilitas Penginapan</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#galeri">
+            <span>Galeri Foto Suasana</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#lokasi">
+            <span>Transit &amp; Akses Kampus</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+          <a class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-between" href="#adab">
+            <span>Tata Tertib &amp; FAQ</span>
+            <span class="material-symbols-outlined text-xs text-on-surface-variant">chevron_right</span>
+          </a>
+        </div>
+        <div class="pt-3 border-t border-border-stone/60 flex flex-col gap-2">
+          <a class="w-full py-3 bg-primary hover:bg-primary-deep text-white text-center text-xs font-mono font-medium rounded-xl flex items-center justify-center gap-2" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" target="_blank">
+            <span class="material-symbols-outlined text-[17px]">chat</span>
+            <span>WhatsApp Ibu Agnesia (0812-2729-637)</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
+
   <main class="flex-1 w-full">
+
     <!-- ==================== HERO SECTION: EDITORIAL ARCHITECTURAL HOSPITALITY ==================== -->
-    <section class="relative min-h-[calc(100vh-80px)] flex flex-col justify-between pt-10 pb-8 border-b border-border-stone bg-gradient-to-b from-surface-canvas via-[#FAF6EF] to-surface-canvas overflow-hidden">
+    <section class="relative min-h-[calc(100dvh-90px)] flex flex-col justify-between pt-8 pb-12 overflow-hidden border-b border-border-stone/80">
       <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full my-auto py-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          <!-- Left Column: Editorial Headline & Actions -->
+          
+          <!-- Left Column: Editorial Headline & High-Agency Actions -->
           <div class="lg:col-span-6 flex flex-col items-start">
-            <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-surface-muted/90 border border-border-stone text-[11px] font-mono text-primary tracking-wider uppercase mb-6">
-              <span class="text-syariah-gold">●</span>
+            
+            <!-- Sharia Eyebrow Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gold-subtle border border-syariah-gold/40 text-[11px] font-mono text-primary font-medium tracking-wider uppercase mb-6 shadow-xs">
+              <span class="text-syariah-gold text-xs">●</span>
               <span>Akomodasi Syariah Resmi • Bantul, D.I. Yogyakarta</span>
             </div>
-            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-normal text-on-surface leading-[1.18] tracking-tight">
+
+            <!-- Main Editorial Heading -->
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-normal text-on-surface leading-[1.16] tracking-tight">
               Kenyamanan Istirahat Penuh <em class="italic font-normal font-serif text-primary">Tentrem</em> &amp; <em class="italic font-normal font-serif text-secondary">Berkah</em> di Yogyakarta
             </h1>
+
             <p class="font-sans text-base sm:text-lg text-on-surface-variant font-normal mt-6 leading-relaxed max-w-xl">
-              Hunian singgah bersahaja dengan suasana damai, higienis, dan terawat rapi. Terletak di perbatasan asri Bantul–Kota Yogyakarta, hanya beberapa menit dari Jogja Expo Center (JEC), UIN Sunan Kalijaga, dan Universitas Atma Jaya.
+              Hunian singgah bersahaja dengan suasana damai, higienis, dan terawat rapi. Berada di lingkungan pemukiman asri perbatasan Bantul–Kota Yogyakarta, hanya beberapa menit dari Jogja Expo Center (JEC), UIN Sunan Kalijaga, dan Universitas Atma Jaya.
             </p>
-            <!-- Action Buttons -->
+
+            <!-- Dual Action CTAs -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mt-8">
-              <a class="inline-flex items-center justify-center gap-2.5 bg-primary hover:bg-primary-container text-on-primary font-medium px-6 py-3.5 rounded-full shadow-sm hover:shadow transition-all text-sm" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
-                <span class="material-symbols-outlined text-[19px]">chat</span>
-                <span>Reservasi via WhatsApp (0812-2729-637)</span>
+              <!-- Button-in-Button Main Action -->
+              <a class="group inline-flex items-center justify-between gap-4 bg-primary hover:bg-primary-deep text-on-primary font-medium pl-6 pr-2 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-sm active:scale-[0.98]" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
+                <span>Reservasi via WhatsApp Ibu Agnes</span>
+                <div class="w-9 h-9 rounded-full bg-syariah-gold group-hover:brightness-110 flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-105 shadow-xs">
+                  <span class="material-symbols-outlined text-[19px]">chat</span>
+                </div>
               </a>
-              <a class="inline-flex items-center justify-center gap-2 bg-white hover:bg-surface-subtle text-on-surface font-medium px-6 py-3.5 rounded-full border border-border-stone shadow-xs transition-colors text-sm" href="#kamar">
-                <span>Eksplor Kamar &amp; Fasilitas</span>
+
+              <!-- Secondary Explore Button -->
+              <a class="inline-flex items-center justify-center gap-2 bg-white hover:bg-surface-subtle text-on-surface font-medium px-6 py-3.5 rounded-full border border-border-stone shadow-xs transition-colors text-sm hover:border-primary/40" href="#kamar">
+                <span>Eksplor 6 Kamar &amp; Fasilitas</span>
                 <span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
               </a>
             </div>
-            <!-- Trust Micro Credential -->
-            <div class="flex flex-wrap items-center gap-5 mt-7 text-xs text-on-surface-variant font-mono">
+
+            <!-- Trust Micro Credentials -->
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 text-xs text-on-surface-variant font-mono">
               <span class="inline-flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-syariah-gold text-[16px]">verified</span>
+                <span class="material-symbols-outlined text-syariah-gold text-[17px]">verified</span>
                 Khusus Pasangan Sah &amp; Keluarga
               </span>
-              <span class="inline-block w-1 h-1 rounded-full bg-border-strong"></span>
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-border-strong"></span>
               <span class="inline-flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-primary text-[16px]">eco</span>
+                <span class="material-symbols-outlined text-primary text-[17px]">eco</span>
                 Bebas Asap Rokok &amp; Miras
               </span>
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-border-strong"></span>
+              <span class="inline-flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-secondary text-[17px]">nest_doorbell_visitor</span>
+                Suasana Asri &amp; Hening
+              </span>
             </div>
+
           </div>
-          <!-- Right Column: Layered Architectural Photo Composition -->
+
+          <!-- Right Column: Layered Double-Bezel Architectural Photo Composition -->
           <div class="lg:col-span-6 relative">
             <div class="relative grid grid-cols-12 gap-3.5 items-end">
-              <!-- Main Hero Image (Kamar Tidur Utama) -->
-              <div class="col-span-8 relative rounded-2xl overflow-hidden border border-border-stone shadow-lg bg-surface-muted aspect-[4/5] group">
-                <img alt="Kamar Tidur Nyaman Grha Vege Jawi Syariah" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQAVD96ll8fPgRb_apKwpUdL-rIsHN1XNHSWj62wAsHdwOqs_rgADFoakANgAb_xaa0dYN1DfWS8I2DM5DJhvDecO22_O4U1soIDU_VBiMqcgJAy4mpnm8ZVt11ByIV86umurLzafdoeVOgaGoKDgNCkCgaSfWI6rvPAvDh5ug8HneoHMopYRvqhVfYIX2jesKyR3asbjqO6bgnfdrgFZDlCeDaxqUxFbe_mf7vWAmhwFrglWSXwKbYQ"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-5 left-5 right-5 text-white">
-                  <span class="text-[10px] font-mono uppercase tracking-widest text-gold-soft">Suasana Kamar</span>
-                  <p class="font-serif text-lg font-normal leading-snug mt-0.5">Kamar Bersih, Tenang &amp; Wangi</p>
+              
+              <!-- Main Hero Image (Kamar Tidur Utama) with Double-Bezel -->
+              <div class="col-span-8 bezel-shell p-1.5 shadow-ambient-lg group">
+                <div class="bezel-core overflow-hidden relative aspect-[4/5] bg-surface-muted">
+                  <img alt="Kamar Tidur Nyaman Grha Vege Jawi Syariah" class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQAVD96ll8fPgRb_apKwpUdL-rIsHN1XNHSWj62wAsHdwOqs_rgADFoakANgAb_xaa0dYN1DfWS8I2DM5DJhvDecO22_O4U1soIDU_VBiMqcgJAy4mpnm8ZVt11ByIV86umurLzafdoeVOgaGoKDgNCkCgaSfWI6rvPAvDh5ug8HneoHMopYRvqhVfYIX2jesKyR3asbjqO6bgnfdrgFZDlCeDaxqUxFbe_mf7vWAmhwFrglWSXwKbYQ"/>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent"></div>
+                  
+                  <div class="absolute top-3.5 left-3.5">
+                    <span class="bg-black/50 backdrop-blur-md text-white text-[10px] font-mono px-3 py-1 rounded-full border border-white/20">
+                      ● Total 6 Kamar Tidur
+                    </span>
+                  </div>
+
+                  <div class="absolute bottom-5 left-5 right-5 text-white">
+                    <span class="text-[10px] font-mono uppercase tracking-widest text-gold-soft font-semibold">Suasana Kamar Tidur</span>
+                    <p class="font-serif text-lg font-normal leading-snug mt-0.5">Kamar Bersih, Tenang &amp; Wangi</p>
+                    <p class="text-xs text-white/80 font-sans mt-0.5">AC Dingin, KM Dalam &amp; Kasur Empuk</p>
+                  </div>
                 </div>
               </div>
+
               <!-- Secondary Floating Stacks (Mushola & Kamar Mandi) -->
               <div class="col-span-4 flex flex-col gap-3.5">
-                <div class="relative rounded-xl overflow-hidden border border-border-stone shadow-md bg-surface-muted aspect-square group">
-                  <img alt="Mushola Representatif Khusus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxffUU-novAVuW6Bwq41fJq5v5WcS9vtMHkahBeYJHQoNnic8_fFCCI0LcVdYMGaDIWPwDFGTb-RNr9kHM8idNgk7w3QVz_omicyggC-CrsRq5QOHFopK-h0XAfalj9yOzivE00DVnO5hiQRaHuLpZlnODGDjWByBOrBuE0VCWBNeYvi9DieywUwuFOxld_qyad8ZalwbFcYRhioe2ag4X0jNvrEe4C2DDawDI_d2sYGQpm8uzlFOvxg"/>
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-2.5 left-2.5 text-white">
-                    <p class="text-[11px] font-mono">Mushola Khusus</p>
+                
+                <!-- Mushola Tile -->
+                <div class="bezel-shell p-1 shadow-ambient group">
+                  <div class="bezel-core overflow-hidden relative aspect-square bg-surface-muted">
+                    <img alt="Mushola Representatif Khusus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxffUU-novAVuW6Bwq41fJq5v5WcS9vtMHkahBeYJHQoNnic8_fFCCI0LcVdYMGaDIWPwDFGTb-RNr9kHM8idNgk7w3QVz_omicyggC-CrsRq5QOHFopK-h0XAfalj9yOzivE00DVnO5hiQRaHuLpZlnODGDjWByBOrBuE0VCWBNeYvi9DieywUwuFOxld_qyad8ZalwbFcYRhioe2ag4X0jNvrEe4C2DDawDI_d2sYGQpm8uzlFOvxg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-2.5 left-2.5 text-white">
+                      <p class="text-[11px] font-mono font-medium">Mushola Khusus</p>
+                      <span class="text-[9px] text-gold-soft block font-sans">Wudhu Air Mengalir</span>
+                    </div>
                   </div>
                 </div>
-                <div class="relative rounded-xl overflow-hidden border border-border-stone shadow-md bg-surface-muted aspect-[4/3] group">
-                  <img alt="Kamar Mandi Dalam dengan Shower Air Panas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaulSxTWSsGRc2HNEjlDwY8sOVEde7npoHXBQIzQDoGE9QBNGpy0Hrg12KATcwqP7Wmj57fENiuF7C5tZv9XVzdg2jKbkv_wx44NwLLOKRHKKPj4Ogn7y8_16si7FnWqUxKbx6hkLftiUE0esVw-ygbYk_E8JUqZP9vUOdiL3-ufKv8uYZncuLtoR6jh0bxNKC7sZG-TXaGyNiNQ9VZ7bT4g8I0Sl9DtKG5DDWTJW1dDcNA_g5BHicmA"/>
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-2.5 left-2.5 text-white">
-                    <p class="text-[11px] font-mono">Water Heater</p>
+
+                <!-- Water Heater Bathroom Tile -->
+                <div class="bezel-shell p-1 shadow-ambient group">
+                  <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+                    <img alt="Kamar Mandi Dalam dengan Shower Air Panas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaulSxTWSsGRc2HNEjlDwY8sOVEde7npoHXBQIzQDoGE9QBNGpy0Hrg12KATcwqP7Wmj57fENiuF7C5tZv9XVzdg2jKbkv_wx44NwLLOKRHKKPj4Ogn7y8_16si7FnWqUxKbx6hkLftiUE0esVw-ygbYk_E8JUqZP9vUOdiL3-ufKv8uYZncuLtoR6jh0bxNKC7sZG-TXaGyNiNQ9VZ7bT4g8I0Sl9DtKG5DDWTJW1dDcNA_g5BHicmA"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-2.5 left-2.5 text-white">
+                      <p class="text-[11px] font-mono font-medium">Water Heater</p>
+                      <span class="text-[9px] text-white/80 block font-sans">Shower Hangat 24 Jam</span>
+                    </div>
                   </div>
                 </div>
+
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
-      <!-- Minimalist Monolithic Info Strip at bottom of Hero -->
+
+      <!-- Monolithic Key Info Strip Ribbon -->
       <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full pt-4">
-        <div class="bg-white/80 backdrop-blur-xs border border-border-stone rounded-2xl p-5 shadow-xs">
-          <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border-stone/80">
-            <div class="p-3 sm:px-6 flex flex-col">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Kapasitas Properti</span>
-              <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">6 Kamar Tidur</span>
-              <span class="text-xs text-on-surface-variant/80 mt-0.5">AC Dingin &amp; KM Dalam</span>
-            </div>
-            <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Kenyamanan Ibadah</span>
-              <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">Mushola Khusus</span>
-              <span class="text-xs text-on-surface-variant/80 mt-0.5">Tempat Wudhu Mengalir Jernih</span>
-            </div>
-            <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Aksesibilitas</span>
-              <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">Bantul &amp; JEC</span>
-              <span class="text-xs text-on-surface-variant/80 mt-0.5">Dekat UIN Sunan Kalijaga</span>
-            </div>
-            <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant">Tarif Bersih Harian</span>
-              <span class="font-serif text-xl sm:text-2xl font-medium text-secondary mt-1">Mulai Rp 165.000</span>
-              <span class="text-xs text-on-surface-variant/80 mt-0.5">Tanpa Biaya Tersembunyi</span>
+        <div class="bezel-shell p-1.5 shadow-ambient">
+          <div class="bezel-core p-4 sm:p-5 border border-border-stone/60">
+            <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border-stone/80">
+              
+              <div class="p-3 sm:px-6 flex flex-col">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Kapasitas Properti</span>
+                <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">6 Kamar Tidur</span>
+                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">2 Lantai Bawah • 4 Lantai Atas</span>
+              </div>
+
+              <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-syariah-gold font-medium">Kenyamanan Ibadah</span>
+                <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">Mushola Khusus</span>
+                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">Kran Wudhu Mengalir Jernih</span>
+              </div>
+
+              <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Aksesibilitas</span>
+                <span class="font-serif text-xl sm:text-2xl font-medium text-primary mt-1">Bantul &amp; JEC</span>
+                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">Dekat UIN Sunan Kalijaga &amp; UAJY</span>
+              </div>
+
+              <div class="p-3 sm:px-6 flex flex-col pt-4 md:pt-3">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-secondary font-medium">Tarif Bersih Harian</span>
+                <span class="font-serif text-xl sm:text-2xl font-medium text-secondary mt-1">Mulai Rp 165.000</span>
+                <span class="text-xs text-on-surface-variant/80 mt-0.5 font-sans">All-Inclusive Tanpa Biaya Tersembunyi</span>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <!-- ==================== CERITA & KETENTERAMAN (FILOSOFI SYARIAH) ==================== -->
     <section class="py-24 bg-surface-canvas border-b border-border-stone" id="filosofi">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          
           <!-- Sisi Kiri: Kutipan Besar Editorial -->
           <div class="lg:col-span-5 flex flex-col justify-between">
             <div>
               <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold block mb-3">Cerita &amp; Ketenteraman</span>
-              <h2 class="font-serif text-2xl sm:text-3xl lg:text-[2.5rem] font-normal leading-tight text-on-surface">
+              <h2 class="font-serif text-2xl sm:text-3xl lg:text-[2.6rem] font-normal leading-tight text-on-surface">
                 Mengutamakan adab bertamu, ketenangan batin, dan kebersihan yang terjaga.
               </h2>
               <div class="w-16 h-0.5 bg-syariah-gold/60 my-7"></div>
@@ -190,16 +376,20 @@
                 Grha Vege Jawi Syariah dibangun atas cita-cita sederhana: menghadirkan tempat beristirahat yang menghargai kekhusyukan ibadah, menjaga kehormatan keluarga, dan memberikan kehangatan khas keramahan Yogyakarta.
               </p>
             </div>
-            <div class="mt-8 pt-6 border-t border-border-stone text-xs font-mono text-on-surface-variant">
-              <span>Penginapan Ramah Keluarga &amp; Akademisi • Sejak Awal Berdiri</span>
+            
+            <div class="mt-8 pt-6 border-t border-border-stone text-xs font-mono text-on-surface-variant flex items-center justify-between">
+              <span>Penginapan Ramah Keluarga &amp; Akademisi</span>
+              <span class="text-syariah-gold font-medium">Bantul, DIY</span>
             </div>
           </div>
-          <!-- Sisi Kanan: Editorial Numbered List (01, 02, 03) -->
-          <div class="lg:col-span-7 flex flex-col divide-y divide-border-stone">
+
+          <!-- Sisi Kanan: Editorial Numbered List (01, 02, 03) with Double-Bezel Cards -->
+          <div class="lg:col-span-7 flex flex-col gap-5">
+            
             <!-- 01 -->
-            <div class="py-8 first:pt-0">
-              <div class="flex items-start gap-6">
-                <span class="font-mono text-2xl font-light text-primary/40">01</span>
+            <div class="bezel-shell p-1.5 shadow-xs hover:border-primary/40 transition-colors">
+              <div class="bezel-core p-6 flex items-start gap-5">
+                <span class="font-mono text-2xl font-light text-primary/50 shrink-0">01</span>
                 <div>
                   <h3 class="font-serif text-xl sm:text-2xl font-medium text-on-surface">
                     Mushola Representatif &amp; Tempat Wudhu Bersih
@@ -210,10 +400,11 @@
                 </div>
               </div>
             </div>
+
             <!-- 02 -->
-            <div class="py-8">
-              <div class="flex items-start gap-6">
-                <span class="font-mono text-2xl font-light text-secondary/40">02</span>
+            <div class="bezel-shell p-1.5 shadow-xs hover:border-secondary/40 transition-colors">
+              <div class="bezel-core p-6 flex items-start gap-5">
+                <span class="font-mono text-2xl font-light text-secondary/50 shrink-0">02</span>
                 <div>
                   <h3 class="font-serif text-xl sm:text-2xl font-medium text-on-surface">
                     Lingkungan Terjaga &amp; Amanah Syariah
@@ -224,10 +415,11 @@
                 </div>
               </div>
             </div>
+
             <!-- 03 -->
-            <div class="py-8 last:pb-0">
-              <div class="flex items-start gap-6">
-                <span class="font-mono text-2xl font-light text-syariah-gold/60">03</span>
+            <div class="bezel-shell p-1.5 shadow-xs hover:border-syariah-gold/60 transition-colors">
+              <div class="bezel-core p-6 flex items-start gap-5">
+                <span class="font-mono text-2xl font-light text-syariah-gold/70 shrink-0">03</span>
                 <div>
                   <h3 class="font-serif text-xl sm:text-2xl font-medium text-on-surface">
                     Suasana Hening Kekeluargaan &amp; Dapur Mini Bersama
@@ -238,15 +430,19 @@
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
+
     <!-- ==================== KAMAR & STRUKTUR LANTAI (TOTAL 6 KAMAR) ==================== -->
     <section class="py-24 bg-surface-subtle/50 border-b border-border-stone" id="kamar">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        
         <!-- Header & Whole Unit Note -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div class="max-w-2xl">
             <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Suite Showcase</span>
             <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
@@ -256,261 +452,331 @@
               Setiap kamar dirancang dengan proporsi ruang yang pas, ventilasi alami, dan standar kebersihan tinggi demi kenyamanan maksimal 2 orang dewasa per unit.
             </p>
           </div>
-          <!-- Whole House Rental Banner -->
-          <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-border-stone shadow-xs max-w-md">
-            <div class="w-11 h-11 rounded-lg bg-surface-subtle flex items-center justify-center text-primary shrink-0 border border-border-stone">
-              <span class="material-symbols-outlined text-[24px]">holiday_village</span>
-            </div>
-            <div>
-              <p class="text-xs font-semibold text-on-surface">Sewa Seluruh Unit Guesthouse (6 Kamar)</p>
-              <p class="text-[11px] text-on-surface-variant mt-0.5">Ideal untuk rombongan keluarga 8–12 orang. Privasi penuh &amp; amanah.</p>
+
+          <!-- Whole House Rental Banner Pill -->
+          <div class="bezel-shell p-1 max-w-md">
+            <div class="bezel-core p-4 flex items-center gap-4">
+              <div class="w-11 h-11 rounded-xl bg-surface-subtle flex items-center justify-center text-primary shrink-0 border border-border-stone">
+                <span class="material-symbols-outlined text-[24px]">holiday_village</span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-on-surface">Sewa Seluruh Unit Guesthouse (6 Kamar)</p>
+                <p class="text-[11px] text-on-surface-variant mt-0.5">Ideal untuk rombongan keluarga 8–12 orang. Privasi penuh &amp; amanah.</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Interactive Room Filter Switcher -->
+        <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-border-stone/60">
+          <button data-floor="all" class="room-tab-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all bg-primary text-white shadow-xs">
+            Semua Kamar (6 Unit)
+          </button>
+          <button data-floor="ground" class="room-tab-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+            Lantai Bawah (2 Unit)
+          </button>
+          <button data-floor="upper" class="room-tab-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+            Lantai Atas (4 Unit)
+          </button>
+        </div>
+
         <!-- Showcase Cards: Lantai Bawah (2 Kamar) & Lantai Atas (4 Kamar) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="room-cards-grid">
+          
           <!-- Showcase 1: Lantai Bawah (Ground Floor) -->
-          <article class="bg-white rounded-2xl border border-border-stone overflow-hidden shadow-xs flex flex-col">
-            <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden group">
-              <img alt="Kamar Tidur Lantai Bawah Grha Vege Jawi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6AI0UqpoJfIwY_HaYgPoypt52aBZk1C9I4J9K5N85Uf6nHzs5otVv1GCqhQjVlJRfbB05ADExUp3FFWdQbAydRSQiXjcd7bWql98qJPGDoBVstsLd28BeUzk3y401DZdgMI6RFs2mLDDI3aMSV_Y3dlsHvfCwN_qKtI-gDJNtT0PWS5S5EZYWHVQML0VICZjqqAa_Pn3XWmVrhOb1F3GTqLBwEFBnVynHkIcOuwxgXFRVhLsOn1YOdg"/>
-              <div class="absolute top-4 left-4">
-                <span class="bg-primary/95 backdrop-blur-xs text-white text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full">
-                  2 Kamar • Lantai Bawah
-                </span>
+          <article class="room-card bezel-shell p-2 shadow-ambient hover:border-primary/50 transition-all flex flex-col" data-card-floor="ground">
+            <div class="bezel-core overflow-hidden flex-1 flex flex-col">
+              
+              <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden group">
+                <img alt="Kamar Tidur Lantai Bawah Grha Vege Jawi" class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6AI0UqpoJfIwY_HaYgPoypt52aBZk1C9I4J9K5N85Uf6nHzs5otVv1GCqhQjVlJRfbB05ADExUp3FFWdQbAydRSQiXjcd7bWql98qJPGDoBVstsLd28BeUzk3y401DZdgMI6RFs2mLDDI3aMSV_Y3dlsHvfCwN_qKtI-gDJNtT0PWS5S5EZYWHVQML0VICZjqqAa_Pn3XWmVrhOb1F3GTqLBwEFBnVynHkIcOuwxgXFRVhLsOn1YOdg"/>
+                
+                <div class="absolute top-4 left-4">
+                  <span class="bg-primary/95 backdrop-blur-md text-white text-[11px] font-mono uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs">
+                    2 Kamar • Lantai Bawah
+                  </span>
+                </div>
+                
+                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px]">Akses Datar Tanpa Tangga</span>
+                  <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px]">Ramah Orang Tua &amp; Lansia</span>
+                </div>
               </div>
-              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full">Akses Datar Tanpa Tangga</span>
-                <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full">Ramah Orang Tua &amp; Lansia</span>
-              </div>
-            </div>
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-2xl font-normal text-on-surface">Kamar Lantai Bawah (Ground Suite)</h3>
-                <p class="text-sm text-on-surface-variant mt-2.5 leading-relaxed">
-                  Berada langsung di lantai dasar dengan akses langsung ke lorong tengah, mushola guesthouse, dan area dapur bersama. Menghindari kesulitan menaiki tangga untuk orang tua maupun tamu yang membawa koper besar.
-                </p>
-                <!-- Tabular Metadata Specs -->
-                <div class="mt-6 pt-6 border-t border-border-stone">
-                  <h4 class="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant/80 mb-3">Spesifikasi &amp; Fasilitas Kamar</h4>
-                  <div class="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs font-mono text-on-surface">
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">bed</span>
-                      <span>Kasur Queen Berkualitas</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">group</span>
-                      <span>Maks. 2 Orang Dewasa</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">shower</span>
-                      <span>KM Dalam + Water Heater</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">ac_unit</span>
-                      <span>AC Individual Terawat</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">tv</span>
-                      <span>Smart LED TV 32"</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">wifi</span>
-                      <span>WiFi Fiber Optik</span>
+
+              <div class="p-7 sm:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-serif text-2xl font-normal text-on-surface">Kamar Lantai Bawah (Ground Suite)</h3>
+                  <p class="text-sm text-on-surface-variant mt-2.5 leading-relaxed">
+                    Berada langsung di lantai dasar dengan akses datar langsung ke lorong tengah, mushola guesthouse, dan area dapur bersama. Menghindari kesulitan menaiki tangga untuk orang tua maupun tamu yang membawa koper besar.
+                  </p>
+
+                  <!-- Tabular Metadata Specs Grid -->
+                  <div class="mt-6 pt-6 border-t border-border-stone">
+                    <h4 class="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant/80 mb-3 font-semibold">Spesifikasi &amp; Fasilitas Kamar</h4>
+                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-xs font-mono text-on-surface">
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">bed</span>
+                        <span>Kasur Queen Berkualitas</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">group</span>
+                        <span>Maks. 2 Orang Dewasa</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">shower</span>
+                        <span>KM Dalam + Water Heater</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">ac_unit</span>
+                        <span>AC Individual Terawat</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">tv</span>
+                        <span>Smart LED TV 32"</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">wifi</span>
+                        <span>WiFi Fiber Optik</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="mt-8 pt-6 border-t border-border-stone flex items-center justify-between">
-                <div>
-                  <span class="text-[11px] font-mono text-on-surface-variant block">Tarif Menginap Bersih</span>
-                  <span class="font-serif text-xl font-medium text-primary">Rp 165.000 <span class="text-xs font-sans font-normal text-on-surface-variant">/ malam (weekday)</span></span>
+
+                <div class="mt-8 pt-6 border-t border-border-stone flex items-center justify-between">
+                  <div>
+                    <span class="text-[11px] font-mono text-on-surface-variant block">Tarif Menginap Bersih</span>
+                    <span class="font-serif text-xl sm:text-2xl font-medium text-primary">Rp 165.000 <span class="text-xs font-sans font-normal text-on-surface-variant">/ malam (weekday)</span></span>
+                  </div>
+                  
+                  <a class="group inline-flex items-center gap-2 text-xs font-mono font-medium text-primary hover:text-white bg-surface-subtle hover:bg-primary pl-4 pr-1.5 py-1.5 rounded-full border border-border-stone transition-all" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20Kamar%20Lantai%20Bawah%20(Ground%20Suite)" rel="noopener noreferrer" target="_blank">
+                    <span>Pesan Kamar Bawah</span>
+                    <div class="w-6 h-6 rounded-full bg-white/40 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
+                      <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                    </div>
+                  </a>
                 </div>
-                <a class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-primary hover:text-primary-container bg-surface-subtle px-4 py-2 rounded-full border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20Kamar%20Lantai%20Bawah" rel="noopener noreferrer" target="_blank">
-                  Pesan Unit Ini <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
-                </a>
+
               </div>
+
             </div>
           </article>
+
           <!-- Showcase 2: Lantai Atas (Upper Floor) -->
-          <article class="bg-white rounded-2xl border border-border-stone overflow-hidden shadow-xs flex flex-col">
-            <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden group">
-              <img alt="Kamar Tidur Lantai Atas Grha Vege Jawi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuuZ4fcBlsdvEFz3kuS-QL0zzcENEQEQrAnCggULbj6J-u6EI_5mBKe9mVHIa5TWW8k9b69XGmULmqtjSKhO6wegO3s-Gy9CTLo1UZWasyWILnBqlvOhuRYIuamuyJxJuNpuIBa83PX6uL7N-NhKGCFF1N-9yaCgbmJjYQIJj7E051GSRuE0FdASoMWrZMQcDMboYf_My9Gf5wFUY_ogESs93arD85xzzebIUmx6Mr6mQNP1y5FWy5Hw"/>
-              <div class="absolute top-4 left-4">
-                <span class="bg-primary/95 backdrop-blur-xs text-white text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full">
-                  4 Kamar • Lantai Atas
-                </span>
+          <article class="room-card bezel-shell p-2 shadow-ambient hover:border-primary/50 transition-all flex flex-col" data-card-floor="upper">
+            <div class="bezel-core overflow-hidden flex-1 flex flex-col">
+              
+              <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden group">
+                <img alt="Kamar Tidur Lantai Atas Grha Vege Jawi" class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuuZ4fcBlsdvEFz3kuS-QL0zzcENEQEQrAnCggULbj6J-u6EI_5mBKe9mVHIa5TWW8k9b69XGmULmqtjSKhO6wegO3s-Gy9CTLo1UZWasyWILnBqlvOhuRYIuamuyJxJuNpuIBa83PX6uL7N-NhKGCFF1N-9yaCgbmJjYQIJj7E051GSRuE0FdASoMWrZMQcDMboYf_My9Gf5wFUY_ogESs93arD85xzzebIUmx6Mr6mQNP1y5FWy5Hw"/>
+                
+                <div class="absolute top-4 left-4">
+                  <span class="bg-primary/95 backdrop-blur-md text-white text-[11px] font-mono uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs">
+                    4 Kamar • Lantai Atas
+                  </span>
+                </div>
+                
+                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px]">Balkon &amp; Sirkulasi Asri</span>
+                  <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px]">Privasi Tenang &amp; Terjaga</span>
+                </div>
               </div>
-              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full">Balkon &amp; Sirkulasi Asri</span>
-                <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full">Privasi Tenang &amp; Terjaga</span>
-              </div>
-            </div>
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-2xl font-normal text-on-surface">Kamar Lantai Atas (Balcony Suite)</h3>
-                <p class="text-sm text-on-surface-variant mt-2.5 leading-relaxed">
-                  Menghadirkan suasana tenang dengan ventilasi udara segar yang leluasa. Koridor balkon terbuka menghadap pepohonan hijau di sekitar lingkungan Bantul, sangat pas untuk istirahat setelah seharian bepergian di Yogyakarta.
-                </p>
-                <!-- Tabular Metadata Specs -->
-                <div class="mt-6 pt-6 border-t border-border-stone">
-                  <h4 class="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant/80 mb-3">Spesifikasi &amp; Fasilitas Kamar</h4>
-                  <div class="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs font-mono text-on-surface">
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">bed</span>
-                      <span>Kasur Double Empuk &amp; Bersih</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">group</span>
-                      <span>Maks. 2 Orang Dewasa</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">shower</span>
-                      <span>KM Dalam + Water Heater</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">ac_unit</span>
-                      <span>AC Individual Dingin</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">tv</span>
-                      <span>Smart LED TV 32"</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-[17px] text-primary">deck</span>
-                      <span>Balkon &amp; Kursi Santai</span>
+
+              <div class="p-7 sm:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-serif text-2xl font-normal text-on-surface">Kamar Lantai Atas (Balcony Suite)</h3>
+                  <p class="text-sm text-on-surface-variant mt-2.5 leading-relaxed">
+                    Menghadirkan suasana tenang dengan ventilasi udara segar yang leluasa. Koridor balkon terbuka menghadap pepohonan hijau di sekitar lingkungan Bantul, sangat pas untuk istirahat setelah seharian bepergian di Yogyakarta.
+                  </p>
+
+                  <!-- Tabular Metadata Specs Grid -->
+                  <div class="mt-6 pt-6 border-t border-border-stone">
+                    <h4 class="text-[11px] font-mono uppercase tracking-widest text-on-surface-variant/80 mb-3 font-semibold">Spesifikasi &amp; Fasilitas Kamar</h4>
+                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-xs font-mono text-on-surface">
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">bed</span>
+                        <span>Kasur Double Empuk &amp; Bersih</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">group</span>
+                        <span>Maks. 2 Orang Dewasa</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">shower</span>
+                        <span>KM Dalam + Water Heater</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">ac_unit</span>
+                        <span>AC Individual Dingin</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">tv</span>
+                        <span>Smart LED TV 32"</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[17px] text-primary">deck</span>
+                        <span>Balkon &amp; Kursi Santai</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="mt-8 pt-6 border-t border-border-stone flex items-center justify-between">
-                <div>
-                  <span class="text-[11px] font-mono text-on-surface-variant block">Tarif Menginap Bersih</span>
-                  <span class="font-serif text-xl font-medium text-primary">Rp 165.000 <span class="text-xs font-sans font-normal text-on-surface-variant">/ malam (weekday)</span></span>
+
+                <div class="mt-8 pt-6 border-t border-border-stone flex items-center justify-between">
+                  <div>
+                    <span class="text-[11px] font-mono text-on-surface-variant block">Tarif Menginap Bersih</span>
+                    <span class="font-serif text-xl sm:text-2xl font-medium text-primary">Rp 165.000 <span class="text-xs font-sans font-normal text-on-surface-variant">/ malam (weekday)</span></span>
+                  </div>
+                  
+                  <a class="group inline-flex items-center gap-2 text-xs font-mono font-medium text-primary hover:text-white bg-surface-subtle hover:bg-primary pl-4 pr-1.5 py-1.5 rounded-full border border-border-stone transition-all" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20Kamar%20Lantai%20Atas%20(Balcony%20Suite)" rel="noopener noreferrer" target="_blank">
+                    <span>Pesan Kamar Atas</span>
+                    <div class="w-6 h-6 rounded-full bg-white/40 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
+                      <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                    </div>
+                  </a>
                 </div>
-                <a class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-primary hover:text-primary-container bg-surface-subtle px-4 py-2 rounded-full border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20Kamar%20Lantai%20Atas" rel="noopener noreferrer" target="_blank">
-                  Pesan Unit Ini <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
-                </a>
+
               </div>
+
             </div>
           </article>
+
         </div>
       </div>
     </section>
+
     <!-- ==================== SKEMA TARIF BERSIH & TRANSPARAN (RATE CARD HOSPITALITY) ==================== -->
     <section class="py-24 bg-surface-canvas border-b border-border-stone" id="tarif">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        
         <div class="max-w-2xl mx-auto text-center mb-16">
           <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Hospitality Rate Card</span>
           <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
             Skema Tarif Sewa Bersih &amp; Transparan
           </h2>
           <p class="text-sm text-on-surface-variant mt-3 leading-relaxed">
-            Satu harga wajar tanpa biaya tersembunyi. Sudah mencakup fasilitas kamar mandi dalam, AC dingin, water heater, listrik, air, dan parkir aman.
+            Satu harga wajar tanpa biaya tersembunyi. Sudah mencakup fasilitas kamar mandi dalam, AC dingin, water heater, listrik, air, dispenser bersama, WiFi fiber, dan parkir aman.
           </p>
         </div>
-        <!-- 4-Column Architectural Rate Card -->
+
+        <!-- 4-Column Architectural Rate Card with Double-Bezel -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
           <!-- Col 1: Weekday -->
-          <div class="bg-white rounded-2xl border border-border-stone p-7 flex flex-col justify-between shadow-xs hover:border-primary/40 transition-colors">
-            <div>
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Weekday</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle text-on-surface-variant border border-border-stone">Senin–Kamis</span>
+          <div class="bezel-shell p-1.5 shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between">
+            <div class="bezel-core p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Weekday</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle text-on-surface-variant border border-border-stone">Senin–Kamis</span>
+                </div>
+                <div class="mt-6">
+                  <div class="font-serif text-3xl sm:text-4xl font-normal text-on-surface">Rp 165.000</div>
+                  <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / malam</span>
+                </div>
+                <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
+                  Pilihan favorit untuk dinas kerja, kunjungan singkat kampus, maupun transit perjalanan di D.I. Yogyakarta.
+                </p>
               </div>
-              <div class="mt-6">
-                <div class="font-serif text-3xl sm:text-4xl font-normal text-on-surface">Rp 165.000</div>
-                <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / malam</span>
+              <div class="mt-8 pt-5 border-t border-border-stone">
+                <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-primary hover:text-white text-primary border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20kamar%20Weekday%20(Rp%20165.000)" rel="noopener noreferrer" target="_blank">
+                  Pilih Weekday
+                </a>
               </div>
-              <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
-                Pilihan favorit untuk dinas kerja, kunjungan singkat kampus, maupun transit perjalanan di D.I. Yogyakarta.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-border-stone">
-              <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-surface-muted text-primary border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20kamar%20Weekday%20(Rp%20165.000)" rel="noopener noreferrer" target="_blank">
-                Pilih Weekday
-              </a>
             </div>
           </div>
+
           <!-- Col 2: Weekend -->
-          <div class="bg-white rounded-2xl border border-border-stone p-7 flex flex-col justify-between shadow-xs hover:border-syariah-gold/60 transition-colors">
-            <div>
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-mono uppercase tracking-wider text-secondary font-semibold">Weekend</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle text-on-surface-variant border border-border-stone">Jumat–Minggu</span>
+          <div class="bezel-shell p-1.5 shadow-xs hover:border-secondary/50 transition-all flex flex-col justify-between">
+            <div class="bezel-core p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider text-secondary font-semibold">Weekend</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle text-on-surface-variant border border-border-stone">Jumat–Minggu</span>
+                </div>
+                <div class="mt-6">
+                  <div class="font-serif text-3xl sm:text-4xl font-normal text-on-surface">Rp 220.000</div>
+                  <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / malam</span>
+                </div>
+                <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
+                  Ideal bagi keluarga muslim yang berwisata, menghadiri resepsi pernikahan, maupun acara wisuda perguruan tinggi.
+                </p>
               </div>
-              <div class="mt-6">
-                <div class="font-serif text-3xl sm:text-4xl font-normal text-on-surface">Rp 220.000</div>
-                <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / malam</span>
+              <div class="mt-8 pt-5 border-t border-border-stone">
+                <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-secondary hover:text-white text-secondary border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20kamar%20Weekend%20(Rp%20220.000)" rel="noopener noreferrer" target="_blank">
+                  Pilih Weekend
+                </a>
               </div>
-              <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
-                Ideal bagi keluarga muslim yang berwisata, menghadiri resepsi pernikahan, maupun acara wisuda perguruan tinggi.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-border-stone">
-              <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-surface-muted text-secondary border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20pesan%20kamar%20Weekend%20(Rp%20220.000)" rel="noopener noreferrer" target="_blank">
-                Pilih Weekend
-              </a>
             </div>
           </div>
-          <!-- Col 3: Bulanan (Kost Eksklusif) -->
-          <div class="bg-white rounded-2xl border-2 border-primary p-7 flex flex-col justify-between shadow-sm relative">
+
+          <!-- Col 3: Bulanan (Kost Eksklusif) - Highlighted -->
+          <div class="bezel-shell p-1.5 shadow-md border-2 border-syariah-gold relative flex flex-col justify-between bg-gold-subtle/30">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-mono uppercase tracking-widest px-3 py-0.5 rounded-full shadow-xs">
               Paling Diminati
             </div>
-            <div>
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Bulanan (Kost)</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/10 text-primary">Eksklusif</span>
+            <div class="bezel-core p-6 flex-1 flex flex-col justify-between border border-syariah-gold/30">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Bulanan (Kost)</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/10 text-primary font-medium">Eksklusif</span>
+                </div>
+                <div class="mt-6">
+                  <div class="font-serif text-3xl sm:text-4xl font-normal text-primary">Rp 1.870.000</div>
+                  <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / bulan</span>
+                </div>
+                <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
+                  Paket hemat bagi mahasiswa pascasarjana UIN/UAJY, dokter residen, maupun pegawai dinas dengan kamar berfasilitas penuh.
+                </p>
               </div>
-              <div class="mt-6">
-                <div class="font-serif text-3xl sm:text-4xl font-normal text-primary">Rp 1.870.000</div>
-                <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / bulan</span>
+              <div class="mt-8 pt-5 border-t border-border-stone">
+                <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-primary hover:bg-primary-deep text-white shadow-xs transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20tertarik%20sewa%20Kamar%20Bulanan%20(Rp%201.870.000)" rel="noopener noreferrer" target="_blank">
+                  Pilih Paket Bulanan
+                </a>
               </div>
-              <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
-                Paket hemat bagi mahasiswa pascasarjana UIN/UAJY, dokter residen, maupun pegawai dinas dengan kamar berfasilitas penuh.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-border-stone">
-              <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-primary hover:bg-primary-container text-white shadow-xs transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20tertarik%20sewa%20Kamar%20Bulanan%20(Rp%201.870.000)" rel="noopener noreferrer" target="_blank">
-                Pilih Paket Bulanan
-              </a>
             </div>
           </div>
+
           <!-- Col 4: Rombongan / Full House -->
-          <div class="bg-white rounded-2xl border border-border-stone p-7 flex flex-col justify-between shadow-xs hover:border-primary/40 transition-colors">
-            <div>
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-mono uppercase tracking-wider text-on-surface font-semibold">Satu Rumah</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle text-on-surface-variant border border-border-stone">1–6 Kamar</span>
+          <div class="bezel-shell p-1.5 shadow-xs hover:border-primary/50 transition-all flex flex-col justify-between">
+            <div class="bezel-core p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider text-on-surface font-semibold">Satu Rumah</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle text-on-surface-variant border border-border-stone">1–6 Kamar</span>
+                </div>
+                <div class="mt-6">
+                  <div class="font-serif text-2xl sm:text-3xl font-normal text-on-surface">Tarif Khusus</div>
+                  <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ rombongan keluarga</span>
+                </div>
+                <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
+                  Sewa seluruh kamar guesthouse untuk acara keluarga besar dengan privasi terjaga penuh, dapur dan mushola pribadi.
+                </p>
               </div>
-              <div class="mt-6">
-                <div class="font-serif text-2xl sm:text-3xl font-normal text-on-surface">Tarif Khusus</div>
-                <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ rombongan keluarga</span>
+              <div class="mt-8 pt-5 border-t border-border-stone">
+                <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-surface-muted text-on-surface border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20konsultasi%20sewa%20seluruh%20guesthouse%20(rombongan)" rel="noopener noreferrer" target="_blank">
+                  Konsultasi Rombongan
+                </a>
               </div>
-              <p class="text-xs text-on-surface-variant mt-5 leading-relaxed">
-                Sewa seluruh kamar guesthouse untuk acara keluarga besar dengan privasi terjaga penuh, dapur dan mushola pribadi.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-border-stone">
-              <a class="block w-full py-2.5 text-center text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-surface-muted text-on-surface border border-border-stone transition-colors" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20konsultasi%20sewa%20seluruh%20guesthouse%20(rombongan)" rel="noopener noreferrer" target="_blank">
-                Konsultasi Rombongan
-              </a>
             </div>
           </div>
+
         </div>
+
         <!-- All-Inclusive Transparency Note -->
-        <div class="mt-10 p-5 rounded-xl bg-surface-subtle border border-border-stone flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <div class="flex items-center gap-3 text-on-surface-variant">
-            <span class="material-symbols-outlined text-primary text-[22px] shrink-0">check_circle</span>
-            <span><strong>All-Inclusive Transparan:</strong> Seluruh tarif sudah termasuk penggunaan AC, listrik, air hangat, dispenser bersama, WiFi fiber, dan parkir tanpa pungutan tambahan saat check-in.</span>
+        <div class="mt-10 bezel-shell p-1">
+          <div class="bezel-core p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div class="flex items-center gap-3 text-on-surface-variant">
+              <span class="material-symbols-outlined text-primary text-[22px] shrink-0">check_circle</span>
+              <span><strong>All-Inclusive Transparan:</strong> Seluruh tarif sudah termasuk penggunaan AC, listrik, air hangat, dispenser bersama, WiFi fiber, dan parkir tanpa pungutan tambahan saat check-in.</span>
+            </div>
+            <span class="font-mono text-primary whitespace-nowrap text-[11px] font-medium bg-primary-light px-3 py-1 rounded-full">Bebas Pungutan Liar</span>
           </div>
-          <span class="font-mono text-primary whitespace-nowrap text-[11px] font-medium">Bebas Pungutan Liar</span>
         </div>
+
       </div>
     </section>
+
     <!-- ==================== FASILITAS KOMPREHENSIF (ARCHITECTURAL AMENITIES CLUSTERING) ==================== -->
     <section class="py-24 bg-surface-subtle/40 border-b border-border-stone" id="fasilitas">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        
         <div class="max-w-2xl mb-16">
           <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Standard &amp; Fasilitas</span>
           <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
@@ -520,150 +786,172 @@
             Dikelompokkan secara terstruktur untuk memastikan kebutuhan privasi kamar serta fasilitas bersama terpenuhi dengan tertib dan nyaman.
           </p>
         </div>
-        <!-- 3 Architectural Clusters -->
+
+        <!-- 3 Architectural Clusters in Double-Bezel Containers -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
           <!-- Cluster 1: Kenyamanan Kamar Pribadi -->
-          <div class="bg-white rounded-2xl p-8 border border-border-stone shadow-xs flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-[24px]">bed</span>
+          <div class="bezel-shell p-1.5 shadow-xs flex flex-col justify-between">
+            <div class="bezel-core p-7 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center mb-6">
+                  <span class="material-symbols-outlined text-[24px]">bed</span>
+                </div>
+                
+                <h3 class="font-serif text-xl font-medium text-on-surface">Kenyamanan Kamar Pribadi</h3>
+                <p class="text-xs text-on-surface-variant mt-2 mb-6 leading-relaxed">
+                  Ruang istirahat pribadi yang hening dengan kontrol suhu mandiri dan sanitasi higienis.
+                </p>
+
+                <ul class="space-y-4 text-xs text-on-surface-variant font-mono">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">ac_unit</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">AC Dingin Tiap Kamar</strong>
+                      <span>Unit pendingin mandiri yang diservis berkala untuk hembusan sejuk &amp; senyap.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">hot_tub</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">KM Dalam + Water Heater</strong>
+                      <span>Shower air hangat siap 24 jam dengan debit air bersih melimpah.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">tv</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Smart LED TV 32 Inci</strong>
+                      <span>Hiburan santai di dalam kamar tidur menjelang waktu istirahat malam.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">hotel</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Sprei Bersih &amp; Wangi</strong>
+                      <span>Linen dicuci steril dan diganti berkala untuk kenyamanan tidur nyenyak.</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <h3 class="font-serif text-xl font-medium text-on-surface">Kenyamanan Kamar Pribadi</h3>
-              <p class="text-xs text-on-surface-variant mt-2 mb-6 leading-relaxed">
-                Ruang istirahat pribadi yang hening dengan kontrol suhu mandiri dan sanitasi higienis.
-              </p>
-              <ul class="space-y-4 text-xs text-on-surface-variant font-mono">
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">ac_unit</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">AC Dingin Tiap Kamar</strong>
-                    <span>Unit pendingin mandiri yang diservis berkala untuk hembusan sejuk &amp; senyap.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">hot_tub</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">KM Dalam + Water Heater</strong>
-                    <span>Shower air hangat siap 24 jam dengan debit air bersih melimpah.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">tv</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Smart LED TV 32 Inci</strong>
-                    <span>Hiburan santai di dalam kamar tidur menjelang waktu istirahat malam.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-primary shrink-0 mt-0.5">hotel</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Sprei Bersih &amp; Wangi</strong>
-                    <span>Linen dicuci steril dan diganti berkala untuk kenyamanan tidur nyenyak.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-8 pt-4 border-t border-border-stone text-[11px] font-mono text-primary">
-              01 • Ruang Istirahat Tenang
+
+              <div class="mt-8 pt-4 border-t border-border-stone text-[11px] font-mono text-primary font-medium">
+                01 • Ruang Istirahat Tenang
+              </div>
             </div>
           </div>
+
           <!-- Cluster 2: Fasilitas Bersama & Ibadah -->
-          <div class="bg-white rounded-2xl p-8 border border-border-stone shadow-xs flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-surface-subtle border border-border-stone text-syariah-gold flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-[24px]">mosque</span>
+          <div class="bezel-shell p-1.5 shadow-xs flex flex-col justify-between">
+            <div class="bezel-core p-7 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-surface-subtle border border-border-stone text-syariah-gold flex items-center justify-center mb-6">
+                  <span class="material-symbols-outlined text-[24px]">mosque</span>
+                </div>
+                
+                <h3 class="font-serif text-xl font-medium text-on-surface">Fasilitas Bersama &amp; Ibadah</h3>
+                <p class="text-xs text-on-surface-variant mt-2 mb-6 leading-relaxed">
+                  Ruang bersama yang asri dan representatif untuk mendukung ibadah serta kebutuhan santai keluarga.
+                </p>
+
+                <ul class="space-y-4 text-xs text-on-surface-variant font-mono">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">mosque</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Mushola Khusus Representatif</strong>
+                      <span>Sajadah wangi, mukena bersih, sarung, dan arah kiblat tepat terkalibrasi.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">water_drop</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Tempat Wudhu Mengalir Jernih</strong>
+                      <span>Kran wudhu terpisah yang bersih dan tidak licin, aman bagi segala usia.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">soup_kitchen</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Dapur Mini &amp; Dispenser Galon</strong>
+                      <span>Kompor gas, kulkas bersama, dan air minum galon higienis siap pakai sewaktu-waktu.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">deck</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Balkon &amp; Ruang Santai Asri</strong>
+                      <span>Tempat duduk santai untuk berbincang santun menikmati angin semilir sore.</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <h3 class="font-serif text-xl font-medium text-on-surface">Fasilitas Bersama &amp; Ibadah</h3>
-              <p class="text-xs text-on-surface-variant mt-2 mb-6 leading-relaxed">
-                Ruang bersama yang asri dan representatif untuk mendukung ibadah serta kebutuhan santai keluarga.
-              </p>
-              <ul class="space-y-4 text-xs text-on-surface-variant font-mono">
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">mosque</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Mushola Khusus Representatif</strong>
-                    <span>Sajadah wangi, mukena bersih, sarung, dan arah kiblat tepat terkalibrasi.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">water_drop</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Tempat Wudhu Mengalir Jernih</strong>
-                    <span>Kran wudhu terpisah yang bersih dan tidak licin, aman bagi segala usia.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">soup_kitchen</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Dapur Mini &amp; Dispenser Galon</strong>
-                    <span>Kompor gas, kulkas bersama, dan air minum galon higienis siap pakai sewaktu-waktu.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-syariah-gold shrink-0 mt-0.5">deck</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Balkon &amp; Ruang Santai Asri</strong>
-                    <span>Tempat duduk santai untuk berbincang santun menikmati angin semilir sore.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-8 pt-4 border-t border-border-stone text-[11px] font-mono text-syariah-gold">
-              02 • Ibadah &amp; Kebersamaan
+
+              <div class="mt-8 pt-4 border-t border-border-stone text-[11px] font-mono text-syariah-gold font-medium">
+                02 • Ibadah &amp; Kebersamaan
+              </div>
             </div>
           </div>
+
           <!-- Cluster 3: Kemudahan & Keamanan -->
-          <div class="bg-white rounded-2xl p-8 border border-border-stone shadow-xs flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-surface-subtle border border-border-stone text-secondary flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-[24px]">security</span>
+          <div class="bezel-shell p-1.5 shadow-xs flex flex-col justify-between">
+            <div class="bezel-core p-7 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-surface-subtle border border-border-stone text-secondary flex items-center justify-center mb-6">
+                  <span class="material-symbols-outlined text-[24px]">security</span>
+                </div>
+                
+                <h3 class="font-serif text-xl font-medium text-on-surface">Kemudahan &amp; Keamanan</h3>
+                <p class="text-xs text-on-surface-variant mt-2 mb-6 leading-relaxed">
+                  Infrastruktur penunjang aktivitas digital serta perlindungan privasi kendaraan di lingkungan tertutup.
+                </p>
+
+                <ul class="space-y-4 text-xs text-on-surface-variant font-mono">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">wifi</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">WiFi Fiber Optik Cepat</strong>
+                      <span>Konektivitas stabil di seluruh kamar dan lorong guesthouse untuk zoom &amp; streaming.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">local_parking</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Parkir Mobil &amp; Motor Aman</strong>
+                      <span>Area pelataran paving block di dalam pagar guesthouse yang tertutup malam hari.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">door_front</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Pintu Pagar Terkunci Aman</strong>
+                      <span>Akses pintu masuk dijaga dengan tertib untuk kenyamanan istirahat tamu.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">support_agent</span>
+                    <div>
+                      <strong class="text-on-surface block font-sans font-medium text-xs">Pengelola Responsif Ramah</strong>
+                      <span>Ibu Agnesia dan tim siap membantu koordinasi kebutuhan menginap Anda.</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <h3 class="font-serif text-xl font-medium text-on-surface">Kemudahan &amp; Keamanan</h3>
-              <p class="text-xs text-on-surface-variant mt-2 mb-6 leading-relaxed">
-                Infrastruktur penunjang aktivitas digital serta perlindungan privasi kendaraan di lingkungan tertutup.
-              </p>
-              <ul class="space-y-4 text-xs text-on-surface-variant font-mono">
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">wifi</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">WiFi Fiber Optik Cepat</strong>
-                    <span>Konektivitas stabil di seluruh kamar dan lorong guesthouse untuk zoom &amp; streaming.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">local_parking</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Parkir Mobil &amp; Motor Aman</strong>
-                    <span>Area pelataran paving block di dalam pagar guesthouse yang tertutup malam hari.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">door_front</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Pintu Pagar Terkunci Aman</strong>
-                    <span>Akses pintu masuk dijaga dengan tertib untuk kenyamanan istirahat tamu.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="material-symbols-outlined text-[17px] text-secondary shrink-0 mt-0.5">support_agent</span>
-                  <div>
-                    <strong class="text-on-surface block font-sans font-medium text-xs">Pengelola Responsif Ramah</strong>
-                    <span>Ibu Agnesia dan tim siap membantu koordinasi kebutuhan menginap Anda.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-8 pt-4 border-t border-border-stone text-[11px] font-mono text-secondary">
-              03 • Aksesibilitas &amp; Keamanan
+
+              <div class="mt-8 pt-4 border-t border-border-stone text-[11px] font-mono text-secondary font-medium">
+                03 • Aksesibilitas &amp; Keamanan
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-    <!-- ==================== GALERI SUASANA REALISTIS (CURATED VISUAL JOURNEY) ==================== -->
-    <section class="py-24 bg-surface-canvas border-b border-border-stone">
+
+    <!-- ==================== GALERI SUASANA REALISTIS & LIGHTBOX ==================== -->
+    <section class="py-24 bg-surface-canvas border-b border-border-stone" id="galeri">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Dokumentasi Autentik</span>
             <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
@@ -674,71 +962,146 @@
             Foto nyata tanpa rekayasa sudut visual yang berlebihan. Ruangan rapi, wangi, dan tertata apa adanya untuk ketenangan istirahat Anda.
           </p>
         </div>
-        <!-- Curated Visual Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Gallery Category Tabs -->
+        <div class="flex flex-wrap items-center gap-2 mb-8 pb-3 border-b border-border-stone/60">
+          <button data-filter="all" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-primary text-white shadow-xs">
+            Semua Foto (6)
+          </button>
+          <button data-filter="bedroom" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+            Kamar Tidur
+          </button>
+          <button data-filter="mushola" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+            Mushola
+          </button>
+          <button data-filter="pantry" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+            Dapur Mini
+          </button>
+          <button data-filter="outdoor" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+            Balkon &amp; Parkiran
+          </button>
+        </div>
+
+        <!-- Curated Visual Grid with Double-Bezel Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gallery-grid">
+          
           <!-- Big 1: Kamar Tidur Utama -->
-          <div class="md:col-span-2 rounded-2xl overflow-hidden border border-border-stone shadow-xs bg-surface-muted aspect-[16/10] relative group">
-            <img alt="Kamar Tidur Utama Rapi dan Bersih" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0KlG83ao-6UXBjkVqMnzywbQVCIn19T6sYbYHfUuKhyUZ4IEAlORIfzm8WzrWrDEijD0TkoEqFXcpT-ThCXD_ByICj3R0--320lQp8n0LKJ4DRRhcaB_uO1QkuFQe97j8ESLR30FRvjlHxNKscduc3Bw0mntgo_PfUF59VuMOQ86Ljva4V7jh_7YwKEViHTQR49qlW522zYwPggv7KiIkFKZcG0R41lH28wo9SjdSnbmLeyLJy3V4g"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div class="absolute bottom-5 left-6 right-6 text-white flex items-end justify-between">
-              <div>
-                <p class="font-serif text-lg font-normal">Kamar Tidur Utama Bernuansa Tenang</p>
-                <p class="text-xs text-white/80 font-sans mt-0.5">Sprei putih bersih dengan pencahayaan hangat menenangkan mata</p>
+          <div class="gallery-item md:col-span-2 bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="bedroom" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0KlG83ao-6UXBjkVqMnzywbQVCIn19T6sYbYHfUuKhyUZ4IEAlORIfzm8WzrWrDEijD0TkoEqFXcpT-ThCXD_ByICj3R0--320lQp8n0LKJ4DRRhcaB_uO1QkuFQe97j8ESLR30FRvjlHxNKscduc3Bw0mntgo_PfUF59VuMOQ86Ljva4V7jh_7YwKEViHTQR49qlW522zYwPggv7KiIkFKZcG0R41lH28wo9SjdSnbmLeyLJy3V4g" data-title="Kamar Tidur Utama Bernuansa Tenang" data-desc="Sprei putih bersih dengan pencahayaan hangat menenangkan mata">
+            <div class="bezel-core overflow-hidden relative aspect-[16/10] bg-surface-muted">
+              <img alt="Kamar Tidur Utama Rapi dan Bersih" class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0KlG83ao-6UXBjkVqMnzywbQVCIn19T6sYbYHfUuKhyUZ4IEAlORIfzm8WzrWrDEijD0TkoEqFXcpT-ThCXD_ByICj3R0--320lQp8n0LKJ4DRRhcaB_uO1QkuFQe97j8ESLR30FRvjlHxNKscduc3Bw0mntgo_PfUF59VuMOQ86Ljva4V7jh_7YwKEViHTQR49qlW522zYwPggv7KiIkFKZcG0R41lH28wo9SjdSnbmLeyLJy3V4g"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-5 left-6 right-6 text-white flex items-end justify-between">
+                <div>
+                  <p class="font-serif text-lg font-normal">Kamar Tidur Utama Bernuansa Tenang</p>
+                  <p class="text-xs text-white/80 font-sans mt-0.5">Sprei putih bersih dengan pencahayaan hangat menenangkan mata</p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                  <span class="material-symbols-outlined text-[18px]">zoom_in</span>
+                </div>
               </div>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-white/70 bg-black/40 px-2.5 py-1 rounded-full backdrop-blur-xs">Interior</span>
             </div>
           </div>
+
           <!-- Stack 2: Mushola & Dapur Bersama -->
-          <div class="flex flex-col gap-6">
-            <div class="rounded-2xl overflow-hidden border border-border-stone shadow-xs bg-surface-muted aspect-[4/3] relative group">
+          <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="mushola" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JkUaLnatkrTTqgAacRvyUB9DRZwgppfn30O1GXkoOJ7j4id_hEvQaNxZePQVsUH6gL5ra4D7wdYx2sTJelbVUI729kyEDYa9PYjhKDcG2QZgTuAJPsrrn-zMHDrrl7aUXMpsoRvgi0SH-NqebUjJrKKl7KFQIGd8ixxAFOcNrdr-drCjb4Om9hb-POOXjfs6YsuYjqZTiajU79e_Lx5XCKo84S9dUwIxgjEXw04PXrr8xjDsAcZTPA" data-title="Mushola Syariah Bersih" data-desc="Karpet suci, sajadah, mukena terawat, dan penunjuk arah kiblat akurat">
+            <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
               <img alt="Mushola Syariah Khusus Bersih" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JkUaLnatkrTTqgAacRvyUB9DRZwgppfn30O1GXkoOJ7j4id_hEvQaNxZePQVsUH6gL5ra4D7wdYx2sTJelbVUI729kyEDYa9PYjhKDcG2QZgTuAJPsrrn-zMHDrrl7aUXMpsoRvgi0SH-NqebUjJrKKl7KFQIGd8ixxAFOcNrdr-drCjb4Om9hb-POOXjfs6YsuYjqZTiajU79e_Lx5XCKo84S9dUwIxgjEXw04PXrr8xjDsAcZTPA"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-                <p class="font-serif text-sm font-medium">Mushola Syariah Bersih</p>
-                <span class="text-[10px] font-mono text-gold-soft">Khusus Tamu</span>
+                <div>
+                  <p class="font-serif text-sm font-medium">Mushola Syariah Bersih</p>
+                  <span class="text-[10px] font-mono text-gold-soft">Khusus Tamu</span>
+                </div>
+                <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
               </div>
             </div>
-            <div class="rounded-2xl overflow-hidden border border-border-stone shadow-xs bg-surface-muted aspect-[4/3] relative group">
+          </div>
+
+          <!-- Dapur Bersama -->
+          <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="pantry" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG_SvVNancNF0_ZlK5GswCakQu_105pCZcjmDqZduPirdUpIoGdA3e8uz0bQEtSl2tG1RmkXStX0aklu6hxotRYO73_B2uafbG1nJb5IZbGoyT74xTCQnHPLt5grV7AZd_BMjFiZpVb1uxNU6phrPNmkwogzB8btGloHoYPJ64RCrfL_Y9vDIRKgBRes3d_9xTs6Iy0tyQDF-MdFLX3VVSJNCdm8fGs1FnCnI-l3RD91ygYLpZLQFh0g" data-title="Dapur Bersama &amp; Dispenser" data-desc="Mini pantry lengkap dengan kompor, kulkas, dan air minum galon">
+            <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
               <img alt="Dapur Mini Bersama dan Dispenser Air Minum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG_SvVNancNF0_ZlK5GswCakQu_105pCZcjmDqZduPirdUpIoGdA3e8uz0bQEtSl2tG1RmkXStX0aklu6hxotRYO73_B2uafbG1nJb5IZbGoyT74xTCQnHPLt5grV7AZd_BMjFiZpVb1uxNU6phrPNmkwogzB8btGloHoYPJ64RCrfL_Y9vDIRKgBRes3d_9xTs6Iy0tyQDF-MdFLX3VVSJNCdm8fGs1FnCnI-l3RD91ygYLpZLQFh0g"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-                <p class="font-serif text-sm font-medium">Dapur Bersama &amp; Dispenser</p>
-                <span class="text-[10px] font-mono text-white/80">Mini Pantry</span>
+                <div>
+                  <p class="font-serif text-sm font-medium">Dapur Bersama &amp; Dispenser</p>
+                  <span class="text-[10px] font-mono text-white/80">Mini Pantry</span>
+                </div>
+                <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
               </div>
             </div>
           </div>
-          <!-- Bottom Row 3 Cards: Kamar Mandi, Parkiran, Balkon -->
-          <div class="rounded-2xl overflow-hidden border border-border-stone shadow-xs bg-surface-muted aspect-[4/3] relative group">
-            <img alt="Kamar Mandi Dalam Shower Water Heater" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5OFusczteBd7HZ78slk-1qoXQZAyRl4S2x5aB7_vbv7Swng4xap5sqsdwUD6zOxMIWwPaAWDw9BXsq0Nt2s5OFqF0zP-bHchCYbrwGWpCmNRWL_7OEmL3p0tLtsZ9DPY4nliWYheuI4j-DHXfdAKUXSUN5cJkt-bdH4VlQkDwqZZLWWlsneGSkHx9L5d3Z-abyRyNp9NJbnNORqejieNQkYTUn2wYFgHJzBbT6bkaGeWCb5YCvT8_A"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-              <p class="font-serif text-sm font-medium">KM Dalam &amp; Water Heater</p>
-              <span class="text-[10px] font-mono text-white/80">Higienis</span>
+
+          <!-- Kamar Mandi -->
+          <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="bedroom" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5OFusczteBd7HZ78slk-1qoXQZAyRl4S2x5aB7_vbv7Swng4xap5sqsdwUD6zOxMIWwPaAWDw9BXsq0Nt2s5OFqF0zP-bHchCYbrwGWpCmNRWL_7OEmL3p0tLtsZ9DPY4nliWYheuI4j-DHXfdAKUXSUN5cJkt-bdH4VlQkDwqZZLWWlsneGSkHx9L5d3Z-abyRyNp9NJbnNORqejieNQkYTUn2wYFgHJzBbT6bkaGeWCb5YCvT8_A" data-title="KM Dalam &amp; Water Heater" data-desc="Sanitasi bersih dengan shower air hangat bertekanan stabil">
+            <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+              <img alt="Kamar Mandi Dalam Shower Water Heater" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5OFusczteBd7HZ78slk-1qoXQZAyRl4S2x5aB7_vbv7Swng4xap5sqsdwUD6zOxMIWwPaAWDw9BXsq0Nt2s5OFqF0zP-bHchCYbrwGWpCmNRWL_7OEmL3p0tLtsZ9DPY4nliWYheuI4j-DHXfdAKUXSUN5cJkt-bdH4VlQkDwqZZLWWlsneGSkHx9L5d3Z-abyRyNp9NJbnNORqejieNQkYTUn2wYFgHJzBbT6bkaGeWCb5YCvT8_A"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+                <div>
+                  <p class="font-serif text-sm font-medium">KM Dalam &amp; Water Heater</p>
+                  <span class="text-[10px] font-mono text-white/80">Higienis</span>
+                </div>
+                <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+              </div>
             </div>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-border-stone shadow-xs bg-surface-muted aspect-[4/3] relative group">
-            <img alt="Halaman Parkir Paving Block Aman di Dalam Pagar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByOsgLbDuWtOgBuXacM2Bhw68tOuz-RDLs4cShdBdEy2wx8pGBJ5zXD5kFC1_xJJtrxrvrvZzZA_A5ntGD1Lgv4j_pTS6I4r1apmgbAojI2U7m_QT0c2MfrJil_d-SUbN7ljcBbJvXNkY6PmEBhcwenGhcMdTwkQr-aULX-T1yrJlVir0YG-jOV98Huu4G8nroIyzblAq1IBPbdgdi4E0BFPbp7fziHORdhItJJqZ7Rfh_oaLBrZnNig"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-              <p class="font-serif text-sm font-medium">Halaman Parkir Dalam Pagar</p>
-              <span class="text-[10px] font-mono text-white/80">Mobil &amp; Motor</span>
+
+          <!-- Parkiran -->
+          <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuByOsgLbDuWtOgBuXacM2Bhw68tOuz-RDLs4cShdBdEy2wx8pGBJ5zXD5kFC1_xJJtrxrvrvZzZA_A5ntGD1Lgv4j_pTS6I4r1apmgbAojI2U7m_QT0c2MfrJil_d-SUbN7ljcBbJvXNkY6PmEBhcwenGhcMdTwkQr-aULX-T1yrJlVir0YG-jOV98Huu4G8nroIyzblAq1IBPbdgdi4E0BFPbp7fziHORdhItJJqZ7Rfh_oaLBrZnNig" data-title="Halaman Parkir Dalam Pagar" data-desc="Paving block kokoh muat mobil &amp; motor dengan pagar terkunci">
+            <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+              <img alt="Halaman Parkir Paving Block Aman di Dalam Pagar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByOsgLbDuWtOgBuXacM2Bhw68tOuz-RDLs4cShdBdEy2wx8pGBJ5zXD5kFC1_xJJtrxrvrvZzZA_A5ntGD1Lgv4j_pTS6I4r1apmgbAojI2U7m_QT0c2MfrJil_d-SUbN7ljcBbJvXNkY6PmEBhcwenGhcMdTwkQr-aULX-T1yrJlVir0YG-jOV98Huu4G8nroIyzblAq1IBPbdgdi4E0BFPbp7fziHORdhItJJqZ7Rfh_oaLBrZnNig"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+                <div>
+                  <p class="font-serif text-sm font-medium">Halaman Parkir Dalam Pagar</p>
+                  <span class="text-[10px] font-mono text-white/80">Mobil &amp; Motor</span>
+                </div>
+                <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+              </div>
             </div>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-border-stone shadow-xs bg-surface-muted aspect-[4/3] relative group">
-            <img alt="Balkon dan Koridor Asri Menghadap Pepohonan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Ny_RrnUcVgkNkT2F9hJHjhZqF3tdY39xuJwXYZZWbAdm8ZW0P13BpplKtkn4vNuKVO4s4tLiOd-n9jw_GjRhjkGjbDeMzoj-rUGK6n0Baa7sExnTc66jOnk0GKNJHSqJLCc1iA3RlIJZQAhQLUoEIBkz1w3aBlsWCTsh1yo-hwEz5ZSr0vhSjaUB8XtlDcREEUSFNovORFYSSd90_iG7DQptfwTOEFHnh4e1f_E-2Ngs34yj3y73iQ"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-              <p class="font-serif text-sm font-medium">Balkon &amp; Sirkulasi Asri</p>
-              <span class="text-[10px] font-mono text-white/80">Lantai Atas</span>
+
+          <!-- Balkon Lantai Atas -->
+          <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Ny_RrnUcVgkNkT2F9hJHjhZqF3tdY39xuJwXYZZWbAdm8ZW0P13BpplKtkn4vNuKVO4s4tLiOd-n9jw_GjRhjkGjbDeMzoj-rUGK6n0Baa7sExnTc66jOnk0GKNJHSqJLCc1iA3RlIJZQAhQLUoEIBkz1w3aBlsWCTsh1yo-hwEz5ZSr0vhSjaUB8XtlDcREEUSFNovORFYSSd90_iG7DQptfwTOEFHnh4e1f_E-2Ngs34yj3y73iQ" data-title="Balkon &amp; Sirkulasi Asri" data-desc="Koridor lantai atas berangin semilir dengan pemandangan pepohonan">
+            <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+              <img alt="Balkon dan Koridor Asri Menghadap Pepohonan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Ny_RrnUcVgkNkT2F9hJHjhZqF3tdY39xuJwXYZZWbAdm8ZW0P13BpplKtkn4vNuKVO4s4tLiOd-n9jw_GjRhjkGjbDeMzoj-rUGK6n0Baa7sExnTc66jOnk0GKNJHSqJLCc1iA3RlIJZQAhQLUoEIBkz1w3aBlsWCTsh1yo-hwEz5ZSr0vhSjaUB8XtlDcREEUSFNovORFYSSd90_iG7DQptfwTOEFHnh4e1f_E-2Ngs34yj3y73iQ"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+                <div>
+                  <p class="font-serif text-sm font-medium">Balkon &amp; Sirkulasi Asri</p>
+                  <span class="text-[10px] font-mono text-white/80">Lantai Atas</span>
+                </div>
+                <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
+
+    <!-- ==================== LIGHTBOX MODAL ==================== -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
+      <div class="relative max-w-4xl w-full flex flex-col items-center">
+        <button id="lightbox-close" aria-label="Tutup Foto" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+        <div class="w-full max-h-[75vh] overflow-hidden rounded-2xl border border-white/15 bg-black/40 flex items-center justify-center">
+          <img id="lightbox-img" src="" alt="Foto Pembesaran" class="max-h-[75vh] w-auto object-contain"/>
+        </div>
+        <div class="mt-4 text-center text-white">
+          <h4 id="lightbox-title" class="font-serif text-xl font-normal"></h4>
+          <p id="lightbox-desc" class="text-xs text-white/70 mt-1 font-sans"></p>
+        </div>
+      </div>
+    </div>
+
     <!-- ==================== LOKASI & AKSES SEKITAR (BANTUL - YOGYAKARTA) ==================== -->
     <section class="py-24 bg-surface-subtle/50 border-b border-border-stone" id="lokasi">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
           <!-- Sisi Kiri: Transit & Landmark Guide -->
           <div class="lg:col-span-6 flex flex-col">
             <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Transit &amp; Aksesibilitas</span>
@@ -748,216 +1111,327 @@
             <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
               Terletak di kawasan pemukiman Bantul yang tenang tanpa kebisingan jalan tol atau rel kereta, namun memiliki jalur pintas cepat menuju jalan protokol lingkar selatan dan timur Yogyakarta.
             </p>
+
             <div class="flex flex-col gap-3.5 mt-8">
+              
               <!-- POI 1 -->
-              <div class="bg-white p-4 rounded-xl border border-border-stone shadow-xs flex items-center justify-between">
-                <div class="flex items-center gap-3.5">
-                  <div class="w-9 h-9 rounded-lg bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
-                    <span class="material-symbols-outlined text-[20px]">corporate_fare</span>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-on-surface text-xs sm:text-sm">Jogja Expo Center (JEC) &amp; Gembira Loka</h4>
-                    <p class="text-[11px] text-on-surface-variant mt-0.5">Lokasi pameran, konser akbar, dan wisata keluarga</p>
-                  </div>
-                </div>
-                <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 5-7 Menit</span>
-              </div>
-              <!-- POI 2 -->
-              <div class="bg-white p-4 rounded-xl border border-border-stone shadow-xs flex items-center justify-between">
-                <div class="flex items-center gap-3.5">
-                  <div class="w-9 h-9 rounded-lg bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
-                    <span class="material-symbols-outlined text-[20px]">school</span>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-on-surface text-xs sm:text-sm">UIN Sunan Kalijaga &amp; Univ. Atma Jaya (UAJY)</h4>
-                    <p class="text-[11px] text-on-surface-variant mt-0.5">Kampus utama, perpustakaan daerah, dan pusat perkuliahan</p>
-                  </div>
-                </div>
-                <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 8-10 Menit</span>
-              </div>
-              <!-- POI 3 -->
-              <div class="bg-white p-4 rounded-xl border border-border-stone shadow-xs flex items-center justify-between">
-                <div class="flex items-center gap-3.5">
-                  <div class="w-9 h-9 rounded-lg bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
-                    <span class="material-symbols-outlined text-[20px]">restaurant</span>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-on-surface text-xs sm:text-sm">Sentra Kuliner Bantul &amp; Wijilan</h4>
-                    <p class="text-[11px] text-on-surface-variant mt-0.5">Sate Klathak Pak Pong Jejeran, Gudeg Bu Hj. Ahmad, Mie Lethek</p>
-                  </div>
-                </div>
-                <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 10-15 Menit</span>
-              </div>
-              <!-- POI 4 -->
-              <div class="bg-white p-4 rounded-xl border border-border-stone shadow-xs flex items-center justify-between">
-                <div class="flex items-center gap-3.5">
-                  <div class="w-9 h-9 rounded-lg bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
-                    <span class="material-symbols-outlined text-[20px]">local_pharmacy</span>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-on-surface text-xs sm:text-sm">Minimarket &amp; Apotek 24 Jam</h4>
-                    <p class="text-[11px] text-on-surface-variant mt-0.5">Indomaret, Alfamart, ATM Bersama &amp; Klinik Pratama</p>
-                  </div>
-                </div>
-                <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 2-3 Menit</span>
-              </div>
-            </div>
-          </div>
-          <!-- Sisi Kanan: Map Visual Stone Container -->
-          <div class="lg:col-span-6 flex flex-col gap-3">
-            <div class="bg-white p-3 rounded-2xl border border-border-stone shadow-xs">
-              <div class="w-full h-84 sm:h-96 rounded-xl bg-cover bg-center relative flex flex-col justify-between p-5 border border-border-stone overflow-hidden" data-location="Bantul, Daerah Istimewa Yogyakarta" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3TrA-ImBhQQCNqjZAd-H17IEe3zrD5VwvptQW2KUtcvHik7WSWf-Wl7tM5u1CnU3WHVwrcv4nmtEzlSjkc3GpIPYvc1aMOL05dSg63hQ3gd5uXHDh5jQzu--kvfEAJgGIUU1uo_8IjY93i3kMYmljWagrVuxFxG9jFEYmRFqXPuA4tZU-xOc01iqedLEyEiw-1PeknD5leHrXGRZB-8A4guG0Wn76fLdn4cvUZTsvgOhJbPWMLtq9dQ')">
-                <div class="self-start bg-white/95 backdrop-blur-xs px-3.5 py-1 rounded-full text-primary font-mono text-[11px] shadow-xs font-medium border border-border-stone">
-                  Titik Lokasi Properti
-                </div>
-                <div class="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-md border border-border-stone flex items-center justify-between gap-4">
-                  <div class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-secondary text-[24px]">location_on</span>
+              <div class="bezel-shell p-1">
+                <div class="bezel-core p-3.5 sm:p-4 flex items-center justify-between">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
+                      <span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+                    </div>
                     <div>
-                      <h5 class="text-xs font-semibold text-on-surface">Grha Vege Jawi Syariah</h5>
-                      <p class="text-[11px] text-on-surface-variant font-mono">Bantul, Daerah Istimewa Yogyakarta 55198</p>
+                      <h4 class="font-medium text-on-surface text-xs sm:text-sm">Jogja Expo Center (JEC) &amp; Gembira Loka</h4>
+                      <p class="text-[11px] text-on-surface-variant mt-0.5">Lokasi pameran, konser akbar, dan wisata keluarga</p>
                     </div>
                   </div>
-                  <a class="px-3.5 py-2 bg-primary hover:bg-primary-container text-white rounded-lg text-xs font-medium transition-colors shrink-0 shadow-xs" href="https://maps.google.com/?q=Bantul+Yogyakarta" rel="noopener noreferrer" target="_blank">
-                    Buka Peta Google
-                  </a>
+                  <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 5-7 Menit</span>
+                </div>
+              </div>
+
+              <!-- POI 2 -->
+              <div class="bezel-shell p-1">
+                <div class="bezel-core p-3.5 sm:p-4 flex items-center justify-between">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
+                      <span class="material-symbols-outlined text-[20px]">school</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-on-surface text-xs sm:text-sm">UIN Sunan Kalijaga &amp; Univ. Atma Jaya (UAJY)</h4>
+                      <p class="text-[11px] text-on-surface-variant mt-0.5">Kampus utama, perpustakaan daerah, dan pusat perkuliahan</p>
+                    </div>
+                  </div>
+                  <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 8-10 Menit</span>
+                </div>
+              </div>
+
+              <!-- POI 3 -->
+              <div class="bezel-shell p-1">
+                <div class="bezel-core p-3.5 sm:p-4 flex items-center justify-between">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
+                      <span class="material-symbols-outlined text-[20px]">restaurant</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-on-surface text-xs sm:text-sm">Sentra Kuliner Bantul &amp; Wijilan</h4>
+                      <p class="text-[11px] text-on-surface-variant mt-0.5">Sate Klathak Pak Pong Jejeran, Gudeg Bu Hj. Ahmad, Mie Lethek</p>
+                    </div>
+                  </div>
+                  <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 10-15 Menit</span>
+                </div>
+              </div>
+
+              <!-- POI 4 -->
+              <div class="bezel-shell p-1">
+                <div class="bezel-core p-3.5 sm:p-4 flex items-center justify-between">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-stone">
+                      <span class="material-symbols-outlined text-[20px]">local_pharmacy</span>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-on-surface text-xs sm:text-sm">Minimarket &amp; Apotek 24 Jam</h4>
+                      <p class="text-[11px] text-on-surface-variant mt-0.5">Indomaret, Alfamart, ATM Bersama &amp; Klinik Pratama</p>
+                    </div>
+                  </div>
+                  <span class="font-mono text-xs text-primary font-medium bg-surface-subtle px-2.5 py-1 rounded-md shrink-0 border border-border-stone">± 2-3 Menit</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sisi Kanan: Map Visual Double-Bezel Container -->
+          <div class="lg:col-span-6 flex flex-col gap-3">
+            <div class="bezel-shell p-2 shadow-ambient">
+              <div class="bezel-core p-2">
+                <div class="w-full h-84 sm:h-96 rounded-2xl bg-cover bg-center relative flex flex-col justify-between p-5 border border-border-stone overflow-hidden" data-location="Bantul, Daerah Istimewa Yogyakarta" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3TrA-ImBhQQCNqjZAd-H17IEe3zrD5VwvptQW2KUtcvHik7WSWf-Wl7tM5u1CnU3WHVwrcv4nmtEzlSjkc3GpIPYvc1aMOL05dSg63hQ3gd5uXHDh5jQzu--kvfEAJgGIUU1uo_8IjY93i3kMYmljWagrVuxFxG9jFEYmRFqXPuA4tZU-xOc01iqedLEyEiw-1PeknD5leHrXGRZB-8A4guG0Wn76fLdn4cvUZTsvgOhJbPWMLtq9dQ')">
+                  
+                  <div class="self-start bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full text-primary font-mono text-[11px] shadow-xs font-medium border border-border-stone">
+                    Titik Lokasi Properti
+                  </div>
+
+                  <div class="bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-md border border-border-stone flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-secondary text-[24px]">location_on</span>
+                      <div>
+                        <h5 class="text-xs font-semibold text-on-surface">Grha Vege Jawi Syariah</h5>
+                        <p class="text-[11px] text-on-surface-variant font-mono">Bantul, Daerah Istimewa Yogyakarta 55198</p>
+                      </div>
+                    </div>
+                    <a class="px-3.5 py-2 bg-primary hover:bg-primary-deep text-white rounded-lg text-xs font-medium transition-colors shrink-0 shadow-xs" href="https://maps.google.com/?q=Bantul+Yogyakarta" rel="noopener noreferrer" target="_blank">
+                      Buka Peta Google
+                    </a>
+                  </div>
+
                 </div>
               </div>
             </div>
+
             <p class="text-[11px] text-on-surface-variant font-mono flex items-center gap-2 px-2">
               <span class="material-symbols-outlined text-primary text-[15px]">pin_drop</span>
               Koordinat presisi dan panduan arah jalan masuk dikirimkan melalui WhatsApp sesaat setelah reservasi diterima.
             </p>
           </div>
+
         </div>
       </div>
     </section>
-    <!-- ==================== KETENTUAN MENGINAP (ADAB BERTAMU SYARIAH) ==================== -->
+
+    <!-- ==================== KETENTUAN MENGINAP & FAQ ACCORDION ==================== -->
     <section class="py-24 bg-surface-canvas border-b border-border-stone" id="adab">
       <div class="max-w-4xl mx-auto px-6">
+        
         <div class="text-center mb-14">
           <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Adab Menginap Bersama</span>
           <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
-            Ketentuan &amp; Tata Tertib Syariah
+            Ketentuan Syariah &amp; Tanya Jawab (FAQ)
           </h2>
           <p class="text-sm text-on-surface-variant mt-3 max-w-xl mx-auto leading-relaxed">
             Ditegakkan dengan penuh santun demi menjaga kekhidmatan, kebersihan, dan ketenteraman batin seluruh tamu yang singgah.
           </p>
         </div>
-        <!-- Warm Parchment Container -->
-        <div class="bg-surface-subtle/70 p-8 sm:p-10 rounded-2xl border border-border-stone shadow-xs flex flex-col divide-y divide-border-stone">
-          <!-- Rule 1: Pasangan Sah / Keluarga -->
-          <div class="pb-7 flex items-start gap-5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-border-stone text-primary flex items-center justify-center shrink-0 shadow-xs">
-              <span class="material-symbols-outlined text-[22px]">family_restroom</span>
-            </div>
-            <div>
-              <h3 class="font-serif text-lg font-medium text-on-surface">Khusus Pasangan Sah (Muhrim) &amp; Keluarga</h3>
-              <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
-                Tamu berpasangan berlainan jenis dalam satu kamar diwajibkan menunjukkan bukti pernikahan yang sah (KTP beralamat sama atau Buku Nikah resmi) saat proses registrasi check-in. Kami tidak melayani pasangan non-muhrim.
-              </p>
-            </div>
-          </div>
-          <!-- Rule 2: Bebas Asap Rokok & Minuman Keras -->
-          <div class="py-7 flex items-start gap-5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-border-stone text-secondary flex items-center justify-center shrink-0 shadow-xs">
-              <span class="material-symbols-outlined text-[22px]">smoke_free</span>
-            </div>
-            <div>
-              <h3 class="font-serif text-lg font-medium text-on-surface">Kawasan Bebas Asap Rokok &amp; Minuman Keras</h3>
-              <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
-                Seluruh kamar tidur, koridor dalam, mushola, dan area bersama adalah zona mutlak bebas rokok. Tamu dilarang keras membawa atau mengonsumsi minuman beralkohol serta obat-obatan terlarang di lingkungan guesthouse.
-              </p>
-            </div>
-          </div>
-          <!-- Rule 3: Jam Hening Malam 22.00 WIB -->
-          <div class="py-7 flex items-start gap-5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-border-stone text-primary flex items-center justify-center shrink-0 shadow-xs">
-              <span class="material-symbols-outlined text-[22px]">nightlight</span>
-            </div>
-            <div>
-              <h3 class="font-serif text-lg font-medium text-on-surface">Waktu Hening Mulai Pukul 22.00 WIB</h3>
-              <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
-                Demi menghormati hak istirahat seluruh tamu dan warga pemukiman sekitar, dimohon meminimalkan volume suara dan musik setelah pukul 22.00 WIB serta senantiasa berbusana santun di area luar kamar.
-              </p>
-            </div>
-          </div>
-          <!-- Rule 4: Jadwal Check-in & Check-out -->
-          <div class="pt-7 flex items-start gap-5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-border-stone text-syariah-gold flex items-center justify-center shrink-0 shadow-xs">
-              <span class="material-symbols-outlined text-[22px]">schedule</span>
-            </div>
-            <div>
-              <h3 class="font-serif text-lg font-medium text-on-surface">Waktu Check-In &amp; Check-Out</h3>
-              <div class="flex flex-wrap items-center gap-2.5 mt-2 font-mono text-xs">
-                <span class="px-3 py-1 bg-white border border-border-stone rounded-md text-primary font-medium">Check-In: Mulai 14.00 WIB</span>
-                <span class="px-3 py-1 bg-white border border-border-stone rounded-md text-secondary font-medium">Check-Out: Maksimal 12.00 WIB</span>
+
+        <!-- Warm Parchment Container for 4 Rules -->
+        <div class="bezel-shell p-2 shadow-xs mb-10">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col divide-y divide-border-stone/80">
+            
+            <!-- Rule 1: Pasangan Sah / Keluarga -->
+            <div class="pb-7 flex items-start gap-5">
+              <div class="w-10 h-10 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center shrink-0 shadow-xs">
+                <span class="material-symbols-outlined text-[22px]">family_restroom</span>
               </div>
-              <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
-                Kebutuhan early check-in atau late check-out dapat dikoordinasikan terlebih dahulu bersama Ibu Agnesia sesuai jadwal pembersihan kamar.
-              </p>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-on-surface">Khusus Pasangan Sah (Muhrim) &amp; Keluarga</h3>
+                <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+                  Tamu berpasangan berlainan jenis dalam satu kamar diwajibkan menunjukkan bukti pernikahan yang sah (KTP beralamat sama atau Buku Nikah resmi) saat proses registrasi check-in. Kami tidak melayani pasangan non-muhrim.
+                </p>
+              </div>
             </div>
+
+            <!-- Rule 2: Bebas Asap Rokok & Minuman Keras -->
+            <div class="py-7 flex items-start gap-5">
+              <div class="w-10 h-10 rounded-xl bg-surface-subtle border border-border-stone text-secondary flex items-center justify-center shrink-0 shadow-xs">
+                <span class="material-symbols-outlined text-[22px]">smoke_free</span>
+              </div>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-on-surface">Kawasan Bebas Asap Rokok &amp; Minuman Keras</h3>
+                <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+                  Seluruh kamar tidur, koridor dalam, mushola, dan area bersama adalah zona mutlak bebas rokok. Tamu dilarang keras membawa atau mengonsumsi minuman beralkohol serta obat-obatan terlarang di lingkungan guesthouse.
+                </p>
+              </div>
+            </div>
+
+            <!-- Rule 3: Jam Hening Malam 22.00 WIB -->
+            <div class="py-7 flex items-start gap-5">
+              <div class="w-10 h-10 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center shrink-0 shadow-xs">
+                <span class="material-symbols-outlined text-[22px]">nightlight</span>
+              </div>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-on-surface">Waktu Hening Mulai Pukul 22.00 WIB</h3>
+                <p class="text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+                  Demi menghormati hak istirahat seluruh tamu dan warga pemukiman sekitar, dimohon meminimalkan volume suara dan musik setelah pukul 22.00 WIB serta senantiasa berbusana santun di area luar kamar.
+                </p>
+              </div>
+            </div>
+
+            <!-- Rule 4: Jadwal Check-in & Check-out -->
+            <div class="pt-7 flex items-start gap-5">
+              <div class="w-10 h-10 rounded-xl bg-surface-subtle border border-border-stone text-syariah-gold flex items-center justify-center shrink-0 shadow-xs">
+                <span class="material-symbols-outlined text-[22px]">schedule</span>
+              </div>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-on-surface">Waktu Check-In &amp; Check-Out</h3>
+                <div class="flex flex-wrap items-center gap-2.5 mt-2 font-mono text-xs">
+                  <span class="px-3 py-1 bg-surface-subtle border border-border-stone rounded-md text-primary font-medium">Check-In: Mulai 14.00 WIB</span>
+                  <span class="px-3 py-1 bg-surface-subtle border border-border-stone rounded-md text-secondary font-medium">Check-Out: Maksimal 12.00 WIB</span>
+                </div>
+                <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                  Kebutuhan early check-in atau late check-out dapat dikoordinasikan terlebih dahulu bersama Ibu Agnesia sesuai jadwal pembersihan kamar.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
+
+        <!-- FAQ Accordion Container -->
+        <div class="mt-12">
+          <h3 class="font-serif text-2xl font-normal text-on-surface text-center mb-6">Pertanyaan yang Sering Diajukan (FAQ)</h3>
+          
+          <div class="flex flex-col gap-3.5" id="faq-accordion">
+            
+            <!-- FAQ 1 -->
+            <div class="faq-item bezel-shell p-1">
+              <div class="bezel-core overflow-hidden">
+                <button class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                  <span class="font-medium text-on-surface text-xs sm:text-sm">Dokumen apa saja yang diperlukan saat check-in bagi pasangan suami istri?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 transition-transform duration-300 faq-icon">expand_more</span>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-border-stone/60">
+                  Cukup menunjukkan e-KTP dengan alamat domisili yang sama, atau foto/buku fisik Buku Nikah resmi dari KUA / Akta Perkawinan catatan sipil. Proses registrasi dilakukan dengan santun dan cepat oleh Ibu Agnesia.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item bezel-shell p-1">
+              <div class="bezel-core overflow-hidden">
+                <button class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                  <span class="font-medium text-on-surface text-xs sm:text-sm">Apakah guesthouse memiliki fasilitas parkir mobil yang aman?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 transition-transform duration-300 faq-icon">expand_more</span>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-border-stone/60">
+                  Ya, kami memiliki halaman parkir paving block luas tepat di dalam pagar guesthouse yang muat untuk beberapa mobil keluarga dan sepeda motor. Pagar gerbang senantiasa tertutup rapat di malam hari.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item bezel-shell p-1">
+              <div class="bezel-core overflow-hidden">
+                <button class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                  <span class="font-medium text-on-surface text-xs sm:text-sm">Bisakah tamu menggunakan dapur mini untuk memasak makanan ringan?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 transition-transform duration-300 faq-icon">expand_more</span>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-border-stone/60">
+                  Tentu saja. Tersedia mini pantry bersama yang dilengkapi kompor gas, kulkas bersama untuk menyimpan makanan, dan dispenser air mineral galon higienis panas/dingin yang bebas dipakai seluruh tamu secara tertib.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item bezel-shell p-1">
+              <div class="bezel-core overflow-hidden">
+                <button class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+                  <span class="font-medium text-on-surface text-xs sm:text-sm">Bagaimana prosedur booking satu rumah penuh (6 kamar) untuk rombongan?</span>
+                  <span class="material-symbols-outlined text-primary shrink-0 transition-transform duration-300 faq-icon">expand_more</span>
+                </button>
+                <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-border-stone/60">
+                  Untuk sewa 1 rumah penuh (6 kamar), Anda dapat langsung menghubungi Ibu Agnesia via WhatsApp untuk mengecek kalender ketersediaan tanggal dan mendapatkan penawaran tarif paket rombongan khusus.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
+
     <!-- ==================== BANNER RESERVASI PENUTUP ==================== -->
     <section class="py-24 bg-surface-canvas">
       <div class="max-w-7xl mx-auto px-6 lg:px-10">
-        <div class="relative overflow-hidden bg-[#3E4F40] text-white rounded-3xl p-10 sm:p-14 lg:p-16 shadow-xl flex flex-col items-center text-center">
-          <span class="px-4 py-1 rounded-full bg-white/10 text-gold-soft text-[11px] font-mono uppercase tracking-widest mb-5 border border-white/10">
-            Reservasi Amanah &amp; Respons Cepat
-          </span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal max-w-3xl leading-tight">
-            Rencanakan Kunjungan Penuh Ketenangan di Yogyakarta
-          </h2>
-          <p class="font-sans text-sm sm:text-base text-white/80 max-w-2xl mt-5 leading-relaxed">
-            Silakan hubungi Ibu Agnesia Hari Kardyantini untuk menanyakan ketersediaan 6 kamar tidur, booking rombongan keluarga, maupun konsultasi sewa bulanan mahasiswa &amp; pegawai.
-          </p>
-          <!-- WhatsApp CTA -->
-          <div class="flex flex-col sm:flex-row items-center gap-4 mt-8 z-10 w-full sm:w-auto">
-            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-syariah-gold hover:brightness-110 text-white font-medium px-7 py-3.5 rounded-full shadow-md transition-all text-sm" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
-              <span class="material-symbols-outlined text-[20px]">chat</span>
-              <span>Hubungi WhatsApp Ibu Agnesia (0812-2729-637)</span>
-            </a>
-            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3.5 rounded-full border border-white/20 transition-colors text-sm" href="#kamar">
-              <span>Cek Denah Kamar</span>
-              <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
-            </a>
-          </div>
-          <!-- Assurance Points -->
-          <div class="flex flex-wrap justify-center items-center gap-6 mt-10 text-xs text-white/75 font-mono">
-            <span class="inline-flex items-center gap-2">
-              <span class="material-symbols-outlined text-[16px] text-gold-soft">verified</span>
-              Konfirmasi Reservasi Instan
+        <div class="bezel-shell p-2 shadow-ambient-lg bg-[#243227]/40">
+          <div class="relative overflow-hidden bg-gradient-to-br from-[#243227] via-[#334436] to-[#28362B] text-white rounded-3xl p-10 sm:p-14 lg:p-16 flex flex-col items-center text-center border border-syariah-gold/30">
+            
+            <span class="px-4 py-1.5 rounded-full bg-white/10 text-gold-soft text-[11px] font-mono uppercase tracking-widest mb-5 border border-white/15 backdrop-blur-xs font-semibold">
+              Reservasi Amanah &amp; Respons Cepat
             </span>
-            <span class="inline-block w-1 h-1 rounded-full bg-white/40"></span>
-            <span class="inline-flex items-center gap-2">
-              <span class="material-symbols-outlined text-[16px] text-gold-soft">verified</span>
-              Tanpa Biaya Tersembunyi
-            </span>
-            <span class="inline-block w-1 h-1 rounded-full bg-white/40"></span>
-            <span class="inline-flex items-center gap-2">
-              <span class="material-symbols-outlined text-[16px] text-gold-soft">verified</span>
-              Bersih, Rapi &amp; Berkah
-            </span>
+
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal max-w-3xl leading-tight">
+              Rencanakan Kunjungan Penuh Ketenangan di Yogyakarta
+            </h2>
+
+            <p class="font-sans text-sm sm:text-base text-white/85 max-w-2xl mt-5 leading-relaxed">
+              Silakan hubungi Ibu Agnesia Hari Kardyantini untuk menanyakan ketersediaan 6 kamar tidur, booking rombongan keluarga, maupun konsultasi sewa bulanan mahasiswa &amp; pegawai.
+            </p>
+
+            <!-- WhatsApp CTA Button-in-Button -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 mt-9 z-10 w-full sm:w-auto">
+              <a class="group w-full sm:w-auto inline-flex items-center justify-between gap-4 bg-syariah-gold hover:brightness-110 text-white font-medium pl-7 pr-2 py-2 rounded-full shadow-gold-glow transition-all duration-300 text-sm active:scale-[0.98]" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank">
+                <span>Hubungi WhatsApp Ibu Agnesia (0812-2729-637)</span>
+                <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <span class="material-symbols-outlined text-[19px]">chat</span>
+                </div>
+              </a>
+
+              <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3.5 rounded-full border border-white/20 transition-colors text-sm" href="#kamar">
+                <span>Cek Rincian Kamar</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+              </a>
+            </div>
+
+            <!-- Assurance Points -->
+            <div class="flex flex-wrap justify-center items-center gap-6 mt-10 text-xs text-white/80 font-mono">
+              <span class="inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-gold-soft">verified</span>
+                Konfirmasi Reservasi Instan
+              </span>
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-white/40"></span>
+              <span class="inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-gold-soft">verified</span>
+                Tanpa Biaya Tersembunyi
+              </span>
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-white/40"></span>
+              <span class="inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-gold-soft">verified</span>
+                Bersih, Rapi &amp; Berkah
+              </span>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
+
   </main>
+
   <!-- ==================== FOOTER ==================== -->
   <footer class="bg-surface-subtle border-t border-border-stone pt-16 pb-12">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-border-stone">
+        
         <!-- Brand & Description -->
         <div class="lg:col-span-5 flex flex-col">
           <a class="flex items-center gap-3 mb-5 shrink-0" href="#">
             <img alt="Grha Vege Jawi Syariah" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs"/>
           </a>
+          
           <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
             Guesthouse syariah beradab di Bantul, Yogyakarta dengan 6 kamar tidur ber-AC, kamar mandi dalam air hangat, fasilitas mushola representatif, dan dapur mini bersama.
           </p>
+
           <div class="mt-6 space-y-2 text-xs text-on-surface-variant font-mono">
             <p class="flex items-center gap-2">
               <span class="material-symbols-outlined text-[17px] text-primary">person</span>
@@ -973,6 +1447,7 @@
             </p>
           </div>
         </div>
+
         <!-- Quick Links -->
         <div class="lg:col-span-3 flex flex-col">
           <h5 class="text-xs uppercase font-mono tracking-widest font-semibold text-on-surface mb-4">Navigasi Halaman</h5>
@@ -982,22 +1457,28 @@
             <li><a class="hover:text-primary transition-colors" href="#kamar">Rincian 6 Kamar Tidur</a></li>
             <li><a class="hover:text-primary transition-colors" href="#tarif">Skema Tarif Bersih</a></li>
             <li><a class="hover:text-primary transition-colors" href="#fasilitas">Fasilitas Penginapan</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#galeri">Galeri Foto Autentik</a></li>
             <li><a class="hover:text-primary transition-colors" href="#lokasi">Transit &amp; Akses Sekitar</a></li>
-            <li><a class="hover:text-primary transition-colors" href="#adab">Adab &amp; Tata Tertib</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#adab">Adab &amp; FAQ</a></li>
           </ul>
         </div>
+
         <!-- Principles Summary Card -->
         <div class="lg:col-span-4 flex flex-col">
           <h5 class="text-xs uppercase font-mono tracking-widest font-semibold text-on-surface mb-4">Amanah Bertamu</h5>
-          <div class="p-5 rounded-xl bg-white border border-border-stone shadow-xs text-xs text-on-surface-variant leading-relaxed">
-            <p class="font-serif text-sm font-medium text-primary mb-2 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[18px] text-syariah-gold">verified</span>
-              Hunian Tenang &amp; Berkah
-            </p>
-            Menerima tamu pasangan sah (suami-istri muhrim) dan keluarga muslim. Lingkungan bebas asap rokok di kamar, bebas minuman beralkohol, serta dekat dengan lingkungan universitas di timur-selatan Yogyakarta.
+          <div class="bezel-shell p-1">
+            <div class="bezel-core p-5 text-xs text-on-surface-variant leading-relaxed">
+              <p class="font-serif text-sm font-medium text-primary mb-2 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[18px] text-syariah-gold">verified</span>
+                Hunian Tenang &amp; Berkah
+              </p>
+              Menerima tamu pasangan sah (suami-istri muhrim) dan keluarga muslim. Lingkungan bebas asap rokok di kamar, bebas minuman beralkohol, serta dekat dengan lingkungan universitas di timur-selatan Yogyakarta.
+            </div>
           </div>
         </div>
+
       </div>
+
       <!-- Bottom Copyright -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-on-surface-variant">
         <p>© 2024 Grha Vege Jawi Syariah. Hak Cipta Dilindungi.</p>
@@ -1005,5 +1486,194 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==================== GLOBAL FLOATING FAST-ACTION WHATSAPP WIDGET ==================== -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a class="group flex items-center gap-3 bg-primary hover:bg-primary-deep text-white pl-4 pr-1.5 py-1.5 rounded-full shadow-2xl transition-all duration-300 border border-white/20 hover:scale-105 active:scale-95" href="https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah" rel="noopener noreferrer" target="_blank" aria-label="Chat WhatsApp Ibu Agnesia">
+      <div class="flex flex-col text-left">
+        <span class="text-[10px] font-mono text-gold-soft leading-none flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Ibu Agnesia Online
+        </span>
+        <span class="text-xs font-medium mt-0.5">Tanya Kamar</span>
+      </div>
+      <div class="w-9 h-9 rounded-full bg-syariah-gold flex items-center justify-center text-white shadow-xs group-hover:rotate-12 transition-transform">
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ==================== CLIENT INTERACTION ENGINE ==================== -->
+  <script>
+    // 1. Mobile Menu Drawer Engine
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const hambLine1 = document.getElementById('hamb-line-1');
+    const hambLine2 = document.getElementById('hamb-line-2');
+    const hambLine3 = document.getElementById('hamb-line-3');
+    let isMenuOpen = false;
+
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+          mobileDrawer.classList.remove('hidden');
+          hambLine1.classList.add('rotate-45', 'translate-y-2');
+          hambLine2.classList.add('opacity-0');
+          hambLine3.classList.add('-rotate-45', '-translate-y-2');
+        } else {
+          mobileDrawer.classList.add('hidden');
+          hambLine1.classList.remove('rotate-45', 'translate-y-2');
+          hambLine2.classList.remove('opacity-0');
+          hambLine3.classList.remove('-rotate-45', '-translate-y-2');
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          isMenuOpen = false;
+          mobileDrawer.classList.add('hidden');
+          hambLine1.classList.remove('rotate-45', 'translate-y-2');
+          hambLine2.classList.remove('opacity-0');
+          hambLine3.classList.remove('-rotate-45', '-translate-y-2');
+        });
+      });
+    }
+
+    // 2. Interactive Room Floor Switcher
+    const roomTabBtns = document.querySelectorAll('.room-tab-btn');
+    const roomCards = document.querySelectorAll('.room-card');
+
+    roomTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const floor = btn.getAttribute('data-floor');
+
+        // Update Tab Styles
+        roomTabBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white', 'shadow-xs');
+          b.classList.add('bg-white', 'text-on-surface-variant', 'border', 'border-border-stone');
+        });
+        btn.classList.add('bg-primary', 'text-white', 'shadow-xs');
+        btn.classList.remove('bg-white', 'text-on-surface-variant');
+
+        // Filter Cards
+        roomCards.forEach(card => {
+          const cardFloor = card.getAttribute('data-card-floor');
+          if (floor === 'all' || floor === cardFloor) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 3. Interactive Gallery Filter & Lightbox Engine
+    const galleryBtns = document.querySelectorAll('.gallery-filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    galleryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update Tab Styles
+        galleryBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white', 'shadow-xs');
+          b.classList.add('bg-white', 'text-on-surface-variant', 'border', 'border-border-stone');
+        });
+        btn.classList.add('bg-primary', 'text-white', 'shadow-xs');
+        btn.classList.remove('bg-white', 'text-on-surface-variant');
+
+        // Filter Gallery Items
+        galleryItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          if (filter === 'all' || filter === category) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox open
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const src = item.getAttribute('data-src');
+        const title = item.getAttribute('data-title');
+        const desc = item.getAttribute('data-desc');
+
+        if (lightboxImg && lightboxTitle && lightboxDesc && lightboxModal) {
+          lightboxImg.src = src;
+          lightboxTitle.textContent = title;
+          lightboxDesc.textContent = desc;
+          lightboxModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Lightbox close
+    function closeLightbox() {
+      if (lightboxModal) {
+        lightboxModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+    if (lightboxModal) {
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) closeLightbox();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // 4. FAQ Accordion Engine
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      if (trigger && content && icon) {
+        trigger.addEventListener('click', () => {
+          const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            const otherTrigger = otherItem.querySelector('.faq-trigger');
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            if (otherTrigger && otherContent && otherIcon && otherItem !== item) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+              otherContent.classList.add('hidden');
+              otherIcon.classList.remove('rotate-180');
+            }
+          });
+
+          // Toggle current
+          if (isExpanded) {
+            trigger.setAttribute('aria-expanded', 'false');
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+          } else {
+            trigger.setAttribute('aria-expanded', 'true');
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
