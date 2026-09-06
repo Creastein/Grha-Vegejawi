@@ -1,0 +1,91 @@
+---
+// src/components/CtaBanner.astro
+const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah";
+---
+
+<!-- ==================== BANNER RESERVASI PENUTUP (EDITORIAL LUXURY) ==================== -->
+<section class="py-20 sm:py-28 bg-surface-canvas relative overflow-hidden" id="reservasi">
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10">
+    
+    <!-- Double-Bezel Architectural Outer Shell -->
+    <div class="rounded-3xl sm:rounded-[2.5rem] p-1.5 sm:p-2.5 bg-stone-200/60 border border-stone-300/70 shadow-[0_24px_50px_-12px_rgba(36,50,39,0.18)]">
+      
+      <!-- Inner Core: Deep Forest Green Sanctuary Canvas with Tactile Details -->
+      <div class="relative overflow-hidden rounded-[calc(1.5rem-0.25rem)] sm:rounded-[calc(2.5rem-0.625rem)] bg-gradient-to-br from-[#1B261E] via-[#243227] to-[#1E2A21] text-white px-6 py-12 sm:px-12 sm:py-16 lg:px-20 lg:py-20 flex flex-col items-center text-center border border-syariah-gold/35 shadow-inner">
+        
+        <!-- Ambient Radial Glow Orbs -->
+        <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-syariah-gold/15 blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <!-- Subtle Background Pattern Overlay -->
+        <div class="absolute inset-0 tactile-grain opacity-25 pointer-events-none" aria-hidden="true"></div>
+
+        <!-- Status Availability Pill (Relational & Real-Time Feeling) -->
+        <div class="relative z-10 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-[11px] font-mono tracking-wider uppercase text-gold-soft mb-6 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+          <span>Eksklusif 6 Kamar • Respons Langsung Bu Agnesia</span>
+        </div>
+
+        <!-- Main Headline (2-Line Elegant Serif Flow) -->
+        <h2 class="relative z-10 font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal max-w-4xl leading-[1.2] tracking-tight text-white drop-shadow-sm">
+          Amankan Kenyamanan Istirahat Keluarga Anda di Yogyakarta
+        </h2>
+
+        <!-- Value Proposition Microcopy (Warm, Credible, Zero Fluff) -->
+        <p class="relative z-10 font-sans text-xs sm:text-sm md:text-base text-stone-200/90 max-w-2xl mt-4 sm:mt-5 leading-relaxed">
+          Nikmati hunian syariah yang hening, bersih, dan beradab dekat sentra kampus. Hubungi Ibu Agnesia langsung via WhatsApp untuk memastikan ketersediaan tanggal dan kamar pilihan Anda.
+        </p>
+
+        <!-- Low-Friction Action Zone (Button-in-Button + High Contrast) -->
+        <div class="relative z-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 mt-8 sm:mt-10 w-full sm:w-auto">
+          
+          <!-- Primary WhatsApp CTA (Gold Pill, Dark High-Contrast Text) -->
+          <a 
+            class="group/btn w-full sm:w-auto min-h-[48px] inline-flex items-center justify-between gap-3 sm:gap-4 bg-syariah-gold hover:bg-yellow-500 text-primary-deep font-semibold pl-5 sm:pl-6 pr-1.5 py-1.5 rounded-full shadow-[0_10px_25px_-5px_rgba(200,157,75,0.4)] hover:shadow-[0_16px_32px_-5px_rgba(200,157,75,0.5)] transition-all duration-300 text-xs sm:text-sm active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white" 
+            href={waLink} 
+            rel="noopener noreferrer" 
+            target="_blank"
+            aria-label="Hubungi WhatsApp Ibu Agnesia"
+          >
+            <span class="font-mono">Chat WhatsApp Bu Agnes (0812-2729-637)</span>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-primary text-white flex items-center justify-center transition-transform duration-300 group-hover/btn:scale-105 shadow-md shrink-0">
+              <span class="material-symbols-outlined text-[18px] sm:text-[19px]">chat</span>
+            </div>
+          </a>
+
+          <!-- Secondary Navigation Link (Pointing Upward to Room Catalog) -->
+          <a 
+            class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 sm:px-6 py-2.5 rounded-full border border-white/25 backdrop-blur-xs transition-all duration-300 text-xs sm:text-sm active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
+            href="#kamar"
+          >
+            <span>Pilih Kamar Favorit</span>
+            <span class="material-symbols-outlined text-[17px] text-gold-soft">arrow_upward</span>
+          </a>
+        </div>
+
+        <!-- Tactile Reassurance Bar (3 Micro-Pill Anchors) -->
+        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mt-10 sm:mt-12 pt-8 border-t border-white/15 text-left">
+          
+          <div class="flex items-center gap-2.5 p-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xs">
+            <span class="material-symbols-outlined text-[18px] text-gold-soft shrink-0">person_check</span>
+            <span class="text-[11px] font-mono text-stone-200 leading-tight">Respons Langsung Pemilik (Bu Agnesia)</span>
+          </div>
+
+          <div class="flex items-center gap-2.5 p-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xs">
+            <span class="material-symbols-outlined text-[18px] text-gold-soft shrink-0">lock</span>
+            <span class="text-[11px] font-mono text-stone-200 leading-tight">Parkir Mobil Aman di Dalam Pagar</span>
+          </div>
+
+          <div class="flex items-center gap-2.5 p-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xs">
+            <span class="material-symbols-outlined text-[18px] text-gold-soft shrink-0">volunteer_activism</span>
+            <span class="text-[11px] font-mono text-stone-200 leading-tight">Syariah Santun, Bersih &amp; Tenang</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+

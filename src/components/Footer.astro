@@ -1,0 +1,177 @@
+---
+// src/components/Footer.astro
+const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7919649,110.4029812,747m/data=!3m2!1e3!4b1!4m9!3m8!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!16s%2Fg%2F11f773xm6s";
+const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20seputar%20penginapan%20Grha%20Vege%20Jawi%20Syariah";
+---
+
+<!-- ==================== FOOTER (PROFESSIONAL LUXURY STANDARD) ==================== -->
+<footer class="bg-[#141E16] text-stone-300 border-t border-white/10 pt-14 pb-10 relative overflow-hidden">
+  
+  <!-- Subtle ambient glow in background -->
+  <div class="absolute -top-24 right-1/4 w-80 h-80 rounded-full bg-syariah-gold/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-10 w-64 h-64 rounded-full bg-emerald-900/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 relative z-10">
+    
+    <!-- Main Footer Grid (Brand, Quick Nav, Operational & Contact Info) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+      
+      <!-- Col 1: Identity & Brief Essence (5 Cols) -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div>
+          <!-- Brand Logo inside clean protective pill -->
+          <a 
+            class="inline-flex items-center gap-3 mb-4 p-2 pr-4 rounded-full bg-white/95 backdrop-blur-md shadow-xs border border-white/20 hover:scale-[1.02] transition-transform" 
+            href="#beranda" 
+            aria-label="Kembali ke Beranda"
+          >
+            <img 
+              alt="Logo Grha Vege Jawi Syariah" 
+              class="h-8 sm:h-9 w-auto object-contain" 
+              src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs" 
+              width="112" 
+              height="32" 
+            />
+            <span class="text-xs font-mono font-semibold text-primary uppercase tracking-wider border-l border-stone-200 pl-3">Syariah</span>
+          </a>
+          
+          <h3 class="font-serif text-lg sm:text-xl font-medium text-white tracking-tight">
+            Hunian yang Nyaman dan Tenang
+          </h3>
+
+          <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mt-2.5 max-w-md">
+            Guesthouse berkonsep syariah yang asri dan beradab di Yogyakarta. Menyediakan peristirahatan yang bersih, aman, dan tenteram untuk keluarga dan rombongan tamu santun.
+          </p>
+        </div>
+
+        <!-- Google Maps Verified Rating Chip -->
+        <a 
+          href={gmapsUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="group mt-6 inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-syariah-gold/40 transition-all duration-300 w-fit"
+          aria-label="Lihat ulasan di Google Maps"
+        >
+          <div class="flex items-center gap-1 text-amber-400 text-xs font-mono">
+            <span class="material-symbols-outlined text-[16px]">star</span>
+            <span class="font-bold text-white">4.6</span>
+          </div>
+          <span class="text-stone-500">|</span>
+          <span class="text-xs font-sans text-stone-300 group-hover:text-gold-soft transition-colors">
+            308+ Ulasan di Google Maps ↗
+          </span>
+        </a>
+      </div>
+
+      <!-- Col 2: Navigation Links (3 Cols) -->
+      <div class="lg:col-span-3">
+        <h4 class="text-[11px] uppercase font-mono tracking-widest font-semibold text-gold-soft mb-4 flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-syariah-gold"></span>
+          Navigasi
+        </h4>
+        
+        <ul class="space-y-2 text-xs font-sans text-stone-300">
+          <li><a class="hover:text-gold-soft transition-colors inline-flex items-center gap-1.5" href="#beranda"><span class="text-stone-600">›</span> Beranda</a></li>
+          <li><a class="hover:text-gold-soft transition-colors inline-flex items-center gap-1.5" href="#fasilitas"><span class="text-stone-600">›</span> Fasilitas Hunian</a></li>
+          <li><a class="hover:text-gold-soft transition-colors inline-flex items-center gap-1.5" href="#kamar"><span class="text-stone-600">›</span> Pilihan Kamar</a></li>
+          <li><a class="hover:text-gold-soft transition-colors inline-flex items-center gap-1.5" href="#tarif"><span class="text-stone-600">›</span> Tarif &amp; Pemesanan</a></li>
+          <li><a class="hover:text-gold-soft transition-colors inline-flex items-center gap-1.5" href="#lokasi"><span class="text-stone-600">›</span> Lokasi &amp; Akses</a></li>
+          <li><a class="hover:text-gold-soft transition-colors inline-flex items-center gap-1.5" href="#faq"><span class="text-stone-600">›</span> Ketentuan Syariah &amp; FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Practical Info & Direct Contact (4 Cols) -->
+      <div class="lg:col-span-4 flex flex-col justify-between">
+        <div>
+          <h4 class="text-[11px] uppercase font-mono tracking-widest font-semibold text-gold-soft mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-syariah-gold"></span>
+            Informasi &amp; Kontak
+          </h4>
+
+          <!-- Compact Address & Hours -->
+          <div class="space-y-3 text-xs text-stone-300">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-[16px] text-syariah-gold shrink-0 mt-0.5" aria-hidden="true">location_on</span>
+              <span class="leading-relaxed text-stone-300">
+                Jl. Turonggo No.125, Jaranan, Banguntapan, Bantul, D.I. Yogyakarta 55189
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-[16px] text-syariah-gold shrink-0" aria-hidden="true">schedule</span>
+              <span class="font-mono text-stone-300">
+                Check-In: 14.00 WIB &nbsp;•&nbsp; Check-Out: 12.00 WIB
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-[16px] text-emerald-400 shrink-0" aria-hidden="true">chat</span>
+              <span class="font-sans text-stone-300">
+                Pengelola: <span class="text-white font-medium">Ibu Agnesia</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Action Buttons -->
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a 
+            href={waLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-emerald-300 hover:text-white text-xs font-mono transition-all duration-200"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>WhatsApp Reservasi</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+          </a>
+
+          <a 
+            href={gmapsUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 hover:text-white text-xs font-mono transition-colors"
+          >
+            <span>Petunjuk Arah</span>
+            <span class="material-symbols-outlined text-[14px]">map</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar: Copyright, Website by WL-Studio (CENTER), and Region Badge -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-xs font-mono text-stone-400">
+      
+      <!-- Left: Copyright -->
+      <div class="order-1 text-center sm:text-left">
+        <p>© 2026 Grha Vege Jawi Syariah. Hak Cipta Dilindungi.</p>
+      </div>
+
+      <!-- Center: Website by WL-Studio Badge (High-End Tactile Link) -->
+      <div class="order-2 text-center">
+        <a 
+          href="https://www.wellibuilds.online/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-syariah-gold/50 text-stone-300 hover:text-white transition-all duration-300 text-xs font-mono shadow-xs active:scale-95"
+          aria-label="Website dibuat oleh WL-Studio (wellibuilds.online)"
+        >
+          <span class="text-stone-400">Website by</span>
+          <span class="font-semibold text-syariah-gold group-hover:text-gold-soft transition-colors">WL-Studio</span>
+          <span class="material-symbols-outlined text-[14px] text-syariah-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">arrow_outward</span>
+        </a>
+      </div>
+
+      <!-- Right: Location & Identity -->
+      <div class="order-3 flex items-center gap-2 text-center sm:text-right">
+        <span class="w-1.5 h-1.5 rounded-full bg-syariah-gold shrink-0" aria-hidden="true"></span>
+        <span class="text-stone-300 font-medium">Banguntapan, Bantul • D.I. Yogyakarta</span>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+

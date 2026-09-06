@@ -1,0 +1,404 @@
+---
+// src/components/RulesFaq.astro
+const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20seputar%20ketentuan%20menginap%20dan%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah";
+---
+
+<!-- ==================== KETENTUAN SYARIAH & TANYA JAWAB (FAQ) ==================== -->
+<section class="py-20 sm:py-28 bg-surface-canvas border-b border-border-stone scroll-mt-20 relative overflow-hidden" id="faq">
+  
+  <!-- Subtle ambient background accents -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-syariah-gold/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 relative z-10">
+    
+    <!-- Section Header (Editorial Luxury) -->
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold border border-syariah-gold/25 shadow-2xs">
+        <span class="w-1.5 h-1.5 rounded-full bg-syariah-gold animate-pulse" aria-hidden="true"></span>
+        Adab &amp; Informasi Menginap
+      </span>
+      <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal mt-3 tracking-tight">
+        Ketentuan Syariah &amp; Tanya Jawab (FAQ)
+      </h2>
+      <p class="text-xs sm:text-sm text-on-surface-variant mt-2.5 max-w-xl mx-auto leading-relaxed">
+        Ditegakkan dengan santun dan amanah demi menjaga ketenangan, kebersihan, dan kenyamanan ibadah seluruh tamu keluarga &amp; akademisi.
+      </p>
+    </div>
+
+    <!-- Editorial Asymmetric Split (5 Cols Syariah Rules : 7 Cols Interactive FAQ) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      
+      <!-- ================= SISI KIRI (5 COLS): KUBAH ADAB SYARIAH ================= -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        
+        <!-- Double-Bezel Card Outer Shell -->
+        <div class="rounded-3xl p-1.5 sm:p-2 bg-stone-100/90 border border-stone-200/80 shadow-[0_12px_35px_-10px_rgba(40,54,43,0.06)]">
+          <!-- Inner Core Container -->
+          <div class="rounded-[calc(1.5rem-0.375rem)] bg-white p-5 sm:p-7 border border-stone-100/90 flex flex-col justify-between">
+            
+            <!-- Card Header -->
+            <div class="pb-5 border-b border-stone-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-syariah-gold/15 text-syariah-gold border border-syariah-gold/25 flex items-center justify-center shrink-0 shadow-2xs">
+                  <span class="material-symbols-outlined text-[22px]">verified_user</span>
+                </div>
+                <div>
+                  <span class="text-[10px] font-mono font-semibold uppercase tracking-wider text-syariah-gold block">Pedoman Tamu</span>
+                  <h3 class="font-serif text-lg sm:text-xl font-medium text-on-surface">Ketentuan Hunian Syariah</h3>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-primary font-semibold bg-primary-light px-2.5 py-1 rounded-full">Resmi</span>
+            </div>
+
+            <!-- 4 Tactile Rule Items -->
+            <div class="divide-y divide-stone-100 my-2">
+              
+              <!-- Rule 1: Pasangan Sah & Keluarga -->
+              <div class="py-4 sm:py-4.5 flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <span class="material-symbols-outlined text-[17px]">family_restroom</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between gap-2">
+                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Khusus Pasangan Sah &amp; Keluarga</h4>
+                    <span class="text-[10px] font-mono text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full shrink-0">Muhrim</span>
+                  </div>
+                  <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Tamu berpasangan berlainan jenis wajib menunjukkan e-KTP alamat sama atau Buku Nikah resmi saat check-in. Kami tidak melayani pasangan non-muhrim.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Rule 2: Bebas Asap Rokok & Miras -->
+              <div class="py-4 sm:py-4.5 flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <span class="material-symbols-outlined text-[17px]">smoke_free</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between gap-2">
+                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">100% Bebas Asap Rokok &amp; Miras</h4>
+                    <span class="text-[10px] font-mono text-secondary font-medium bg-secondary/10 px-2 py-0.5 rounded-full shrink-0">Zona Bersih</span>
+                  </div>
+                  <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Seluruh kamar tidur, koridor dalam, dan mushola bebas asap rokok. Dilarang keras membawa minuman beralkohol serta zat terlarang.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Rule 3: Jam Hening Malam 22.00 WIB -->
+              <div class="py-4 sm:py-4.5 flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <span class="material-symbols-outlined text-[17px]">nightlight</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between gap-2">
+                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Waktu Hening Mulai 22.00 WIB</h4>
+                    <span class="text-[10px] font-mono text-stone-600 font-medium bg-stone-100 px-2 py-0.5 rounded-full shrink-0">Tenang</span>
+                  </div>
+                  <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Menghormati hak istirahat seluruh keluarga dan warga sekitar dengan meminimalkan suara setelah pukul 22.00 WIB serta berbusana santun.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Rule 4: Jadwal Check-in & Check-out -->
+              <div class="pt-4 sm:pt-4.5 flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-syariah-gold flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <span class="material-symbols-outlined text-[17px]">schedule</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between gap-2">
+                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Waktu Check-In &amp; Check-Out</h4>
+                    <span class="text-[10px] font-mono text-syariah-gold font-medium bg-gold-subtle px-2 py-0.5 rounded-full shrink-0">14.00 - 12.00</span>
+                  </div>
+                  <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Check-in mulai 14.00 WIB dan check-out maksimal 12.00 WIB. Kebutuhan fleksibel dapat dikoordinasikan langsung bersama Ibu Agnesia.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Mushola Representatif Callout -->
+            <div class="mt-4 p-3.5 rounded-2xl bg-surface-subtle/80 border border-stone-200/80 flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[18px]">mosque</span>
+              </div>
+              <div class="text-[11px] leading-tight text-on-surface-variant">
+                <strong class="text-on-surface font-medium block">Tersedia Mushola Bersih di Dalam Rumah</strong>
+                Lengkap dengan sajadah terawat, mukena, dan tempat wudhu air jernih.
+              </div>
+            </div>
+
+            <!-- Fast-Track WhatsApp Concierge (Button-in-Button) -->
+            <a 
+              href={waLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="group/cta mt-5 w-full min-h-[48px] inline-flex items-center justify-between gap-3 bg-syariah-gold hover:bg-yellow-500 text-on-surface font-semibold pl-4 pr-1.5 py-1.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-xs active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+            >
+              <span class="font-mono text-primary-deep font-semibold">Butuh Konfirmasi Khusus? Chat Bu Agnes</span>
+              <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center transition-transform duration-300 group-hover/cta:scale-105 shadow-xs shrink-0">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= SISI KANAN (7 COLS): INTERACTIVE FAQ 2.0 ================= -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        
+        <!-- Filter Tabs for Instant FAQ Discovery -->
+        <div class="flex items-center justify-between gap-3 mb-1 overflow-x-auto no-scrollbar py-0.5">
+          <div 
+            class="inline-flex items-center gap-1 p-1 rounded-full bg-stone-100/90 border border-stone-200/80 backdrop-blur-sm shadow-xs" 
+            id="faq-filter-tabs"
+            role="tablist"
+            aria-label="Filter Kategori FAQ"
+          >
+            <button 
+              type="button" 
+              role="tab"
+              aria-selected="true"
+              data-faq-filter="all" 
+              class="faq-tab active px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold tracking-wide transition-all duration-200 bg-primary text-white shadow-xs cursor-pointer select-none whitespace-nowrap active:scale-95"
+            >
+              Semua (6)
+            </button>
+            <button 
+              type="button" 
+              role="tab"
+              aria-selected="false"
+              data-faq-filter="kamar" 
+              class="faq-tab px-3.5 py-1.5 rounded-full text-xs font-sans font-medium tracking-wide transition-all duration-200 text-stone-600 hover:text-primary hover:bg-white/80 cursor-pointer select-none whitespace-nowrap active:scale-95"
+            >
+              Kamar &amp; Keluarga
+            </button>
+            <button 
+              type="button" 
+              role="tab"
+              aria-selected="false"
+              data-faq-filter="tarif" 
+              class="faq-tab px-3.5 py-1.5 rounded-full text-xs font-sans font-medium tracking-wide transition-all duration-200 text-stone-600 hover:text-primary hover:bg-white/80 cursor-pointer select-none whitespace-nowrap active:scale-95"
+            >
+              Tarif &amp; Sewa
+            </button>
+            <button 
+              type="button" 
+              role="tab"
+              aria-selected="false"
+              data-faq-filter="fasilitas" 
+              class="faq-tab px-3.5 py-1.5 rounded-full text-xs font-sans font-medium tracking-wide transition-all duration-200 text-stone-600 hover:text-primary hover:bg-white/80 cursor-pointer select-none whitespace-nowrap active:scale-95"
+            >
+              Fasilitas &amp; Akses
+            </button>
+          </div>
+        </div>
+
+        <!-- Accordion Items Container -->
+        <div class="flex flex-col gap-3" id="faq-accordion-list">
+          
+          <!-- FAQ 1: Fleksibilitas Rombongan Keluarga (Category: kamar) -->
+          <div class="faq-item rounded-2xl bg-white border border-stone-200/80 hover:border-syariah-gold/60 transition-all duration-300 shadow-[0_4px_16px_-4px_rgba(40,54,43,0.03)] overflow-hidden" data-faq-category="kamar">
+            <button 
+              type="button" 
+              class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-md shrink-0">Kamar</span>
+                <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Bisakah memesan kamar untuk rombongan keluarga besar?</span>
+              </div>
+              <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
+                <span class="material-symbols-outlined text-[17px] transition-transform duration-300 faq-icon">expand_more</span>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-stone-100 text-justify sm:text-left">
+              Sangat bisa. Kami memiliki total <strong>6 kamar tidur privat</strong> (2 unit di lantai bawah bebas tangga yang ramah lansia/anak, dan 4 unit di lantai atas dengan balkon asri semilir). Anda bebas memesan 1 kamar, 2 kamar, 4 kamar, maupun memborong seluruh 6 kamar sekaligus untuk privasi utuh keluarga saat acara wisuda kampus, liburan bersama, atau hajatan di Yogyakarta.
+            </div>
+          </div>
+
+          <!-- FAQ 2: Fasilitas Lengkap 9 Poin Asli (Category: fasilitas) -->
+          <div class="faq-item rounded-2xl bg-white border border-stone-200/80 hover:border-syariah-gold/60 transition-all duration-300 shadow-[0_4px_16px_-4px_rgba(40,54,43,0.03)] overflow-hidden" data-faq-category="fasilitas">
+            <button 
+              type="button" 
+              class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-syariah-gold font-semibold bg-syariah-gold/10 px-2 py-0.5 rounded-md shrink-0">Fasilitas</span>
+                <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Apa saja fasilitas yang tersedia di dalam kamar dan area bersama?</span>
+              </div>
+              <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
+                <span class="material-symbols-outlined text-[17px] transition-transform duration-300 faq-icon">expand_more</span>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-stone-100 text-justify sm:text-left">
+              Satu kamar standar untuk 2 orang dilengkapi <strong>9 fasilitas utama</strong>: kamar mandi dalam dengan water heater air panas 24 jam, unit AC dingin, WiFi fiber kencang, TV, dental kit higienis baru, serta fasilitas gula pasir, teh, kopi, dan air mineral. Tamu juga bebas menggunakan fasilitas bersama: parkir mobil aman di dalam pagar, dapur mini bersama (kompor &amp; kulkas), dan dispenser galon higienis gratis.
+            </div>
+          </div>
+
+          <!-- FAQ 3: Skema Tarif Menginap (Category: tarif) -->
+          <div class="faq-item rounded-2xl bg-white border border-stone-200/80 hover:border-syariah-gold/60 transition-all duration-300 shadow-[0_4px_16px_-4px_rgba(40,54,43,0.03)] overflow-hidden" data-faq-category="tarif">
+            <button 
+              type="button" 
+              class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-semibold bg-emerald-50 px-2 py-0.5 rounded-md shrink-0">Tarif</span>
+                <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Berapa tarif menginap per malam (weekday, weekend &amp; long weekend)?</span>
+              </div>
+              <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
+                <span class="material-symbols-outlined text-[17px] transition-transform duration-300 faq-icon">expand_more</span>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-stone-100 text-justify sm:text-left">
+              Tarif sewa kamar harian (isi 2 orang): <strong>Weekday mulai dari Rp 165.000/malam</strong> (Senin–Kamis), dan <strong>Weekend mulai dari Rp 220.000/malam</strong> (Jumat–Minggu). Untuk periode <strong>Long Weekend</strong> dan libur nasional, tarif berlaku dinamis menyesuaikan ketersediaan, silakan langsung konfirmasi ke WhatsApp Ibu Agnesia.
+            </div>
+          </div>
+
+          <!-- FAQ 4: Ketentuan Sewa Bulanan (Category: tarif) -->
+          <div class="faq-item rounded-2xl bg-white border border-stone-200/80 hover:border-syariah-gold/60 transition-all duration-300 shadow-[0_4px_16px_-4px_rgba(40,54,43,0.03)] overflow-hidden" data-faq-category="tarif">
+            <button 
+              type="button" 
+              class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-sky-800 font-semibold bg-sky-50 px-2 py-0.5 rounded-md shrink-0">Bulanan</span>
+                <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Bagaimana ketentuan dan biaya untuk sewa bulanan (kost)?</span>
+              </div>
+              <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
+                <span class="material-symbols-outlined text-[17px] transition-transform duration-300 faq-icon">expand_more</span>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-stone-100 text-justify sm:text-left">
+              Sewa kamar bulanan mulai dari <strong>Rp 1.870.000/bulan</strong>. Biaya sewa bulanan sudah <strong>gratis WiFi fiber kecepatan tinggi dan unit AC</strong>. Sementara untuk penggunaan gas water heater dan listrik (token) dikelola dan dibayar secara mandiri oleh penyewa sesuai pemakaian pribadi.
+            </div>
+          </div>
+
+          <!-- FAQ 5: Akses Jalan Mobil & Makanan Online (Category: fasilitas) -->
+          <div class="faq-item rounded-2xl bg-white border border-stone-200/80 hover:border-syariah-gold/60 transition-all duration-300 shadow-[0_4px_16px_-4px_rgba(40,54,43,0.03)] overflow-hidden" data-faq-category="fasilitas">
+            <button 
+              type="button" 
+              class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-stone-600 font-semibold bg-stone-100 px-2 py-0.5 rounded-md shrink-0">Akses</span>
+                <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Bagaimana akses jalan mobil dan kemudahan pesan antar makanan online?</span>
+              </div>
+              <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
+                <span class="material-symbols-outlined text-[17px] transition-transform duration-300 faq-icon">expand_more</span>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-stone-100 text-justify sm:text-left">
+              Akses jalan lingkungan beraspal dan paving halus yang <strong>sangat leluasa untuk papasan dua mobil</strong> langsung masuk ke halaman parkir aman di dalam pagar. Berada di kawasan kampus, titik lokasi sangat akurat di Google Maps sehingga kurir ojek online (GoFood, GrabFood, ShopeeFood) maupun taksi online dapat mengantar dan menjemput tepat di depan gerbang penginapan.
+            </div>
+          </div>
+
+          <!-- FAQ 6: Dokumen Syariah Check-In (Category: kamar) -->
+          <div class="faq-item rounded-2xl bg-white border border-stone-200/80 hover:border-syariah-gold/60 transition-all duration-300 shadow-[0_4px_16px_-4px_rgba(40,54,43,0.03)] overflow-hidden" data-faq-category="kamar">
+            <button 
+              type="button" 
+              class="faq-trigger w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-md shrink-0">Syariah</span>
+                <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Dokumen apa saja yang diperlukan saat check-in bagi pasangan suami istri?</span>
+              </div>
+              <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
+                <span class="material-symbols-outlined text-[17px] transition-transform duration-300 faq-icon">expand_more</span>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 pt-1 text-xs text-on-surface-variant leading-relaxed border-t border-stone-100 text-justify sm:text-left">
+              Cukup menunjukkan e-KTP dengan alamat domisili yang sama, atau foto/buku fisik Buku Nikah resmi dari KUA / Akta Perkawinan catatan sipil. Kami senantiasa menjaga lingkungan hunian syariah yang santun, amanah, dan nyaman bagi seluruh keluarga.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Client-side Interactive Script for Accordion & Filtering -->
+<script>
+  // 1. FAQ Accordion Engine
+  const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+  faqItems.forEach(item => {
+    const trigger = item.querySelector<HTMLButtonElement>('.faq-trigger');
+    const content = item.querySelector<HTMLElement>('.faq-content');
+    const icon = item.querySelector<HTMLElement>('.faq-icon');
+    const iconBox = item.querySelector<HTMLElement>('.faq-icon-box');
+
+    if (trigger && content && icon) {
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // Close others for clean single-expanded experience
+        faqItems.forEach(otherItem => {
+          const otherTrigger = otherItem.querySelector<HTMLButtonElement>('.faq-trigger');
+          const otherContent = otherItem.querySelector<HTMLElement>('.faq-content');
+          const otherIcon = otherItem.querySelector<HTMLElement>('.faq-icon');
+          const otherIconBox = otherItem.querySelector<HTMLElement>('.faq-icon-box');
+          if (otherTrigger && otherContent && otherIcon && otherItem !== item) {
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherContent.classList.add('hidden');
+            otherIcon.classList.remove('rotate-180');
+            otherIconBox?.classList.remove('bg-primary', 'text-white');
+          }
+        });
+
+        if (isExpanded) {
+          trigger.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+          iconBox?.classList.remove('bg-primary', 'text-white');
+        } else {
+          trigger.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+          iconBox?.classList.add('bg-primary', 'text-white');
+        }
+      });
+    }
+  });
+
+  // 2. FAQ Category Filter Tabs
+  const faqTabs = document.querySelectorAll<HTMLButtonElement>('.faq-tab');
+  faqTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const filter = tab.getAttribute('data-faq-filter');
+
+      // Update active tab styles
+      faqTabs.forEach(t => {
+        t.classList.remove('active', 'bg-primary', 'text-white', 'shadow-xs');
+        t.classList.add('text-stone-600', 'hover:text-primary', 'hover:bg-white/80');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.remove('text-stone-600', 'hover:text-primary', 'hover:bg-white/80');
+      tab.classList.add('active', 'bg-primary', 'text-white', 'shadow-xs');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Filter FAQ items
+      faqItems.forEach(item => {
+        const category = item.getAttribute('data-faq-category');
+        if (filter === 'all' || category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

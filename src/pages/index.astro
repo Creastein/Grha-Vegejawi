@@ -1,0 +1,37 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import HeaderNav from '../components/HeaderNav.astro';
+import Hero from '../components/Hero.astro';
+import AboutBrand from '../components/AboutBrand.astro';
+import RoomCatalog from '../components/RoomCatalog.astro';
+import PricingSection from '../components/PricingSection.astro';
+import Facilities from '../components/Facilities.astro';
+import GuestReviews from '../components/GuestReviews.astro';
+import GalleryLightbox from '../components/GalleryLightbox.astro';
+import LocationTransit from '../components/LocationTransit.astro';
+import RulesFaq from '../components/RulesFaq.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import Footer from '../components/Footer.astro';
+import { getPricing } from '../lib/pricing';
+
+// Fetch dynamic pricing data dari Google Sheets (dengan proteksi fallback & SWR cache)
+const pricing = await getPricing();
+---
+
+<Layout>
+  <HeaderNav />
+  <main class="flex-1 w-full">
+    <Hero startingPrice={pricing.weekdayPrice} />
+    <Facilities />
+    <AboutBrand />
+    <RoomCatalog weekdayPrice={pricing.weekdayPrice} />
+    <PricingSection pricing={pricing} />
+    <GalleryLightbox />
+    <GuestReviews />
+    <LocationTransit />
+    <RulesFaq />
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

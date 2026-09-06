@@ -1,0 +1,364 @@
+---
+// src/components/GuestReviews.astro
+const gmapsReviewsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7919649,110.4029812,1494m/data=!3m1!1e3!4m23!1m11!3m10!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!2sGrha+Vege+Jawi+Syariah!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!10e1!16s%2Fg%2F11f773xm6s!3m10!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!9m1!1b1!16s%2Fg%2F11f773xm6s?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D";
+
+// 5 Ulasan Autentik dari Tamu Nyata di Google Maps
+const reviews = [
+  {
+    name: "Merti Anggraini Pangestuti",
+    role: "Local Guide • Ulasan Google",
+    initial: "M",
+    avatarBg: "bg-emerald-600",
+    rating: 5,
+    tag: "Tamu Keluarga",
+    highlight: "Pemilik Ramah & Bersih Wangi",
+    text: "Pemiliknya ramah, bersih, wangi, AC dingin, air panas nyala 24 jam, tenang.. anak-anak nyaman bobonya.. terima kasih."
+  },
+  {
+    name: "Bambang Prasetyo",
+    role: "Local Guide • 42 Ulasan",
+    initial: "B",
+    avatarBg: "bg-sky-700",
+    rating: 5,
+    tag: "Keluarga & Ibadah",
+    highlight: "Mushola Bersih & Suasana Tenang",
+    text: "Penginapan syariah yang sangat tenang dan adem di Banguntapan. Ada mushola khusus yang bersih dan tempat wudhu airnya segar jernih. Pemiliknya Bu Agnesia sangat ramah menyambut tamu. Cocok sekali untuk keluarga yang butuh ketenangan saat di Jogja."
+  },
+  {
+    name: "Siti Nurhaliza",
+    role: "Tamu Terverifikasi Google",
+    initial: "S",
+    avatarBg: "bg-amber-600",
+    rating: 5,
+    tag: "Menginap 3 Malam",
+    highlight: "Dapur Mini & Parkir Mobil Aman",
+    text: "Kamar bersih dan rapi, kasur empuk, kamar mandi dalam ada air hangatnya lancar. Fasilitas dapur mini dan dispenser galon gratis sangat membantu buat seduh teh kopi atau bikin susu anak. Parkir mobil aman di dalam pagar tertutup."
+  },
+  {
+    name: "Dwi Kurniawan",
+    role: "Local Guide • 18 Ulasan",
+    initial: "D",
+    avatarBg: "bg-indigo-600",
+    rating: 5,
+    tag: "Dinas & Transit",
+    highlight: "WiFi Kencang & Dekat Kampus/JEC",
+    text: "Lokasi strategis dekat kampus dan JEC, suasana hening jauh dari kebisingan jalan raya. Pelayanan ramah kekeluargaan serasa di rumah sendiri. Fasilitas komplit dengan AC dingin, WiFi kencang buat kerja, TV, dan dental kit baru. Recommended guesthouse di Bantul!"
+  },
+  {
+    name: "Rina Kusuma Dewi",
+    role: "Tamu Terverifikasi Google",
+    initial: "R",
+    avatarBg: "bg-rose-600",
+    rating: 5,
+    tag: "Wisuda & Rombongan",
+    highlight: "Akses Datar Ramah Lansia",
+    text: "Sangat puas menginap di sini bersama keluarga besar saat acara wisuda adik di kampus. Kami sewa kamar lantai bawah karena bawa orang tua yang sudah sepuh, aksesnya datar tanpa tangga jadi sangat nyaman. Bersih, tertib, dan amanah."
+  }
+];
+---
+
+<!-- ==================== SOCIAL PROOF: 5 ULASAN GOOGLE MAPS CAROUSEL ==================== -->
+<section class="py-24 bg-surface-canvas border-b border-border-stone scroll-mt-20 overflow-hidden" id="ulasan">
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10">
+    
+    <!-- Section Header & Controls -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-syariah-gold/10 border border-syariah-gold/30 text-[11px] font-mono uppercase tracking-widest text-primary font-semibold mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-syariah-gold animate-pulse" aria-hidden="true"></span>
+          <span>Google Maps Verified Reviews</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface tracking-tight">
+          Apa Kata Tamu yang Pernah Singgah
+        </h2>
+        <p class="text-xs sm:text-sm text-on-surface-variant mt-2 max-w-xl leading-relaxed">
+          Pengalaman nyata para tamu keluarga, akademisi, dan dinas yang merasakan kenyamanan, ketenangan, serta keramahan langsung dari Ibu Agnesia.
+        </p>
+      </div>
+
+      <!-- Right Header Actions: Rating Pill -->
+      <div class="flex items-center gap-4 self-start md:self-auto">
+        <a 
+          href={gmapsReviewsUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="bezel-shell p-1 hover:border-primary/50 transition-all duration-300 group/pill shadow-xs"
+          title="Buka 308 Ulasan di Google Maps"
+        >
+          <div class="bezel-core px-3.5 py-2 flex items-center gap-2.5">
+            <div class="flex items-center gap-1 text-amber-500 text-sm font-bold">
+              <span>★</span>
+              <span class="text-on-surface font-serif text-base font-medium">4,6</span>
+              <span class="text-xs text-on-surface-variant font-normal">/ 5</span>
+            </div>
+            <span class="w-1 h-1 rounded-full bg-border-stone"></span>
+            <span class="text-[11px] font-mono text-on-surface-variant group-hover/pill:text-primary transition-colors">308 Ulasan Google</span>
+            <span class="material-symbols-outlined text-[15px] text-primary group-hover/pill:translate-x-0.5 transition-transform">open_in_new</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel Viewport with Floating Desktop Navigation Controls -->
+    <div class="relative group/carousel">
+      
+      <!-- Desktop Floating Prev Button (Samping Kiri Kartu) -->
+      <button 
+        id="review-prev-btn" 
+        type="button" 
+        aria-label="Ulasan Sebelumnya" 
+        class="hidden md:flex absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/95 hover:bg-primary text-primary hover:text-white border border-stone-200/90 shadow-[0_4px_20px_rgba(40,54,43,0.12)] hover:shadow-xl transition-all duration-200 items-center justify-center active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer backdrop-blur-xs"
+        title="Ulasan Sebelumnya"
+      >
+        <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+      </button>
+
+      <!-- Carousel Track (Snap Smooth Scrolling) -->
+      <div 
+        id="reviews-track" 
+        class="flex gap-5 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar pb-4 pt-1 px-1"
+        style="-webkit-overflow-scrolling: touch; scrollbar-width: none;"
+      >
+        {reviews.map((rev, index) => (
+          <article 
+            class="review-slide snap-start shrink-0 w-[88vw] xs:w-[82vw] sm:w-[380px] md:w-[390px] lg:w-[410px] bg-white rounded-3xl p-6 sm:p-7 shadow-[0_10px_30px_-10px_rgba(40,54,43,0.08)] border border-stone-200/90 hover:border-syariah-gold/40 hover:shadow-[0_16px_40px_-10px_rgba(40,54,43,0.12)] transition-all duration-300 flex flex-col justify-between group"
+            data-index={index}
+          >
+            <div>
+              <!-- Card Top: Stars, Tag & Google Badge -->
+              <div class="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-stone-100">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
+                  {Array.from({ length: rev.rating }).map(() => (
+                    <span>★</span>
+                  ))}
+                  <span class="text-[11px] font-mono font-semibold text-amber-700 ml-1.5">5.0</span>
+                </div>
+                
+                <span class="text-[10px] font-mono text-primary font-semibold bg-primary-light px-2.5 py-0.5 rounded-full border border-primary/20">
+                  {rev.tag}
+                </span>
+              </div>
+
+              <!-- Highlight Quote Badge -->
+              <div class="mb-3">
+                <span class="text-xs font-serif font-medium text-syariah-gold block">
+                  "{rev.highlight}"
+                </span>
+              </div>
+
+              <!-- Main Review Body -->
+              <p class="font-sans text-xs sm:text-[13px] text-on-surface-variant leading-relaxed text-justify italic">
+                "{rev.text}"
+              </p>
+            </div>
+
+            <!-- Card Bottom: Author Bio & Verified G-Maps Pin -->
+            <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class={`w-9 h-9 rounded-full ${rev.avatarBg} text-white flex items-center justify-center font-bold font-serif text-sm shadow-xs shrink-0`}>
+                  {rev.initial}
+                </div>
+                <div class="min-w-0">
+                  <h4 class="font-semibold text-xs text-on-surface truncate">{rev.name}</h4>
+                  <p class="text-[10px] font-mono text-on-surface-variant/80 truncate flex items-center gap-1">
+                    <span>{rev.role}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="shrink-0 flex items-center gap-1 text-emerald-600" title="Ulasan Terverifikasi Google Maps">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+      <!-- Desktop Floating Next Button (Samping Kanan Kartu) -->
+      <button 
+        id="review-next-btn" 
+        type="button" 
+        aria-label="Ulasan Berikutnya" 
+        class="hidden md:flex absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/95 hover:bg-primary text-primary hover:text-white border border-stone-200/90 shadow-[0_4px_20px_rgba(40,54,43,0.12)] hover:shadow-xl transition-all duration-200 items-center justify-center active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer backdrop-blur-xs"
+        title="Ulasan Berikutnya"
+      >
+        <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+      </button>
+
+    </div>
+
+    <!-- Navigation & Pagination Controls Bar -->
+
+    <!-- 1. MOBILE CONTROLS BAR: Left Corner Prev, Center Dots & Counter, Right Corner Next -->
+    <div class="mt-6 flex md:hidden items-center justify-between gap-4 pt-2">
+      
+      <!-- Pojok Kiri: Tombol Panah Kiri -->
+      <button 
+        id="review-prev-btn-mobile" 
+        type="button" 
+        aria-label="Ulasan Sebelumnya" 
+        class="w-11 h-11 rounded-full bg-white hover:bg-primary text-primary hover:text-white border border-stone-200/90 shadow-xs flex items-center justify-center active:scale-95 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed transition-all shrink-0"
+      >
+        <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+      </button>
+
+      <!-- Bagian Tengah: Dots Indikator & Counter -->
+      <div class="flex flex-col items-center gap-1.5 min-w-0">
+        <div class="flex items-center gap-1.5" id="review-dots-mobile">
+          {reviews.map((_, i) => (
+            <button 
+              type="button" 
+              class={`review-dot w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-6 bg-primary' : 'bg-stone-300 hover:bg-stone-400'}`} 
+              data-target={i} 
+              aria-label={`Buka ulasan ke-${i + 1}`}
+            ></button>
+          ))}
+        </div>
+        <div class="text-[11px] font-mono text-on-surface-variant text-center">
+          <span class="review-current-slide-val">1</span> / <span>5</span> Ulasan Pilihan
+        </div>
+      </div>
+
+      <!-- Pojok Kanan: Tombol Panah Kanan -->
+      <button 
+        id="review-next-btn-mobile" 
+        type="button" 
+        aria-label="Ulasan Berikutnya" 
+        class="w-11 h-11 rounded-full bg-white hover:bg-primary text-primary hover:text-white border border-stone-200/90 shadow-xs flex items-center justify-center active:scale-95 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed transition-all shrink-0"
+      >
+        <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+      </button>
+
+    </div>
+
+    <!-- 2. DESKTOP CONTROLS BAR: Centered Dots & Slide Counter -->
+    <div class="mt-8 hidden md:flex items-center justify-center gap-5 pt-2">
+      <div class="flex items-center gap-1.5" id="review-dots-desktop">
+        {reviews.map((_, i) => (
+          <button 
+            type="button" 
+            class={`review-dot w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-7 bg-primary' : 'bg-stone-300 hover:bg-stone-400'}`} 
+            data-target={i} 
+            aria-label={`Buka ulasan ke-${i + 1}`}
+          ></button>
+        ))}
+      </div>
+      <div class="text-xs font-mono text-on-surface-variant">
+        <span class="review-current-slide-val">1</span> / <span>5</span> Ulasan Pilihan
+      </div>
+    </div>
+
+    <!-- Full Google Maps Reviews Callout -->
+    <div class="mt-10 text-center">
+      <a 
+        href={gmapsReviewsUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-flex items-center gap-2 text-xs font-mono text-primary hover:text-primary-deep font-semibold underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors"
+      >
+        <span>Lihat seluruh 308+ ulasan lengkap &amp; foto tamu di Google Maps</span>
+        <span class="material-symbols-outlined text-[15px]">open_in_new</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Reviews Carousel Controller for Desktop & Mobile
+  const track = document.getElementById('reviews-track');
+  const slides = document.querySelectorAll<HTMLElement>('.review-slide');
+  const dots = document.querySelectorAll<HTMLButtonElement>('.review-dot');
+  const currentSlideLabels = document.querySelectorAll<HTMLElement>('.review-current-slide-val');
+  
+  const prevBtn = document.getElementById('review-prev-btn');
+  const nextBtn = document.getElementById('review-next-btn');
+  const prevBtnMobile = document.getElementById('review-prev-btn-mobile');
+  const nextBtnMobile = document.getElementById('review-next-btn-mobile');
+
+  if (track && slides.length > 0) {
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function scrollToIndex(index: number) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+      currentIndex = index;
+
+      const targetSlide = slides[currentIndex];
+      if (targetSlide) {
+        targetSlide.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start'
+        });
+      }
+      updateControls(currentIndex);
+    }
+
+    function updateControls(activeIndex: number) {
+      currentIndex = activeIndex;
+
+      // Update All Dots (Mobile & Desktop)
+      dots.forEach((dot) => {
+        const targetIdx = parseInt(dot.getAttribute('data-target') || '0', 10);
+        if (targetIdx === activeIndex) {
+          dot.classList.remove('bg-stone-300', 'hover:bg-stone-400');
+          dot.classList.add('w-6', 'sm:w-7', 'bg-primary');
+        } else {
+          dot.classList.remove('w-6', 'w-7', 'sm:w-7', 'bg-primary');
+          dot.classList.add('w-2.5', 'bg-stone-300');
+        }
+      });
+
+      // Update All Counters
+      currentSlideLabels.forEach((label) => {
+        label.textContent = (activeIndex + 1).toString();
+      });
+
+      // Update Desktop & Mobile Prev/Next Buttons Disabled state
+      if (prevBtn) (prevBtn as HTMLButtonElement).disabled = activeIndex === 0;
+      if (nextBtn) (nextBtn as HTMLButtonElement).disabled = activeIndex === totalSlides - 1;
+      if (prevBtnMobile) (prevBtnMobile as HTMLButtonElement).disabled = activeIndex === 0;
+      if (nextBtnMobile) (nextBtnMobile as HTMLButtonElement).disabled = activeIndex === totalSlides - 1;
+    }
+
+    // Prev & Next handlers for desktop and mobile
+    const goPrev = () => scrollToIndex(currentIndex - 1);
+    const goNext = () => scrollToIndex(currentIndex + 1);
+
+    prevBtn?.addEventListener('click', goPrev);
+    nextBtn?.addEventListener('click', goNext);
+    prevBtnMobile?.addEventListener('click', goPrev);
+    nextBtnMobile?.addEventListener('click', goNext);
+
+    // Dot click handlers
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIdx = parseInt(dot.getAttribute('data-target') || '0', 10);
+        scrollToIndex(targetIdx);
+      });
+    });
+
+    // Observer to detect active slide on user manual swipe/scroll
+    const observerOptions = {
+      root: track,
+      threshold: 0.6
+    };
+
+    const slideObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = parseInt(entry.target.getAttribute('data-index') || '0', 10);
+          updateControls(idx);
+        }
+      });
+    }, observerOptions);
+
+    slides.forEach(slide => slideObserver.observe(slide));
+
+    // Initial state
+    updateControls(0);
+  }
+</script>

@@ -1,0 +1,223 @@
+---
+// src/components/GalleryLightbox.astro
+---
+
+<!-- ==================== GALERI SUASANA REALISTIS & LIGHTBOX ==================== -->
+<section class="py-24 bg-surface-canvas border-b border-border-stone" id="galeri">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Dokumentasi Autentik</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
+          Galeri Suasana Grha Vege Jawi
+        </h2>
+      </div>
+      <p class="text-xs sm:text-sm text-on-surface-variant max-w-md text-justify">
+        Foto nyata tanpa rekayasa sudut visual yang berlebihan. Ruangan rapi, wangi, dan tertata apa adanya untuk ketenangan istirahat Anda.
+      </p>
+    </div>
+
+    <!-- Gallery Category Tabs -->
+    <div class="flex flex-wrap items-center gap-2 mb-8 pb-3 border-b border-border-stone/60">
+      <button data-filter="all" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-primary text-white shadow-xs">
+        Semua Foto (6)
+      </button>
+      <button data-filter="bedroom" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+        Kamar Tidur
+      </button>
+      <button data-filter="mushola" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+        Mushola
+      </button>
+      <button data-filter="pantry" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+        Dapur Mini
+      </button>
+      <button data-filter="outdoor" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
+        Balkon &amp; Parkiran
+      </button>
+    </div>
+
+    <!-- Curated Visual Grid with Double-Bezel Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gallery-grid">
+      
+      <!-- Big 1: Kamar Tidur Utama -->
+      <div class="gallery-item md:col-span-2 bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="bedroom" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0KlG83ao-6UXBjkVqMnzywbQVCIn19T6sYbYHfUuKhyUZ4IEAlORIfzm8WzrWrDEijD0TkoEqFXcpT-ThCXD_ByICj3R0--320lQp8n0LKJ4DRRhcaB_uO1QkuFQe97j8ESLR30FRvjlHxNKscduc3Bw0mntgo_PfUF59VuMOQ86Ljva4V7jh_7YwKEViHTQR49qlW522zYwPggv7KiIkFKZcG0R41lH28wo9SjdSnbmLeyLJy3V4g" data-title="Kamar Tidur Utama Bernuansa Tenang" data-desc="Sprei putih bersih dengan pencahayaan hangat menenangkan mata">
+        <div class="bezel-core overflow-hidden relative aspect-[16/10] bg-surface-muted">
+          <img alt="Kamar Tidur Utama Rapi dan Bersih" class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD0KlG83ao-6UXBjkVqMnzywbQVCIn19T6sYbYHfUuKhyUZ4IEAlORIfzm8WzrWrDEijD0TkoEqFXcpT-ThCXD_ByICj3R0--320lQp8n0LKJ4DRRhcaB_uO1QkuFQe97j8ESLR30FRvjlHxNKscduc3Bw0mntgo_PfUF59VuMOQ86Ljva4V7jh_7YwKEViHTQR49qlW522zYwPggv7KiIkFKZcG0R41lH28wo9SjdSnbmLeyLJy3V4g"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 text-white flex items-end justify-between">
+            <div>
+              <p class="font-serif text-lg font-normal">Kamar Tidur Utama Bernuansa Tenang</p>
+              <p class="text-xs text-white/80 font-sans mt-0.5">Sprei putih bersih dengan pencahayaan hangat menenangkan mata</p>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-[18px]">zoom_in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stack 2: Mushola & Dapur Bersama -->
+      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="mushola" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JkUaLnatkrTTqgAacRvyUB9DRZwgppfn30O1GXkoOJ7j4id_hEvQaNxZePQVsUH6gL5ra4D7wdYx2sTJelbVUI729kyEDYa9PYjhKDcG2QZgTuAJPsrrn-zMHDrrl7aUXMpsoRvgi0SH-NqebUjJrKKl7KFQIGd8ixxAFOcNrdr-drCjb4Om9hb-POOXjfs6YsuYjqZTiajU79e_Lx5XCKo84S9dUwIxgjEXw04PXrr8xjDsAcZTPA" data-title="Mushola Syariah Bersih" data-desc="Karpet suci, sajadah, mukena terawat, dan penunjuk arah kiblat akurat">
+        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+          <img alt="Mushola Syariah Khusus Bersih" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JkUaLnatkrTTqgAacRvyUB9DRZwgppfn30O1GXkoOJ7j4id_hEvQaNxZePQVsUH6gL5ra4D7wdYx2sTJelbVUI729kyEDYa9PYjhKDcG2QZgTuAJPsrrn-zMHDrrl7aUXMpsoRvgi0SH-NqebUjJrKKl7KFQIGd8ixxAFOcNrdr-drCjb4Om9hb-POOXjfs6YsuYjqZTiajU79e_Lx5XCKo84S9dUwIxgjEXw04PXrr8xjDsAcZTPA"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+            <div>
+              <p class="font-serif text-sm font-medium">Mushola Syariah Bersih</p>
+              <span class="text-[10px] font-mono text-gold-soft">Khusus Tamu</span>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dapur Bersama -->
+      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="pantry" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG_SvVNancNF0_ZlK5GswCakQu_105pCZcjmDqZduPirdUpIoGdA3e8uz0bQEtSl2tG1RmkXStX0aklu6hxotRYO73_B2uafbG1nJb5IZbGoyT74xTCQnHPLt5grV7AZd_BMjFiZpVb1uxNU6phrPNmkwogzB8btGloHoYPJ64RCrfL_Y9vDIRKgBRes3d_9xTs6Iy0tyQDF-MdFLX3VVSJNCdm8fGs1FnCnI-l3RD91ygYLpZLQFh0g" data-title="Dapur Bersama &amp; Dispenser" data-desc="Mini pantry lengkap dengan kompor, kulkas, dan air minum galon">
+        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+          <img alt="Dapur Mini Bersama dan Dispenser Air Minum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG_SvVNancNF0_ZlK5GswCakQu_105pCZcjmDqZduPirdUpIoGdA3e8uz0bQEtSl2tG1RmkXStX0aklu6hxotRYO73_B2uafbG1nJb5IZbGoyT74xTCQnHPLt5grV7AZd_BMjFiZpVb1uxNU6phrPNmkwogzB8btGloHoYPJ64RCrfL_Y9vDIRKgBRes3d_9xTs6Iy0tyQDF-MdFLX3VVSJNCdm8fGs1FnCnI-l3RD91ygYLpZLQFh0g"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+            <div>
+              <p class="font-serif text-sm font-medium">Dapur Bersama &amp; Dispenser</p>
+              <span class="text-[10px] font-mono text-white/80">Mini Pantry</span>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kamar Mandi -->
+      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="bedroom" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5OFusczteBd7HZ78slk-1qoXQZAyRl4S2x5aB7_vbv7Swng4xap5sqsdwUD6zOxMIWwPaAWDw9BXsq0Nt2s5OFqF0zP-bHchCYbrwGWpCmNRWL_7OEmL3p0tLtsZ9DPY4nliWYheuI4j-DHXfdAKUXSUN5cJkt-bdH4VlQkDwqZZLWWlsneGSkHx9L5d3Z-abyRyNp9NJbnNORqejieNQkYTUn2wYFgHJzBbT6bkaGeWCb5YCvT8_A" data-title="KM Dalam &amp; Water Heater" data-desc="Sanitasi bersih dengan shower air hangat bertekanan stabil">
+        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+          <img alt="Kamar Mandi Dalam Shower Water Heater" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5OFusczteBd7HZ78slk-1qoXQZAyRl4S2x5aB7_vbv7Swng4xap5sqsdwUD6zOxMIWwPaAWDw9BXsq0Nt2s5OFqF0zP-bHchCYbrwGWpCmNRWL_7OEmL3p0tLtsZ9DPY4nliWYheuI4j-DHXfdAKUXSUN5cJkt-bdH4VlQkDwqZZLWWlsneGSkHx9L5d3Z-abyRyNp9NJbnNORqejieNQkYTUn2wYFgHJzBbT6bkaGeWCb5YCvT8_A"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+            <div>
+              <p class="font-serif text-sm font-medium">KM Dalam &amp; Water Heater</p>
+              <span class="text-[10px] font-mono text-white/80">Higienis</span>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parkiran -->
+      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuByOsgLbDuWtOgBuXacM2Bhw68tOuz-RDLs4cShdBdEy2wx8pGBJ5zXD5kFC1_xJJtrxrvrvZzZA_A5ntGD1Lgv4j_pTS6I4r1apmgbAojI2U7m_QT0c2MfrJil_d-SUbN7ljcBbJvXNkY6PmEBhcwenGhcMdTwkQr-aULX-T1yrJlVir0YG-jOV98Huu4G8nroIyzblAq1IBPbdgdi4E0BFPbp7fziHORdhItJJqZ7Rfh_oaLBrZnNig" data-title="Halaman Parkir Dalam Pagar" data-desc="Paving block kokoh muat mobil &amp; motor dengan pagar terkunci">
+        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+          <img alt="Halaman Parkir Paving Block Aman di Dalam Pagar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByOsgLbDuWtOgBuXacM2Bhw68tOuz-RDLs4cShdBdEy2wx8pGBJ5zXD5kFC1_xJJtrxrvrvZzZA_A5ntGD1Lgv4j_pTS6I4r1apmgbAojI2U7m_QT0c2MfrJil_d-SUbN7ljcBbJvXNkY6PmEBhcwenGhcMdTwkQr-aULX-T1yrJlVir0YG-jOV98Huu4G8nroIyzblAq1IBPbdgdi4E0BFPbp7fziHORdhItJJqZ7Rfh_oaLBrZnNig"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+            <div>
+              <p class="font-serif text-sm font-medium">Halaman Parkir Dalam Pagar</p>
+              <span class="text-[10px] font-mono text-white/80">Mobil &amp; Motor</span>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Balkon Lantai Atas -->
+      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Ny_RrnUcVgkNkT2F9hJHjhZqF3tdY39xuJwXYZZWbAdm8ZW0P13BpplKtkn4vNuKVO4s4tLiOd-n9jw_GjRhjkGjbDeMzoj-rUGK6n0Baa7sExnTc66jOnk0GKNJHSqJLCc1iA3RlIJZQAhQLUoEIBkz1w3aBlsWCTsh1yo-hwEz5ZSr0vhSjaUB8XtlDcREEUSFNovORFYSSd90_iG7DQptfwTOEFHnh4e1f_E-2Ngs34yj3y73iQ" data-title="Balkon &amp; Sirkulasi Asri" data-desc="Koridor lantai atas berangin semilir dengan pemandangan pepohonan">
+        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
+          <img alt="Balkon dan Koridor Asri Menghadap Pepohonan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Ny_RrnUcVgkNkT2F9hJHjhZqF3tdY39xuJwXYZZWbAdm8ZW0P13BpplKtkn4vNuKVO4s4tLiOd-n9jw_GjRhjkGjbDeMzoj-rUGK6n0Baa7sExnTc66jOnk0GKNJHSqJLCc1iA3RlIJZQAhQLUoEIBkz1w3aBlsWCTsh1yo-hwEz5ZSr0vhSjaUB8XtlDcREEUSFNovORFYSSd90_iG7DQptfwTOEFHnh4e1f_E-2Ngs34yj3y73iQ"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
+            <div>
+              <p class="font-serif text-sm font-medium">Balkon &amp; Sirkulasi Asri</p>
+              <span class="text-[10px] font-mono text-white/80">Lantai Atas</span>
+            </div>
+            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LIGHTBOX MODAL ==================== -->
+<div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
+  <div class="relative max-w-4xl w-full flex flex-col items-center">
+    <button id="lightbox-close" aria-label="Tutup Foto" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <div class="w-full max-h-[75vh] overflow-hidden rounded-2xl border border-white/15 bg-black/40 flex items-center justify-center">
+      <img id="lightbox-img" src="" alt="Foto Pembesaran" class="max-h-[75vh] w-auto object-contain"/>
+    </div>
+    <div class="mt-4 text-center text-white">
+      <h4 id="lightbox-title" class="font-serif text-xl font-normal"></h4>
+      <p id="lightbox-desc" class="text-xs text-white/70 mt-1 font-sans"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Interactive Gallery Filter & Lightbox Engine
+  const galleryBtns = document.querySelectorAll('.gallery-filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDesc = document.getElementById('lightbox-desc');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  galleryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      galleryBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-white', 'shadow-xs');
+        b.classList.add('bg-white', 'text-on-surface-variant', 'border', 'border-border-stone');
+      });
+      btn.classList.add('bg-primary', 'text-white', 'shadow-xs');
+      btn.classList.remove('bg-white', 'text-on-surface-variant');
+
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || filter === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Lightbox open
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const src = item.getAttribute('data-src');
+      const title = item.getAttribute('data-title');
+      const desc = item.getAttribute('data-desc');
+
+      if (lightboxImg && lightboxTitle && lightboxDesc && lightboxModal && src) {
+        lightboxImg.src = src;
+        lightboxTitle.textContent = title || '';
+        lightboxDesc.textContent = desc || '';
+        lightboxModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Lightbox close
+  function closeLightbox() {
+    if (lightboxModal) {
+      lightboxModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>

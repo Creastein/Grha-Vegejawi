@@ -1,0 +1,373 @@
+---
+// src/components/RoomCatalog.astro
+import { formatRupiah } from '../lib/pricing';
+
+interface Props {
+  weekdayPrice?: number;
+}
+
+const { weekdayPrice = 165000 } = Astro.props;
+
+const waGroundLink = "https://wa.me/628122729637?text=" + encodeURIComponent("Halo Ibu Agnesia, saya ingin tanya ketersediaan dan pesan Kamar Lantai Bawah (Ground Suite) di Grha Vege Jawi");
+const waUpperLink = "https://wa.me/628122729637?text=" + encodeURIComponent("Halo Ibu Agnesia, saya ingin tanya ketersediaan dan pesan Kamar Lantai Atas (Balcony Suite) di Grha Vege Jawi");
+---
+
+<!-- ==================== KAMAR & STRUKTUR LANTAI (TOTAL 6 KAMAR) ==================== -->
+<section class="py-24 sm:py-28 bg-surface-subtle/50 border-b border-border-stone" id="kamar">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    
+    <!-- Header -->
+    <!-- Header -->
+    <div class="max-w-3xl mb-8 sm:mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] font-mono font-medium tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold border border-syariah-gold/25">
+        Hunian Nyaman &amp; Tenang
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface mt-3 tracking-tight">
+        Total 6 Kamar Tidur Berstandar Nyaman
+      </h2>
+      <p class="text-on-surface-variant text-base mt-4 leading-relaxed text-justify">
+        Grha Vege Jawi Syariah memiliki total 6 kamar tidur (2 di lantai bawah dan 4 di lantai atas). Dirancang khusus dengan fleksibilitas tinggi untuk memenuhi kebutuhan Anda—baik sewa perorangan, pasangan sah, maupun rombongan keluarga besar.
+      </p>
+    </div>
+
+    <!-- Family & Capacity Flexibility Callout Banner (Direct from Ibu Agnesia) -->
+    <div class="mb-10 bg-white rounded-3xl p-6 sm:p-7 border border-syariah-gold/40 shadow-[0_10px_30px_-8px_rgba(200,157,75,0.15)] relative overflow-hidden">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-syariah-gold/15 text-primary flex items-center justify-center shrink-0 border border-syariah-gold/30">
+            <span class="material-symbols-outlined text-[26px] text-syariah-gold">diversity_3</span>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="font-serif text-lg sm:text-xl font-medium text-on-surface">Bisa Dipakai Keluarga &amp; Bebas Pilih Jumlah Kamar</h3>
+              <span class="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary">Sangat Fleksibel</span>
+            </div>
+            <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed text-justify max-w-3xl">
+              Mau sewa <strong>4 kamar</strong> juga boleh, sewa <strong>2 kamar</strong> juga boleh, bahkan <strong>1 kamar</strong> pun boleh juga. Setiap kamar dirancang nyaman dengan kapasitas standar <strong>2 orang per kamar</strong> serta dilengkapi fasilitas privat dan bersama yang lengkap.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Room Combination Quick Badges -->
+        <div class="flex flex-wrap items-center gap-2 font-mono text-xs text-primary shrink-0">
+          <span class="bg-surface-subtle px-3 py-1.5 rounded-full border border-stone-200/80 font-medium">1 Kamar (Solo/Pasutri)</span>
+          <span class="bg-surface-subtle px-3 py-1.5 rounded-full border border-stone-200/80 font-medium">2 Kamar (Lt. Bawah)</span>
+          <span class="bg-surface-subtle px-3 py-1.5 rounded-full border border-stone-200/80 font-medium">4 Kamar (Lt. Atas)</span>
+          <span class="bg-syariah-gold/20 text-primary-deep px-3 py-1.5 rounded-full border border-syariah-gold/40 font-semibold">6 Kamar (Full House)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Room Filter Switcher -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-4 border-b border-border-stone/60">
+      <div class="inline-flex items-center p-1.5 rounded-full bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-xs gap-1.5">
+        <button data-floor="all" class="room-tab-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all bg-primary text-white shadow-xs">
+          Semua Kamar (6 Unit)
+        </button>
+        <button data-floor="ground" class="room-tab-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all text-on-surface-variant hover:text-primary hover:bg-stone-50">
+          Lantai Bawah (2 Unit)
+        </button>
+        <button data-floor="upper" class="room-tab-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all text-on-surface-variant hover:text-primary hover:bg-stone-50">
+          Lantai Atas (4 Unit)
+        </button>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-4 text-xs font-mono text-on-surface-variant">
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+          Kapasitas 2 Orang / Kamar
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-syariah-gold"></span>
+          Fasilitas Komplit &amp; Seragam
+        </span>
+      </div>
+    </div>
+
+    <!-- Showcase Cards: Lantai Bawah (2 Kamar) & Lantai Atas (4 Kamar) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="room-cards-grid">
+      
+      <!-- Showcase 1: Lantai Bawah (Ground Floor - 2 Kamar) -->
+      <article class="room-card bg-white rounded-3xl overflow-hidden shadow-[0_12px_35px_-10px_rgba(40,54,43,0.08)] border border-stone-200/80 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-10px_rgba(40,54,43,0.12)] transition-all duration-500 ease-magnetic flex flex-col group" data-card-floor="ground">
+        
+        <!-- Image Container -->
+        <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden">
+          <img 
+            alt="Kamar Tidur Lantai Bawah Grha Vege Jawi Syariah" 
+            class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6AI0UqpoJfIwY_HaYgPoypt52aBZk1C9I4J9K5N85Uf6nHzs5otVv1GCqhQjVlJRfbB05ADExUp3FFWdQbAydRSQiXjcd7bWql98qJPGDoBVstsLd28BeUzk3y401DZdgMI6RFs2mLDDI3aMSV_Y3dlsHvfCwN_qKtI-gDJNtT0PWS5S5EZYWHVQML0VICZjqqAa_Pn3XWmVrhOb1F3GTqLBwEFBnVynHkIcOuwxgXFRVhLsOn1YOdg"
+            loading="lazy"
+          />
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"></div>
+
+          <!-- Top Floating Badges -->
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+            <span class="bg-primary/95 backdrop-blur-md text-white text-[11px] font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-xs border border-white/10 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px]">bed</span>
+              2 Kamar • Lantai Bawah
+            </span>
+            <span class="bg-white/95 backdrop-blur-md text-primary text-[11px] font-mono font-medium px-3 py-1.5 rounded-full shadow-xs border border-stone-200/60 flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px] text-syariah-gold">verified</span>
+              Isi 2 Orang
+            </span>
+          </div>
+          
+          <!-- Bottom Highlight Pills -->
+          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-2 text-white text-xs">
+            <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px] border border-white/15 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px] text-emerald-400">check_circle</span>
+              Akses Datar Bebas Tangga
+            </span>
+            <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px] border border-white/15 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px] text-amber-300">elderly</span>
+              Ramah Orang Tua &amp; Lansia
+            </span>
+          </div>
+        </div>
+
+        <!-- Body Details -->
+        <div class="p-7 sm:p-9 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-serif text-2xl sm:text-3xl font-normal text-on-surface tracking-tight">Kamar Lantai Bawah (2 Unit)</h3>
+            </div>
+            <span class="text-xs font-mono text-syariah-gold uppercase tracking-wider font-semibold mt-1 block">Tersedia 2 Unit • Akses Datar Nyaman</span>
+
+            <p class="text-sm text-on-surface-variant mt-3 leading-relaxed text-justify">
+              Dua kamar tidur di lantai dasar dengan akses datar tanpa tangga. Posisi sangat strategis dekat lorong utama, mushola guesthouse yang representatif, dan area dapur mini. Pilihan terbaik untuk orang tua tercinta, lansia, maupun keluarga dengan koper besar.
+            </p>
+
+            <!-- Keunggulan Utama Khusus Lantai Bawah -->
+            <div class="mt-6 pt-5 border-t border-stone-100">
+              <h4 class="text-[11px] font-mono uppercase tracking-widest text-primary font-semibold mb-3 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+                Keunggulan Spesifik Lantai Bawah
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div class="p-3 rounded-2xl bg-surface-subtle/80 border border-stone-200/70 flex flex-col justify-between">
+                  <div class="flex items-center gap-1.5 text-primary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">elderly</span>
+                    <span class="text-xs font-semibold text-on-surface">Bebas Tangga</span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant leading-tight">Akses datar tanpa undakan, ramah lansia, anak balita, dan koper besar.</span>
+                </div>
+                <div class="p-3 rounded-2xl bg-surface-subtle/80 border border-stone-200/70 flex flex-col justify-between">
+                  <div class="flex items-center gap-1.5 text-primary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">mosque</span>
+                    <span class="text-xs font-semibold text-on-surface">Dekat Mushola</span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant leading-tight">Langkah singkat menuju ruang ibadah sholat representatif &amp; tempat wudhu.</span>
+                </div>
+                <div class="p-3 rounded-2xl bg-surface-subtle/80 border border-stone-200/70 flex flex-col justify-between">
+                  <div class="flex items-center gap-1.5 text-primary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">soup_kitchen</span>
+                    <span class="text-xs font-semibold text-on-surface">Akses Dapur Mini</span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant leading-tight">Dekat kulkas, kompor masak, dan dispenser air mineral galon higienis.</span>
+                </div>
+              </div>
+
+              <!-- Fasilitas Lengkap di Dalam Kamar -->
+              <div class="mt-3.5 p-3 rounded-2xl bg-white border border-stone-200/80 shadow-2xs">
+                <div class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-on-surface-variant font-semibold mb-2">
+                  <span class="material-symbols-outlined text-[14px] text-syariah-gold">hotel</span>
+                  <span>Fasilitas Lengkap di Tiap Kamar:</span>
+                </div>
+                <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-on-surface">
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Unit AC Dingin</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">KM Dalam + Water Heater</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">WiFi Fiber Cepat</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Televisi (TV)</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Dental Kit Higienis</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Teh, Kopi &amp; Air Mineral</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing & Button-in-Button CTA -->
+          <div class="mt-8 pt-6 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant block">Tarif Menginap Weekday</span>
+              <div class="font-serif text-2xl sm:text-3xl font-medium text-primary mt-0.5">
+                {formatRupiah(weekdayPrice)} <span class="text-xs font-sans font-normal text-on-surface-variant">/ malam (2 orang)</span>
+              </div>
+            </div>
+            
+            <a 
+              class="group/btn inline-flex items-center justify-between gap-3 text-xs font-mono font-medium text-white bg-primary hover:bg-primary-hover pl-5 pr-2 py-2.5 rounded-full shadow-xs hover:shadow-md transition-all duration-300 active:scale-[0.98] shrink-0" 
+              href={waGroundLink} 
+              rel="noopener noreferrer" 
+              target="_blank"
+            >
+              <span>Pesan Kamar Bawah</span>
+              <div class="w-7 h-7 rounded-full bg-white/20 group-hover/btn:bg-white text-white group-hover/btn:text-primary flex items-center justify-center transition-all duration-300">
+                <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Showcase 2: Lantai Atas (Upper Floor - 4 Kamar) -->
+      <article class="room-card bg-white rounded-3xl overflow-hidden shadow-[0_12px_35px_-10px_rgba(40,54,43,0.08)] border border-stone-200/80 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-10px_rgba(40,54,43,0.12)] transition-all duration-500 ease-magnetic flex flex-col group" data-card-floor="upper">
+        
+        <!-- Image Container -->
+        <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden">
+          <img 
+            alt="Kamar Tidur Lantai Atas Grha Vege Jawi Syariah" 
+            class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuuZ4fcBlsdvEFz3kuS-QL0zzcENEQEQrAnCggULbj6J-u6EI_5mBKe9mVHIa5TWW8k9b69XGmULmqtjSKhO6wegO3s-Gy9CTLo1UZWasyWILnBqlvOhuRYIuamuyJxJuNpuIBa83PX6uL7N-NhKGCFF1N-9yaCgbmJjYQIJj7E051GSRuE0FdASoMWrZMQcDMboYf_My9Gf5wFUY_ogESs93arD85xzzebIUmx6Mr6mQNP1y5FWy5Hw"
+            loading="lazy"
+          />
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"></div>
+
+          <!-- Top Floating Badges -->
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+            <span class="bg-primary/95 backdrop-blur-md text-white text-[11px] font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-xs border border-white/10 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px]">apartment</span>
+              4 Kamar • Lantai Atas
+            </span>
+            <span class="bg-white/95 backdrop-blur-md text-primary text-[11px] font-mono font-medium px-3 py-1.5 rounded-full shadow-xs border border-stone-200/60 flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px] text-syariah-gold">verified</span>
+              Isi 2 Orang
+            </span>
+          </div>
+          
+          <!-- Bottom Highlight Pills -->
+          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-2 text-white text-xs">
+            <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px] border border-white/15 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px] text-emerald-400">deck</span>
+              Balkon Terbuka &amp; Asri
+            </span>
+            <span class="bg-black/60 backdrop-blur-xs px-3 py-1 rounded-full font-mono text-[11px] border border-white/15 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px] text-amber-300">spa</span>
+              Privasi Hening &amp; Tenang
+            </span>
+          </div>
+        </div>
+
+        <!-- Body Details -->
+        <div class="p-7 sm:p-9 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-serif text-2xl sm:text-3xl font-normal text-on-surface tracking-tight">Kamar Lantai Atas (4 Unit)</h3>
+            </div>
+            <span class="text-xs font-mono text-syariah-gold uppercase tracking-wider font-semibold mt-1 block">Tersedia 4 Unit • Balkon &amp; Sirkulasi Asri</span>
+
+            <p class="text-sm text-on-surface-variant mt-3 leading-relaxed text-justify">
+              Empat kamar tidur di lantai dua dengan koridor balkon terbuka berangin semilir. Memberikan privasi istirahat yang lebih hening, tenang, dan sejuk setelah seharian beraktivitas di Yogyakarta. Bisa disewa satuan (1 kamar) maupun sekaligus 4 kamar untuk rombongan keluarga.
+            </p>
+
+            <!-- Keunggulan Utama Khusus Lantai Atas -->
+            <div class="mt-6 pt-5 border-t border-stone-100">
+              <h4 class="text-[11px] font-mono uppercase tracking-widest text-primary font-semibold mb-3 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+                Keunggulan Spesifik Lantai Atas
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div class="p-3 rounded-2xl bg-surface-subtle/80 border border-stone-200/70 flex flex-col justify-between">
+                  <div class="flex items-center gap-1.5 text-primary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">deck</span>
+                    <span class="text-xs font-semibold text-on-surface">Balkon Asri</span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant leading-tight">Koridor balkon terbuka dengan angin semilir sejuk khas Yogyakarta.</span>
+                </div>
+                <div class="p-3 rounded-2xl bg-surface-subtle/80 border border-stone-200/70 flex flex-col justify-between">
+                  <div class="flex items-center gap-1.5 text-primary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">spa</span>
+                    <span class="text-xs font-semibold text-on-surface">Privasi Hening</span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant leading-tight">Posisi lantai dua terpisah dari pintu masuk, istirahat tenang tanpa distraksi.</span>
+                </div>
+                <div class="p-3 rounded-2xl bg-surface-subtle/80 border border-stone-200/70 flex flex-col justify-between">
+                  <div class="flex items-center gap-1.5 text-primary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">groups</span>
+                    <span class="text-xs font-semibold text-on-surface">Blok 4 Kamar</span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant leading-tight">Bisa disewa satuan atau diborong 4 kamar untuk satu keluarga besar.</span>
+                </div>
+              </div>
+
+              <!-- Fasilitas Lengkap di Dalam Kamar -->
+              <div class="mt-3.5 p-3 rounded-2xl bg-white border border-stone-200/80 shadow-2xs">
+                <div class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-on-surface-variant font-semibold mb-2">
+                  <span class="material-symbols-outlined text-[14px] text-syariah-gold">hotel</span>
+                  <span>Fasilitas Lengkap di Tiap Kamar:</span>
+                </div>
+                <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-on-surface">
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Unit AC Dingin</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">KM Dalam + Water Heater</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">WiFi Fiber Cepat</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Televisi (TV)</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Dental Kit Higienis</span>
+                  <span class="px-2.5 py-1 rounded-full bg-surface-subtle border border-stone-200/60">Teh, Kopi &amp; Air Mineral</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing & Button-in-Button CTA -->
+          <div class="mt-8 pt-6 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-wider text-on-surface-variant block">Tarif Menginap Weekday</span>
+              <div class="font-serif text-2xl sm:text-3xl font-medium text-primary mt-0.5">
+                {formatRupiah(weekdayPrice)} <span class="text-xs font-sans font-normal text-on-surface-variant">/ malam (2 orang)</span>
+              </div>
+            </div>
+            
+            <a 
+              class="group/btn inline-flex items-center justify-between gap-3 text-xs font-mono font-medium text-white bg-primary hover:bg-primary-hover pl-5 pr-2 py-2.5 rounded-full shadow-xs hover:shadow-md transition-all duration-300 active:scale-[0.98] shrink-0" 
+              href={waUpperLink} 
+              rel="noopener noreferrer" 
+              target="_blank"
+            >
+              <span>Pesan Kamar Atas</span>
+              <div class="w-7 h-7 rounded-full bg-white/20 group-hover/btn:bg-white text-white group-hover/btn:text-primary flex items-center justify-center transition-all duration-300">
+                <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Interactive Room Floor Switcher
+  const roomTabBtns = document.querySelectorAll<HTMLButtonElement>('.room-tab-btn');
+  const roomCards = document.querySelectorAll<HTMLElement>('.room-card');
+
+  roomTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const floor = btn.getAttribute('data-floor');
+
+      // Update Tab Styles
+      roomTabBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-white', 'shadow-xs');
+        b.classList.add('text-on-surface-variant', 'hover:text-primary', 'hover:bg-stone-50');
+      });
+      btn.classList.add('bg-primary', 'text-white', 'shadow-xs');
+      btn.classList.remove('text-on-surface-variant', 'hover:text-primary', 'hover:bg-stone-50');
+
+      // Filter Cards with clean opacity fade
+      roomCards.forEach(card => {
+        const cardFloor = card.getAttribute('data-card-floor');
+        if (floor === 'all' || floor === cardFloor) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+    });
+  });
+</script>

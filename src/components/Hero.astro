@@ -1,0 +1,134 @@
+---
+// src/components/Hero.astro
+interface Props {
+  startingPrice?: number;
+}
+
+const { startingPrice = 165000 } = Astro.props;
+const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah";
+const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7919649,110.4029812,747m/data=!3m2!1e3!4b1!4m9!3m8!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!16s%2Fg%2F11f773xm6s";
+---
+
+<!-- ==================== HERO SECTION: EDGE-TO-EDGE FULL SCREEN IMAGE HERO ==================== -->
+<section id="beranda" class="relative min-h-[100dvh] w-full flex flex-col justify-between pt-20 xs:pt-24 sm:pt-28 pb-5 sm:pb-8 overflow-hidden">
+  
+  <!-- Full-Bleed Background Image -->
+  <img alt="Kamar Tidur Utama Grha Vege Jawi Syariah" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQAVD96ll8fPgRb_apKwpUdL-rIsHN1XNHSWj62wAsHdwOqs_rgADFoakANgAb_xaa0dYN1DfWS8I2DM5DJhvDecO22_O4U1soIDU_VBiMqcgJAy4mpnm8ZVt11ByIV86umurLzafdoeVOgaGoKDgNCkCgaSfWI6rvPAvDh5ug8HneoHMopYRvqhVfYIX2jesKyR3asbjqO6bgnfdrgFZDlCeDaxqUxFbe_mf7vWAmhwFrglWSXwKbYQ"/>
+  
+  <!-- Luxury Dark Vignette Gradient Overlays -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/65"></div>
+  <div class="absolute inset-0 bg-black/20"></div>
+
+  <!-- Main Hero Content Container -->
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 w-full flex-1 flex flex-col justify-center relative z-10 my-auto py-3 sm:py-0">
+    <div class="max-w-3xl flex flex-col items-start text-left">
+      
+      <!-- Sharia Eyebrow Badge (Clean, Mobile Optimized) -->
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-syariah-gold/60 text-[10px] xs:text-[11px] font-mono text-gold-soft font-medium tracking-wider uppercase shadow-lg mb-3 sm:mb-4">
+        <span class="text-syariah-gold text-xs" aria-hidden="true">●</span>
+        <span>Guesthouse Syariah Resmi Yogyakarta</span>
+      </div>
+
+      <!-- Main Editorial Heading (Identity & Category) -->
+      <h1 class="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-normal text-white leading-[1.18] sm:leading-[1.14] tracking-tight drop-shadow-md">
+        Grha Vege Jawi Syariah
+      </h1>
+      
+      <p class="font-serif text-lg xs:text-xl sm:text-2xl md:text-3xl text-gold-soft font-normal mt-1.5 sm:mt-2.5 italic drop-shadow">
+        Hunian yang Nyaman dan Tenang
+      </p>
+
+      <!-- 1 Concise Value Proposition (Emotional Relief & Hospitality) -->
+      <p class="font-sans text-xs xs:text-sm sm:text-base text-white/90 font-normal mt-3 sm:mt-4 max-w-xl leading-relaxed drop-shadow">
+        Guesthouse syariah yang asri dan tenang di kawasan strategis Yogyakarta. Pilihan tepat untuk istirahat lelap keluarga dan akademisi dengan fasilitas lengkap, kamar ber-AC &amp; air hangat, serta parkir mobil aman di dalam pagar.
+      </p>
+
+      <!-- Dual Action CTAs (Touch-First 48px Thumb Zone) -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mt-5 sm:mt-8">
+        <!-- Button-in-Button Main Action -->
+        <a 
+          class="group w-full sm:w-auto min-h-[48px] inline-flex items-center justify-between gap-3 bg-syariah-gold hover:bg-yellow-500 text-on-surface font-semibold pl-4 xs:pl-5 pr-1.5 py-1.5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-xs xs:text-sm active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
+          href={waLink} 
+          rel="noopener noreferrer" 
+          target="_blank" 
+          aria-label="Reservasi via WhatsApp Ibu Agnesia"
+        >
+          <span class="text-primary-deep font-mono">Reservasi via WhatsApp Bu Agnesia</span>
+          <div class="w-8 h-8 xs:w-9 xs:h-9 rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-105 shadow-md shrink-0" aria-hidden="true">
+            <span class="material-symbols-outlined text-[18px] xs:text-[19px]">chat</span>
+          </div>
+        </a>
+
+        <!-- Secondary Explore Button (points directly to section 2 #fasilitas) -->
+        <a 
+          class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-medium px-5 py-2.5 rounded-full border border-white/40 backdrop-blur-md shadow-lg transition-all text-xs xs:text-sm hover:border-white/70 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
+          href="#fasilitas"
+        >
+          <span>Lihat Fasilitas &amp; Kamar</span>
+          <span class="material-symbols-outlined text-[17px] xs:text-[18px] text-gold-soft" aria-hidden="true">arrow_forward</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Status Bar (Safe on Narrow Mobile Viewports) -->
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 w-full relative z-10 flex items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/80 border-t border-white/15 pt-2.5 sm:pt-3">
+    <div class="flex items-center gap-2 min-w-0">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" aria-hidden="true"></span>
+      <span class="truncate">Menerima Tamu Harian &amp; Bulanan</span>
+    </div>
+    <a 
+      href={gmapsUrl} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="inline-flex items-center gap-1.5 text-white/80 hover:text-gold-soft transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold"
+    >
+      <span class="material-symbols-outlined text-[14px] sm:text-[15px]" aria-hidden="true">near_me</span>
+      <span>Google Maps</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- ==================== MONOLITHIC KEY INFO RIBBON STRIP ==================== -->
+<section id="key-stats" class="py-6 sm:py-8 bg-surface-subtle/60 border-b border-border-stone">
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10">
+    <!-- Clean Borderless Floating White Card -->
+    <div class="bg-white rounded-3xl p-5 sm:p-7 shadow-[0_20px_45px_-12px_rgba(30,42,34,0.12),0_8px_20px_-6px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_55px_-12px_rgba(30,42,34,0.16)]">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-4 sm:gap-x-6 md:gap-x-8">
+        
+        <!-- Item 1: Reputasi -->
+        <div class="flex flex-col justify-between">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Reputasi Terverifikasi</span>
+          <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-primary mt-1 flex items-center gap-1.5">
+            <span class="text-amber-500">★</span> 4,6 / 5
+          </span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant/80 mt-0.5 font-sans">308 Ulasan Google</span>
+        </div>
+
+        <!-- Item 2: Ibadah -->
+        <div class="flex flex-col justify-between">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-syariah-gold font-medium">Kenyamanan Ibadah</span>
+          <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-primary mt-1">Mushola Khusus</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant/80 mt-0.5 font-sans">Kran Wudhu Jernih</span>
+        </div>
+
+        <!-- Item 3: Lokasi -->
+        <div class="flex flex-col justify-between">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Lokasi Strategis</span>
+          <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-primary mt-1">Banguntapan</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant/80 mt-0.5 font-sans">2 km Gembira Loka</span>
+        </div>
+
+        <!-- Item 4: Kenyamanan Kamar (Pengganti Tarif) -->
+        <div class="flex flex-col justify-between">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-secondary font-medium">Kenyamanan Kamar</span>
+          <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-secondary mt-1">Water Heater 24 Jam</span>
+          <span class="text-[11px] sm:text-xs text-on-surface-variant/80 mt-0.5 font-sans">Kamar Mandi Dalam &amp; AC</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

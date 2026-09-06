@@ -1,0 +1,175 @@
+---
+// src/components/PricingSection.astro
+import { type PricingData, formatRupiah } from '../lib/pricing';
+
+interface Props {
+  pricing: PricingData;
+}
+
+const { pricing } = Astro.props;
+
+const weekdayFormatted = formatRupiah(pricing.weekdayPrice);
+const weekendFormatted = formatRupiah(pricing.weekendPrice);
+const monthlyFormatted = formatRupiah(pricing.monthlyPrice);
+
+const waWeekdayLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya ingin pesan kamar Weekday (${weekdayFormatted}) di Grha Vege Jawi`)}`;
+const waWeekendLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya ingin pesan kamar Weekend (${weekendFormatted}) di Grha Vege Jawi`)}`;
+const waMonthlyLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya tertarik sewa Kamar Bulanan (${monthlyFormatted}) di Grha Vege Jawi`)}`;
+---
+
+<!-- ==================== SKEMA TARIF BERSIH & TRANSPARAN (RATE CARD HOSPITALITY) ==================== -->
+<section class="py-24 bg-surface-canvas border-b border-border-stone" id="tarif">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] font-mono font-medium tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold border border-syariah-gold/25">
+        Hospitality Rate Card
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface mt-3 tracking-tight">
+        Skema Tarif Sewa Bersih &amp; Transparan
+      </h2>
+      <p class="text-sm sm:text-base text-on-surface-variant mt-4 leading-relaxed text-justify">
+        Satu harga wajar tanpa biaya tersembunyi. Tarif menginap harian sudah all-inclusive (AC, air hangat, WiFi, listrik, perlengkapan mandi &amp; seduhan), sementara sewa bulanan hemat dengan sistem token listrik &amp; gas mandiri.
+      </p>
+
+      {pricing.promoBanner && (
+        <div class="mt-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-syariah-gold/15 text-primary-deep border border-syariah-gold/30 text-xs font-mono font-medium shadow-xs">
+          <span class="material-symbols-outlined text-[16px] text-syariah-gold">campaign</span>
+          <span>{pricing.promoBanner}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- 3-Column Authentic Architectural Rate Card (Floating Ambient Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Col 1: Weekday -->
+      <div class="bg-white rounded-3xl p-7 sm:p-8 shadow-[0_12px_35px_-10px_rgba(40,54,43,0.08)] border border-stone-200/80 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-10px_rgba(40,54,43,0.12)] transition-all duration-500 ease-magnetic flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Weekday</span>
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-surface-subtle text-on-surface-variant border border-stone-200/80">Senin–Kamis</span>
+          </div>
+          <div class="mt-6">
+            <div class="font-serif text-3xl sm:text-4xl font-normal text-on-surface">Mulai {weekdayFormatted}</div>
+            <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / malam (isi 2 orang)</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-5 leading-relaxed text-justify">
+            Pilihan pas untuk dinas kerja, kunjungan singkat kampus, maupun transit perjalanan di Yogyakarta dengan suasana hunian yang tenang dan nyaman.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-mono text-primary">
+            <span class="bg-primary-light px-2.5 py-0.5 rounded-full">All-Inclusive</span>
+            <span class="bg-primary-light px-2.5 py-0.5 rounded-full">Gratis WiFi</span>
+            <span class="bg-primary-light px-2.5 py-0.5 rounded-full">Parkir Mobil</span>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-stone-100">
+          <a 
+            class="group/btn inline-flex items-center justify-between w-full py-2.5 pl-5 pr-2 text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-primary text-primary hover:text-white border border-stone-300/80 hover:border-primary shadow-xs transition-all duration-300 active:scale-[0.98]" 
+            href={waWeekdayLink} 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <span>Pesan Weekday</span>
+            <div class="w-7 h-7 rounded-full bg-white group-hover/btn:bg-white/20 text-primary group-hover/btn:text-white flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Weekend & Long Weekend -->
+      <div class="bg-white rounded-3xl p-7 sm:p-8 shadow-[0_12px_35px_-10px_rgba(40,54,43,0.08)] border border-stone-200/80 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-10px_rgba(40,54,43,0.12)] transition-all duration-500 ease-magnetic flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase tracking-wider text-secondary font-semibold">Weekend</span>
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-surface-subtle text-on-surface-variant border border-stone-200/80">Jumat–Minggu</span>
+          </div>
+          <div class="mt-6">
+            <div class="font-serif text-3xl sm:text-4xl font-normal text-on-surface">Mulai {weekendFormatted}</div>
+            <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / malam (isi 2 orang)</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-5 leading-relaxed text-justify">
+            Ideal bagi keluarga yang berlibur santai, menghadiri resepsi hajatan, maupun acara wisuda perguruan tinggi di seputar Yogyakarta.
+          </p>
+          <div class="mt-4 p-2.5 rounded-xl bg-amber-50/80 border border-amber-200/60 text-[11px] font-mono text-amber-800">
+            <div class="flex items-center gap-1.5 font-semibold text-amber-900">
+              <span class="material-symbols-outlined text-[14px]">event_repeat</span>
+              <span>Long Weekend</span>
+            </div>
+            <span class="text-[10px] text-amber-750 block mt-0.5">Tarif libur nasional &amp; cuti bersama menyesuaikan (konfirmasi langsung ke Bu Agnes).</span>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-stone-100">
+          <a 
+            class="group/btn inline-flex items-center justify-between w-full py-2.5 pl-5 pr-2 text-xs font-mono font-medium rounded-full bg-surface-subtle hover:bg-secondary hover:text-white text-secondary border border-stone-300/80 hover:border-secondary shadow-xs transition-all duration-300 active:scale-[0.98]" 
+            href={waWeekendLink} 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <span>Pesan Weekend</span>
+            <div class="w-7 h-7 rounded-full bg-white group-hover/btn:bg-white/20 text-secondary group-hover/btn:text-white flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 3: Bulanan (Kost Eksklusif) - Highlighted Floating Card -->
+      <div class="bg-white rounded-3xl p-7 sm:p-8 shadow-[0_16px_40px_-10px_rgba(200,157,75,0.18)] border-2 border-syariah-gold relative flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-[0_22px_50px_-10px_rgba(200,157,75,0.25)] transition-all duration-500 ease-magnetic group">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-mono uppercase tracking-widest px-4 py-1 rounded-full shadow-xs border border-white/20">
+          Pilihan Bulanan
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase tracking-wider text-primary font-semibold">Bulanan (Kost)</span>
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium">Nyaman &amp; Tenang</span>
+          </div>
+          <div class="mt-6">
+            <div class="font-serif text-3xl sm:text-4xl font-normal text-primary">Mulai {monthlyFormatted}</div>
+            <span class="text-xs text-on-surface-variant font-mono mt-1 block">/ kamar / bulan</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-5 leading-relaxed text-justify">
+            Hunian nyaman bagi mahasiswa pascasarjana, koas/dokter residen, maupun pegawai dinas yang menginginkan privasi dan suasana hening.
+          </p>
+          
+          <!-- Inclusions & Exclusions details from Ibu Agnes -->
+          <div class="mt-4 space-y-1.5 text-xs font-mono">
+            <div class="flex items-center gap-2 text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/60">
+              <span class="material-symbols-outlined text-[15px]">check</span>
+              <span class="text-[11px]">Gratis WiFi Cepat &amp; Unit AC</span>
+            </div>
+            <div class="flex items-start gap-2 text-stone-600 bg-stone-50 px-2.5 py-1 rounded-lg border border-stone-200">
+              <span class="material-symbols-outlined text-[15px] text-amber-600 shrink-0 mt-0.5">info</span>
+              <span class="text-[10px] leading-tight">Listrik (token) &amp; gas water heater dibayar sendiri</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-stone-100">
+          <a 
+            class="group/btn inline-flex items-center justify-between w-full py-2.5 pl-5 pr-2 text-xs font-mono font-medium rounded-full bg-primary hover:bg-primary-deep text-white shadow-xs transition-all duration-300 active:scale-[0.98]" 
+            href={waMonthlyLink} 
+            rel="noopener noreferrer" 
+            target="_blank"
+          >
+            <span>Tanya Sewa Bulanan</span>
+            <div class="w-7 h-7 rounded-full bg-white/20 group-hover/btn:bg-white text-white group-hover/btn:text-primary flex items-center justify-center transition-all duration-300">
+              <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-0.5 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- All-Inclusive Transparency Floating Note -->
+    <div class="mt-12 bg-white rounded-2xl p-5 sm:p-6 shadow-[0_8px_25px_-8px_rgba(40,54,43,0.06)] border border-stone-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <div class="flex items-center gap-3.5 text-on-surface-variant">
+        <span class="material-symbols-outlined text-primary text-[24px] shrink-0">check_circle</span>
+        <span class="text-justify leading-relaxed"><strong>Transparansi Layanan:</strong> Untuk sewa harian sudah all-inclusive (termasuk AC, listrik, air hangat, WiFi, air galon, seduhan teh/kopi, dental kit, &amp; parkir). Untuk sewa bulanan (kost), fasilitas kamar komplit dengan listrik token dan gas water heater mandiri.</span>
+      </div>
+      <span class="font-mono text-primary whitespace-nowrap text-[11px] font-medium bg-primary-light px-3.5 py-1.5 rounded-full shrink-0 border border-primary/20">Jujur &amp; Amanah</span>
+    </div>
+
+  </div>
+</section>
