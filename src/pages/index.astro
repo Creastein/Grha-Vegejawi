@@ -4,8 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import HeaderNav from '../components/HeaderNav.astro';
 import Hero from '../components/Hero.astro';
 import AboutBrand from '../components/AboutBrand.astro';
-import RoomCatalog from '../components/RoomCatalog.astro';
-import PricingSection from '../components/PricingSection.astro';
+import RoomPricing from '../components/RoomPricing.astro';
 import Facilities from '../components/Facilities.astro';
 import GuestReviews from '../components/GuestReviews.astro';
 import GalleryLightbox from '../components/GalleryLightbox.astro';
@@ -25,8 +24,7 @@ const pricing = await getPricing();
     <Hero startingPrice={pricing.weekdayPrice} />
     <Facilities />
     <AboutBrand />
-    <RoomCatalog weekdayPrice={pricing.weekdayPrice} />
-    <PricingSection pricing={pricing} />
+    <RoomPricing pricing={pricing} />
     <GalleryLightbox />
     <GuestReviews />
     <LocationTransit />

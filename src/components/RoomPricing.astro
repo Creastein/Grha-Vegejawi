@@ -1,0 +1,593 @@
+---
+// src/components/RoomPricing.astro
+// High-End, UI/UX Friendly Room & Pricing Showcase for Desktop and Mobile
+import { type PricingData, formatRupiah } from '../lib/pricing';
+
+interface Props {
+  pricing: PricingData;
+}
+
+const { pricing } = Astro.props;
+
+const weekdayFormatted = formatRupiah(pricing.weekdayPrice);
+const weekendFormatted = formatRupiah(pricing.weekendPrice);
+const monthlyFormatted = formatRupiah(pricing.monthlyPrice);
+
+const waGroundLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan dan pesan Kamar Lantai Bawah (mulai ${weekdayFormatted})`)}`;
+const waUpperLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan dan pesan Kamar Lantai Atas (mulai ${weekdayFormatted})`)}`;
+const waMonthlyLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan sewa Kamar Bulanan (${monthlyFormatted}/bulan)`)}`;
+const waFullHouseLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan sewa Full House (6 Kamar Rombongan)`)}`;
+const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin konsultasi kebutuhan menginap`)}`;
+---
+
+<!-- ==================== KAMAR & TARIF TERPADU (UI/UX FRIENDLY) ==================== -->
+<section class="py-16 sm:py-24 bg-surface-subtle/50 border-b border-border-stone scroll-mt-20 relative overflow-hidden" id="kamar">
+  
+  <!-- Subtle Ambient Glows -->
+  <div class="absolute top-10 -left-40 w-96 h-96 rounded-full bg-syariah-gold/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-10 -right-40 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto px-4 xs:px-6 lg:px-8 relative z-10">
+    
+    <!-- 1. Header Section: Clean, Welcoming, Clear Value -->
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-medium tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold border border-syariah-gold/25 mb-3">
+        Pilihan Kamar &amp; Tarif
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface tracking-tight">
+        Kenyamanan Istirahat &amp; Tarif Jujur
+      </h2>
+      <p class="text-on-surface-variant text-xs xs:text-sm sm:text-base mt-2.5 leading-relaxed">
+        Total 6 kamar privat ber-AC dengan kamar mandi dalam. Pilih sewa harian per kamar, kost bulanan, atau sewa seluruh rumah untuk rombongan keluarga.
+      </p>
+
+      {pricing.promoBanner && (
+        <div class="mt-3.5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-syariah-gold/15 text-primary-deep border border-syariah-gold/30 text-xs font-mono font-medium shadow-2xs">
+          <span class="material-symbols-outlined text-[16px] text-syariah-gold">campaign</span>
+          <span>{pricing.promoBanner}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- 2. Main Intent Switcher Tabs: Harian vs Bulanan vs Full House (Double-Bezel Track) -->
+    <div class="w-full max-w-md mx-auto mb-8 sm:mb-10 px-2" id="tarif">
+      <div class="p-1.5 rounded-full bg-stone-200/70 ring-1 ring-stone-300/80 shadow-inner grid grid-cols-3 gap-1">
+        <button 
+          type="button"
+          data-tab-target="daily-panel"
+          class="stay-type-tab active w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 bg-primary text-white shadow-xs cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
+        >
+          <span class="material-symbols-outlined text-[16px] shrink-0">hotel</span>
+          <span>Harian</span>
+        </button>
+
+        <button 
+          type="button"
+          data-tab-target="monthly-panel"
+          class="stay-type-tab w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 text-stone-700 hover:text-primary hover:bg-white/60 cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
+        >
+          <span class="material-symbols-outlined text-[16px] shrink-0">calendar_month</span>
+          <span>Bulanan</span>
+        </button>
+
+        <button 
+          type="button"
+          data-tab-target="fullhouse-panel"
+          class="stay-type-tab w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 text-stone-700 hover:text-primary hover:bg-white/60 cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
+        >
+          <span class="material-symbols-outlined text-[16px] shrink-0">groups</span>
+          <span>Full House</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL 1: SEWA HARIAN (DEFAULT ACTIVE) -->
+    <!-- ========================================================================= -->
+    <div id="daily-panel" class="stay-panel block transition-opacity duration-300">
+      
+      <!-- STRATEGIC UNIFIED RATE STRIP (Terhubung langsung ke Google Sheets) -->
+      <div class="mb-8 p-2 rounded-[2rem] bg-stone-200/40 ring-1 ring-stone-300/60 shadow-xs">
+        <div class="p-4 sm:px-6 sm:py-4 rounded-[calc(2rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+          
+          <div class="flex items-center gap-2.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+            <div>
+              <div class="flex items-center gap-2">
+                <strong class="font-serif text-base sm:text-lg text-on-surface">Tarif Sewa Harian Resmi</strong>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-syariah-gold/15 text-primary-deep font-semibold">Sama Lantai 1 &amp; 2</span>
+              </div>
+              <p class="text-[11px] sm:text-xs text-stone-500 font-mono mt-0.5">
+                Maks. 2 orang/kamar • Termasuk AC, KM Dalam (Water Heater), TV, WiFi, &amp; Amenities
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 shrink-0 font-mono">
+            <!-- Weekday Pill -->
+            <div class="px-3.5 py-2 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
+              <span class="text-[10px] uppercase text-stone-500 block font-medium">Weekday (Sen–Kam)</span>
+              <div class="font-serif text-base sm:text-lg font-normal text-primary leading-tight mt-0.5">{weekdayFormatted}</div>
+              <span class="text-[9px] text-stone-400 block">/ kamar / malam</span>
+            </div>
+
+            <!-- Weekend Pill -->
+            <div class="px-3.5 py-2 rounded-xl bg-amber-50/80 border border-amber-200/70 text-center">
+              <span class="text-[10px] uppercase text-amber-800 block font-medium">Weekend (Jum–Min)</span>
+              <div class="font-serif text-base sm:text-lg font-normal text-amber-900 leading-tight mt-0.5">{weekendFormatted}</div>
+              <span class="text-[9px] text-amber-700/80 block">/ kamar / malam</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cards Grid: Side-by-side di Desktop, Natural Stack di Mobile (UI/UX Friendly Tanpa Toggle Tersembunyi) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+        
+        <!-- CARD 1: LANTAI BAWAH -->
+        <article class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-200/40 ring-1 ring-stone-300/60 hover:ring-syariah-gold/35 hover:bg-syariah-gold/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_24px_50px_-12px_rgba(40,54,43,0.15)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 flex flex-col justify-between">
+          <div class="rounded-[calc(2.5rem-0.5rem)] bg-white overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col justify-between h-full">
+            <div>
+              <!-- Photo Container -->
+              <div class="relative aspect-[16/10] bg-stone-100 overflow-hidden group">
+                <img 
+                  src="/image/Kamar-lantai-bawah.webp" 
+                  alt="Kamar Lantai Bawah Grha Vege Jawi Syariah"
+                  class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span class="absolute top-3.5 left-3.5 bg-black/65 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-xs">
+                  <span class="material-symbols-outlined text-[13px] text-emerald-400">check_circle</span>
+                  <span>Lantai 1 • 2 Unit</span>
+                </span>
+                <span class="absolute top-3.5 right-3.5 bg-syariah-gold/90 backdrop-blur-md text-primary-deep text-[11px] font-mono font-semibold px-2.5 py-1 rounded-full shadow-xs">
+                  Ramah Lansia
+                </span>
+              </div>
+
+              <!-- Room Content -->
+              <div class="p-5 sm:p-7">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-serif text-xl sm:text-2xl font-normal text-on-surface">Kamar Lantai Bawah</h3>
+                  <span class="text-[11px] font-mono text-stone-400">Queen Bed 160</span>
+                </div>
+                
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Akses datar ramah lansia tanpa tangga. Dekat carport, mushola, ruang tamu, dan dapur mini keluarga.
+                </p>
+
+                <!-- Key Specs (2x2 Grid with Subtle Pills) -->
+                <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-2 gap-2 text-xs text-stone-600 font-mono">
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">king_bed</span>
+                    <span>Queen Bed 160</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">shower</span>
+                    <span>KM Dalam &amp; Heater</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">ac_unit</span>
+                    <span>AC Dingin &amp; TV</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">meeting_room</span>
+                    <span>Dekat Carport</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer: Strategic Pricing & Direct Booking Bar -->
+            <div class="p-5 sm:p-7 pt-0">
+              <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span class="text-[10px] font-mono uppercase text-stone-400 block">Mulai dari:</span>
+                  <div class="flex items-baseline gap-1">
+                    <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{weekdayFormatted}</span>
+                    <span class="text-[10px] font-mono text-stone-400">/malam</span>
+                  </div>
+                </div>
+
+                <a 
+                  href={waGroundLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group/btn inline-flex items-center justify-between gap-2.5 bg-primary hover:bg-primary-deep text-white pl-4 pr-1.5 py-1.5 rounded-full text-xs font-mono font-medium shadow-xs hover:shadow-md transition-all duration-300 active:scale-[0.98] shrink-0"
+                >
+                  <span>Pesan Lantai 1</span>
+                  <span class="w-7 h-7 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0">
+                    <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: LANTAI ATAS -->
+        <article class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-200/40 ring-1 ring-stone-300/60 hover:ring-syariah-gold/35 hover:bg-syariah-gold/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_24px_50px_-12px_rgba(40,54,43,0.15)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 flex flex-col justify-between">
+          <div class="rounded-[calc(2.5rem-0.5rem)] bg-white overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col justify-between h-full">
+            <div>
+              <!-- Photo Container with Interactive View Selector -->
+              <div class="relative aspect-[16/10] bg-stone-100 overflow-hidden group">
+                <img 
+                  id="upper-floor-img"
+                  src="/image/kamar-lantai-atas-160.webp" 
+                  alt="Kamar Lantai Atas Grha Vege Jawi Syariah"
+                  class="w-full h-full object-cover transition-all duration-500"
+                  loading="lazy"
+                />
+                <span class="absolute top-3.5 left-3.5 bg-black/65 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-xs">
+                  <span class="material-symbols-outlined text-[13px] text-syariah-gold">deck</span>
+                  <span>Lantai 2 • 4 Unit</span>
+                </span>
+                <span class="absolute top-3.5 right-3.5 bg-emerald-800/90 backdrop-blur-md text-white text-[11px] font-mono font-medium px-2.5 py-1 rounded-full shadow-xs">
+                  Balkon &amp; Meja Kerja
+                </span>
+              </div>
+
+              <!-- Interactive Photo Switcher Chips -->
+              <div class="px-5 sm:px-7 pt-3 flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-mono">
+                <span class="text-stone-400">Lihat Sudut:</span>
+                <button 
+                  type="button" 
+                  data-photo="/image/kamar-lantai-atas-160.webp"
+                  class="upper-photo-btn active px-3 py-1 rounded-full bg-primary text-white transition-all duration-200 cursor-pointer shadow-2xs"
+                >
+                  Bed 160
+                </button>
+                <button 
+                  type="button" 
+                  data-photo="/image/Kamar-lantai-atas-140.webp"
+                  class="upper-photo-btn px-3 py-1 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all duration-200 cursor-pointer"
+                >
+                  Bed 140
+                </button>
+                <button 
+                  type="button" 
+                  data-photo="/image/balkon-lantai-atas.webp"
+                  class="upper-photo-btn px-3 py-1 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all duration-200 cursor-pointer"
+                >
+                  Balkon
+                </button>
+              </div>
+
+              <!-- Room Content -->
+              <div class="p-5 sm:p-7 pt-3 sm:pt-4">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-serif text-xl sm:text-2xl font-normal text-on-surface">Kamar Lantai Atas</h3>
+                  <span class="text-[11px] font-mono text-stone-400">Bed 160 / 140</span>
+                </div>
+                
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Suasana hening dengan semilir angin balkon. Dilengkapi opsi meja kerja pribadi dan koridor bersantai sofa ukir jati.
+                </p>
+
+                <!-- Key Specs (2x2 Grid with Subtle Pills) -->
+                <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-2 gap-2 text-xs text-stone-600 font-mono">
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">bed</span>
+                    <span>Bed 160 / 140</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">shower</span>
+                    <span>KM Dalam &amp; Heater</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">laptop_mac</span>
+                    <span>Meja Kerja Pribadi</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
+                    <span class="material-symbols-outlined text-[16px] text-primary">deck</span>
+                    <span>Balkon Sofa Jati</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer: Strategic Pricing & Direct Booking Bar -->
+            <div class="p-5 sm:p-7 pt-0">
+              <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span class="text-[10px] font-mono uppercase text-stone-400 block">Mulai dari:</span>
+                  <div class="flex items-baseline gap-1">
+                    <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{weekdayFormatted}</span>
+                    <span class="text-[10px] font-mono text-stone-400">/malam</span>
+                  </div>
+                </div>
+
+                <a 
+                  href={waUpperLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group/btn inline-flex items-center justify-between gap-2.5 bg-primary hover:bg-primary-deep text-white pl-4 pr-1.5 py-1.5 rounded-full text-xs font-mono font-medium shadow-xs hover:shadow-md transition-all duration-300 active:scale-[0.98] shrink-0"
+                >
+                  <span>Pesan Lantai 2</span>
+                  <span class="w-7 h-7 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0">
+                    <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL 2: KOST BULANAN (DOUBLE-BEZEL LUXURY) -->
+    <!-- ========================================================================= -->
+    <div id="monthly-panel" class="stay-panel hidden transition-opacity duration-300">
+      <div class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-200/40 ring-1 ring-stone-300/60 shadow-sm max-w-4xl mx-auto">
+        <div class="rounded-[calc(2.5rem-0.5rem)] bg-white p-6 sm:p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-stone-100">
+            <div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-semibold uppercase bg-syariah-gold/15 text-primary-deep border border-syariah-gold/30 mb-2.5">
+                Kost Privat Eksekutif
+              </span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-normal text-on-surface">
+                Sewa Kamar Bulanan
+              </h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1">
+                Khusus mahasiswa pascasarjana, koas dokter, maupun pekerja dinas yang butuh hunian tenang &amp; tertib syariah.
+              </p>
+            </div>
+
+            <div class="sm:text-right shrink-0">
+              <span class="text-[11px] font-mono text-stone-500 block">Tarif Sewa Bulanan:</span>
+              <div class="font-serif text-3xl font-medium text-primary">{monthlyFormatted}</div>
+              <span class="text-[11px] font-mono text-stone-400">/ kamar / bulan (termasuk pajak daerah)</span>
+            </div>
+          </div>
+
+          <!-- Rincian Termasuk vs Mandiri -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
+              <div class="flex items-center gap-2 text-emerald-900 font-mono font-semibold text-xs mb-3 uppercase tracking-wider">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+                <span>Sudah Termasuk Sewa:</span>
+              </div>
+              <ul class="space-y-2.5 text-xs font-mono text-emerald-950">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">•</span>
+                  <span>Kamar privat AC &amp; kamar mandi dalam</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">•</span>
+                  <span>Water heater, springbed, lemari, meja rias</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">•</span>
+                  <span>Gratis WiFi fiber kecepatan tinggi</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">•</span>
+                  <span>Akses dapur bersama, kulkas, &amp; dispenser</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-600 font-bold">•</span>
+                  <span>Sudah termasuk biaya pajak daerah</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/60 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-amber-900 font-mono font-semibold text-xs mb-3 uppercase tracking-wider">
+                  <span class="material-symbols-outlined text-[18px]">info</span>
+                  <span>Biaya Pemakaian Mandiri:</span>
+                </div>
+                <ul class="space-y-2.5 text-xs font-mono text-amber-950">
+                  <li class="flex items-start gap-2">
+                    <span class="text-amber-600 font-bold">•</span>
+                    <span><strong>Listrik Kamar:</strong> Beli token PLN sendiri sesuai penggunaan AC &amp; elektronik pribadi.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-amber-600 font-bold">•</span>
+                    <span><strong>Gas Water Heater:</strong> Pengisian tabung gas air panas mandiri.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-amber-200/50 text-[11px] font-mono text-amber-900">
+                Kebijakan transparan tanpa biaya titipan tersembunyi.
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="text-xs font-mono text-stone-500">
+              Ketersediaan unit terbatas. Disarankan konfirmasi ketersediaan 1–2 minggu sebelumnya.
+            </div>
+
+            <a 
+              href={waMonthlyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group/btn inline-flex items-center justify-between gap-3 bg-primary hover:bg-primary-deep text-white pl-6 pr-2 py-2 rounded-full text-xs font-mono font-medium shadow-xs hover:shadow-md transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] shrink-0"
+            >
+              <span>Tanya Ketersediaan Bulanan</span>
+              <span class="w-8 h-8 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0 shadow-2xs">
+                <span class="material-symbols-outlined text-[15px]">chat</span>
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL 3: FULL HOUSE (EDITORIAL OLED LUXURY) -->
+    <!-- ========================================================================= -->
+    <div id="fullhouse-panel" class="stay-panel hidden transition-opacity duration-300">
+      <div class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-800/80 ring-1 ring-white/10 shadow-2xl max-w-4xl mx-auto">
+        <div class="rounded-[calc(2.5rem-0.5rem)] bg-gradient-to-br from-stone-900 via-stone-900 to-stone-950 text-white p-6 sm:p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+            <div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-semibold uppercase bg-syariah-gold/20 text-syariah-gold border border-syariah-gold/30 mb-2.5">
+                Khusus Rombongan Keluarga
+              </span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-normal text-white">
+                Sewa Seluruh Rumah (Full House 6 Kamar)
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-300 mt-1">
+                Sewa seluruh lantai 1 dan lantai 2 dengan kapasitas 12–15 tamu. Privasi penuh layaknya rumah keluarga sendiri.
+              </p>
+            </div>
+
+            <div class="sm:text-right shrink-0">
+              <span class="text-[11px] font-mono text-stone-400 block">Kapasitas Maksimal:</span>
+              <div class="font-serif text-3xl font-medium text-syariah-gold">12–15 Tamu</div>
+              <span class="text-[11px] font-mono text-stone-400">Total 6 Kamar Tidur Privat AC</span>
+            </div>
+          </div>
+
+          <!-- 3 Keunggulan Sewa Full House (Glass Cards) -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-[24px] text-syariah-gold mb-2 block">lock</span>
+              <h4 class="font-serif text-base font-normal text-white mb-1">Privasi Penuh</h4>
+              <p class="text-xs text-stone-300 leading-relaxed font-mono">
+                Tanpa orang asing lain. Seluruh rumah, ruang tamu, dan dapur mini khusus keluarga Anda.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-[24px] text-syariah-gold mb-2 block">garage_home</span>
+              <h4 class="font-serif text-base font-normal text-white mb-1">Parkir 3–4 Mobil</h4>
+              <p class="text-xs text-stone-300 leading-relaxed font-mono">
+                Carport dalam pagar aman untuk kendaraan rombongan tanpa khawatir parkir sempit di pinggir jalan.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-[24px] text-syariah-gold mb-2 block">celebration</span>
+              <h4 class="font-serif text-base font-normal text-white mb-1">Momen Keluarga</h4>
+              <p class="text-xs text-stone-300 leading-relaxed font-mono">
+                Ideal untuk rombongan wisuda kampus Yogya, liburan keluarga besar, maupun singgah acara hajatan.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="text-xs font-mono text-stone-400">
+              Tarif fleksibel disesuaikan dengan jumlah kamar yang digunakan dan durasi menginap rombongan.
+            </div>
+
+            <a 
+              href={waFullHouseLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group/btn inline-flex items-center justify-between gap-3 bg-syariah-gold hover:bg-yellow-500 text-primary-deep pl-6 pr-2 py-2 rounded-full text-xs font-mono font-semibold shadow-xs hover:shadow-md transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] shrink-0"
+            >
+              <span>Konsultasi Sewa Full House via WA</span>
+              <span class="w-8 h-8 rounded-full bg-black/10 group-hover/btn:bg-primary-deep group-hover/btn:text-syariah-gold flex items-center justify-center text-primary-deep transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0 shadow-2xs">
+                <span class="material-symbols-outlined text-[15px]">chat</span>
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Founder's Trust Card (Double-Bezel Golden Enclosure) -->
+    <div class="mt-12 sm:mt-16 p-2 sm:p-2.5 rounded-[2.5rem] bg-gradient-to-br from-amber-100/50 via-stone-200/40 to-emerald-100/40 ring-1 ring-syariah-gold/25 shadow-sm">
+      <div class="p-6 sm:p-10 rounded-[calc(2.5rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
+        
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-2 text-syariah-gold mb-2.5">
+            <span class="material-symbols-outlined text-[18px] sm:text-[20px]">format_quote</span>
+            <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest font-semibold">Komitmen Tuan Rumah</span>
+          </div>
+
+          <blockquote class="font-serif text-sm sm:text-base lg:text-lg font-normal italic text-stone-800 leading-relaxed">
+            &ldquo;Kami tidak mengatakan kami paling murah. Namun jika dibandingkan dengan kualitas yang sama, tidak ada yang memberikan lebih baik dari kami.&rdquo;
+          </blockquote>
+
+          <p class="text-xs sm:text-sm text-stone-500 mt-2 leading-relaxed">
+            Bukan sekadar soal harga, melainkan apakah tempat ini benar-benar memberikan ketenangan, kebersihan, dan kenyamanan istirahat terbaik untuk Anda dan keluarga.
+          </p>
+
+          <div class="mt-3.5 pt-3.5 border-t border-stone-100 flex items-center gap-2 text-[11px] sm:text-xs font-mono">
+            <strong class="text-primary font-semibold">Ibu Agnesia Hari Kardyantini</strong>
+            <span class="text-stone-300">•</span>
+            <span class="text-stone-500">Pemilik &amp; Pengelola Grha Vege Jawi Syariah</span>
+          </div>
+        </div>
+
+        <a 
+          href={waConsultLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group/btn shrink-0 w-full sm:w-auto inline-flex items-center justify-between gap-3 bg-syariah-gold hover:bg-yellow-500 text-primary-deep font-mono text-xs font-semibold pl-6 pr-2 py-2 rounded-full shadow-2xs hover:shadow-md transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]"
+        >
+          <span>Tanya Bu Agnes via WhatsApp</span>
+          <span class="w-8 h-8 rounded-full bg-black/10 group-hover/btn:bg-primary-deep group-hover/btn:text-syariah-gold flex items-center justify-center text-primary-deep transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0 shadow-2xs">
+            <span class="material-symbols-outlined text-[15px]">chat</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Client Script for Interactive Tabbing & Photo Switching -->
+<script>
+  // 1. Stay Type Switcher (Harian vs Bulanan vs Full House)
+  const stayTabs = document.querySelectorAll<HTMLButtonElement>('.stay-type-tab');
+  const stayPanels = document.querySelectorAll<HTMLElement>('.stay-panel');
+
+  stayTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-tab-target');
+
+      // Update Tab Buttons
+      stayTabs.forEach(t => {
+        t.classList.remove('active', 'bg-primary', 'text-white', 'shadow-xs');
+        t.classList.add('text-stone-700', 'hover:text-primary', 'hover:bg-white/60');
+      });
+      tab.classList.add('active', 'bg-primary', 'text-white', 'shadow-xs');
+      tab.classList.remove('text-stone-700', 'hover:text-primary', 'hover:bg-white/60');
+
+      // Show Selected Panel
+      stayPanels.forEach(panel => {
+        if (panel.id === targetId) {
+          panel.classList.remove('hidden');
+          panel.classList.add('block');
+        } else {
+          panel.classList.add('hidden');
+          panel.classList.remove('block');
+        }
+      });
+    });
+  });
+
+  // 2. Upper Floor Photo Selector (Bed 160 vs Bed 140 vs Balkon)
+  const upperPhotoBtns = document.querySelectorAll<HTMLButtonElement>('.upper-photo-btn');
+  const upperImg = document.getElementById('upper-floor-img') as HTMLImageElement | null;
+
+  upperPhotoBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newPhoto = btn.getAttribute('data-photo');
+      if (upperImg && newPhoto) {
+        upperImg.src = newPhoto;
+
+        upperPhotoBtns.forEach(b => {
+          b.classList.remove('active', 'bg-primary', 'text-white', 'shadow-2xs');
+          b.classList.add('bg-stone-100', 'text-stone-600');
+        });
+        btn.classList.add('active', 'bg-primary', 'text-white', 'shadow-2xs');
+        btn.classList.remove('bg-stone-100', 'text-stone-600');
+      }
+    });
+  });
+</script>

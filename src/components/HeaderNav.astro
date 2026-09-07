@@ -1,6 +1,6 @@
 ---
 // src/components/HeaderNav.astro
-const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20di%20Grha%20Vege%20Jawi%20Syariah";
+const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20dari%20website%20Grha%20Vege%20Jawi,%20ingin%20tanya%20ketersediaan%20kamar";
 
 // Menu items matching the page section IDs in the approved sequence with dedicated icons for mobile
 const allNavLinks = [
@@ -8,22 +8,22 @@ const allNavLinks = [
   { label: "Fasilitas", href: "#fasilitas", id: "fasilitas", icon: "hotel_class" },
   { label: "Tentang", href: "#tentang", id: "tentang", icon: "apartment" },
   { label: "Kamar", href: "#kamar", id: "kamar", icon: "bed" },
-  { label: "Tarif", href: "#tarif", id: "tarif", icon: "payments" },
   { label: "Galeri", href: "#galeri", id: "galeri", icon: "photo_library" },
-  { label: "Ulasan", href: "#ulasan", id: "ulasan", icon: "star" },
+  { label: "Testimoni", href: "#testimoni", id: "testimoni", icon: "star" },
   { label: "Lokasi", href: "#lokasi", id: "lokasi", icon: "location_on" },
-  { label: "Ketentuan & FAQ", href: "#faq", id: "faq", icon: "help_outline" },
+  { label: "FAQ", href: "#faq", id: "faq", icon: "help_outline" },
 ];
 
-// 7 primary items for sleek desktop capsule nav
+// Primary items for sleek desktop capsule nav (includes Testimoni and FAQ)
 const desktopNavLinks = [
   { label: "Beranda", href: "#beranda", id: "beranda" },
   { label: "Fasilitas", href: "#fasilitas", id: "fasilitas" },
   { label: "Tentang", href: "#tentang", id: "tentang" },
   { label: "Kamar", href: "#kamar", id: "kamar" },
-  { label: "Tarif", href: "#tarif", id: "tarif" },
   { label: "Galeri", href: "#galeri", id: "galeri" },
+  { label: "Testimoni", href: "#testimoni", id: "testimoni" },
   { label: "Lokasi", href: "#lokasi", id: "lokasi" },
+  { label: "FAQ", href: "#faq", id: "faq" },
 ];
 ---
 
@@ -56,7 +56,11 @@ const desktopNavLinks = [
         height="28"
         class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:rotate-[-2deg]" 
         src="https://lh3.googleusercontent.com/aida/AEtjO1ULwJv8cPxuWmIcUTUKRsNc_bbqyTGV5YY0WMbYamwQQGEfwUuFjXHl4h2t0zQwKDyp8IA_L6AkgHw1-NIeEMFyRhCGRfJ_Vci4rPka0kq459zmEhQokZXdBUQnjjIMRGktT1WEtFJ7St950xe9Ypn2XQTDq_1y8M-S3Ui5gC5fXRQ4sQbc8404JhJJFyjG9r3IQ-v_t5ovZ0CA2Cqww0DEM8xQFfQDiOQ1w7pQaRWzWbhmtcQOYfABgTs"
+        onerror="this.style.display='none'; const fb = this.nextElementSibling; if(fb) fb.classList.remove('hidden');"
       />
+      <span class="hidden font-serif font-bold text-primary text-xs sm:text-sm tracking-tight whitespace-nowrap">
+        Grha Vege Jawi
+      </span>
     </a>
 
     <!-- Desktop Navigation Links with Kinetic ScrollSpy -->
@@ -295,20 +299,21 @@ const desktopNavLinks = [
   updateNavbarAppearance();
 
   // ==================== 2. KINETIC SCROLLSPY ENGINE ====================
-  const sectionIds = ['beranda', 'fasilitas', 'tentang', 'kamar', 'tarif', 'galeri', 'ulasan', 'lokasi', 'faq'];
+  const sectionIds = ['beranda', 'fasilitas', 'tentang', 'kamar', 'galeri', 'testimoni', 'ulasan', 'lokasi', 'faq'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
 
   function setActiveNavLink(activeId: string) {
+    const normalizedId = activeId === 'ulasan' ? 'testimoni' : activeId;
     navItems.forEach(item => {
       const targetId = item.getAttribute('data-target-id');
-      const isActive = targetId === activeId;
+      const isActive = targetId === normalizedId;
       item.className = getNavItemClass(isActive, isScrolled);
     });
 
     // Also highlight active item in mobile drawer if open
     document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link').forEach(link => {
       const targetId = link.getAttribute('data-target-id');
-      if (targetId === activeId) {
+      if (targetId === normalizedId) {
         link.classList.add('bg-primary/10', 'text-primary', 'font-bold', 'border-primary/40');
       } else {
         link.classList.remove('bg-primary/10', 'text-primary', 'font-bold', 'border-primary/40');

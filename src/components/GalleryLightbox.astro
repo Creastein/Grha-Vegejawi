@@ -1,256 +1,504 @@
 ---
 // src/components/GalleryLightbox.astro
+// Clean Architectural Gallery: Seamless, Borderless Visual Grid + Pure Cinema Lightbox
 ---
 
-<!-- ==================== GALERI SUASANA REALISTIS & LIGHTBOX ==================== -->
-<section class="py-24 bg-surface-canvas border-b border-border-stone" id="galeri">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+<!-- ==================== SEKSI GALERI ARSITEKTURAL ==================== -->
+<section class="py-20 sm:py-28 bg-surface-canvas border-b border-stone-200/60 scroll-mt-20 relative overflow-hidden" id="galeri">
+  
+  <!-- Subtle Ambient Luxury Glows -->
+  <div class="absolute top-1/4 -right-32 w-96 h-96 rounded-full bg-syariah-gold/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-10 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 relative z-10">
     
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <!-- Section Header (Clean, Minimalist, No Lines) -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 sm:mb-12">
       <div>
-        <span class="text-[11px] uppercase font-mono tracking-widest text-syariah-gold font-semibold">Dokumentasi Autentik</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-normal text-on-surface mt-2 tracking-tight">
-          Galeri Suasana Grha Vege Jawi
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-medium tracking-[0.2em] uppercase bg-syariah-gold/15 text-syariah-gold mb-2.5">
+          Galeri Foto Properti
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface tracking-tight">
+          Suasana &amp; Ruangan
         </h2>
       </div>
-      <p class="text-xs sm:text-sm text-on-surface-variant max-w-md text-justify">
-        Foto nyata tanpa rekayasa sudut visual yang berlebihan. Ruangan rapi, wangi, dan tertata apa adanya untuk ketenangan istirahat Anda.
-      </p>
+
+      <!-- Category Filter Bar with Left & Right Arrow Buttons -->
+      <div class="flex items-center gap-1.5 sm:gap-2 max-w-full">
+        <!-- Left Arrow Button -->
+        <button 
+          id="gallery-filter-prev" 
+          type="button"
+          aria-label="Geser Kategori ke Kiri"
+          class="w-8 h-8 rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer shrink-0 shadow-2xs"
+        >
+          <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+        </button>
+
+        <!-- Scrollable Category Filter Pills -->
+        <div id="gallery-filter-scroll" class="overflow-x-auto no-scrollbar scroll-smooth py-1 flex-1 min-w-0">
+          <div class="inline-flex p-1 rounded-full bg-stone-200/50 gap-1">
+            <button 
+              type="button"
+              data-filter="all" 
+              class="gallery-filter-btn active px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 bg-primary text-white shadow-xs whitespace-nowrap cursor-pointer active:scale-[0.96]"
+            >
+              Semua (9)
+            </button>
+            <button 
+              type="button"
+              data-filter="kamar" 
+              class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96]"
+            >
+              Kamar Tidur (3)
+            </button>
+            <button 
+              type="button"
+              data-filter="ibadah" 
+              class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96]"
+            >
+              Mushola &amp; Sanitasi (2)
+            </button>
+            <button 
+              type="button"
+              data-filter="outdoor" 
+              class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96]"
+            >
+              Fasilitas &amp; Luar (4)
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Arrow Button -->
+        <button 
+          id="gallery-filter-next" 
+          type="button"
+          aria-label="Geser Kategori ke Kanan"
+          class="w-8 h-8 rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer shrink-0 shadow-2xs"
+        >
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </button>
+      </div>
     </div>
 
-    <!-- Gallery Category Tabs -->
-    <div class="flex flex-wrap items-center gap-2 mb-8 pb-3 border-b border-border-stone/60">
-      <button data-filter="all" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-primary text-white shadow-xs">
-        Semua Foto (9)
-      </button>
-      <button data-filter="ground" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
-        Kamar Bawah
-      </button>
-      <button data-filter="upper" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
-        Kamar Atas (3)
-      </button>
-      <button data-filter="mushola" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
-        Mushola
-      </button>
-      <button data-filter="bathroom" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
-        Kamar Mandi
-      </button>
-      <button data-filter="outdoor" class="gallery-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all bg-white text-on-surface-variant hover:text-primary border border-border-stone">
-        Balkon &amp; Fasilitas
-      </button>
-    </div>
-
-    <!-- Curated Visual Grid with Real Property Images -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gallery-grid">
+    <!-- ==================== CLEAN BALANCED GRID (HARMONIOUS 3-COLUMN, NO BORDER LINES) ==================== -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="gallery-mosaic">
       
-      <!-- Item 1: Kamar Lantai Bawah (Bed 160 Queen / Akses Parkir) -->
-      <div class="gallery-item md:col-span-2 bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="ground" data-src="/image/Kamar-lantai-bawah.webp" data-title="Kamar Lantai Bawah (Bed 160 Queen / Kamar 6)" data-desc="Kamar tidur lantai bawah ber-AC dengan ranjang queen bed 160, meja rias ukir wayang jati, dan pintu akses datar langsung ke carport">
-        <div class="bezel-core overflow-hidden relative aspect-[16/10] bg-surface-muted">
-          <img alt="Kamar Tidur Lantai Bawah Grha Vege Jawi Syariah Bed 160 Queen" class="w-full h-full object-cover transition-transform duration-700 ease-magnetic group-hover:scale-105" src="/image/Kamar-lantai-bawah.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-5 left-6 right-6 text-white flex items-end justify-between">
-            <div>
-              <p class="font-serif text-lg font-normal">Kamar Lantai Bawah (Bed 160 Queen)</p>
-              <p class="text-xs text-white/80 font-sans mt-0.5">Ranjang Queen, meja rias jati ukir wayang, &amp; pintu akses langsung ke mobil</p>
-            </div>
-            <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
-              <span class="material-symbols-outlined text-[18px]">zoom_in</span>
-            </div>
+      <!-- 1. Kamar Lantai Bawah -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="kamar"
+        data-index="0"
+      >
+        <!-- Pure Borderless Photo Frame -->
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/Kamar-lantai-bawah.webp" 
+            alt="Kamar Tidur Lantai Bawah Queen Bed 160 Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
           </div>
         </div>
-      </div>
 
-      <!-- Item 2: Kamar Lantai Atas (Bed 160 Queen / Kisi Kayu Modern) -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="upper" data-src="/image/kamar-lantai-atas-160.webp" data-title="Kamar Lantai Atas (Bed 160 / Kisi Kayu)" data-desc="Kamar tidur lantai atas bernuansa modern elegan dengan backdrop panel kisi-kisi kayu vertikal, kasur queen empuk, AC, dan TV dinding">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Kamar Lantai Atas Bed 160 Kisi Kayu Modern Grha Vege Jawi Syariah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/kamar-lantai-atas-160.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Kamar Lt. Atas (Bed 160)</p>
-              <span class="text-[10px] font-mono text-gold-soft">Backdrop Kisi Kayu</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
-          </div>
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Kamar Lantai Bawah (Queen Bed 160)
+          </h3>
         </div>
-      </div>
+      </article>
 
-      <!-- Item 3: Kamar Lantai Atas (Bed 140 / Meja Kerja & TV) -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="upper" data-src="/image/Kamar-lantai-atas-140.webp" data-title="Kamar Lantai Atas (Bed 140 / Meja Kerja)" data-desc="Kamar tidur lantai atas ber-AC dengan bed 140, meja kerja/tulis lengkap air mineral &amp; cangkir, TV dinding, dan lemari pakaian cermin">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Kamar Tidur Lantai Atas Bed 140 Grha Vege Jawi Syariah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/Kamar-lantai-atas-140.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Kamar Lt. Atas (Bed 140)</p>
-              <span class="text-[10px] font-mono text-gold-soft">Meja Kerja &amp; TV</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+      <!-- 2. Kamar Lantai Atas Bed 160 -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="kamar"
+        data-index="1"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/kamar-lantai-atas-160.webp" 
+            alt="Kamar Lantai Atas Bed 160 Kisi Kayu Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
           </div>
         </div>
-      </div>
 
-      <!-- Item 4: Mushola Bersih Khusus Tamu -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="mushola" data-src="/image/mushola.webp" data-title="Mushola Syariah Bersih" data-desc="Karpet sajadah hijau suci memanjang, terawat, penunjuk arah kiblat akurat, dan mosaik batik asri di dalam rumah">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Mushola Syariah Khusus Tamu Bersih" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/mushola.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Mushola Syariah Bersih</p>
-              <span class="text-[10px] font-mono text-gold-soft">Khusus Tamu</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
-          </div>
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Kamar Lantai Atas (Bed 160)
+          </h3>
         </div>
-      </div>
+      </article>
 
-      <!-- Item 5: Kamar Mandi Dalam & Water Heater -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="bathroom" data-src="/image/KM-Lantai-bawah.webp" data-title="KM Dalam &amp; Water Heater" data-desc="Sanitasi higienis dengan kloset duduk, shower air hangat gas 24 jam, dan wastafel cermin">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Kamar Mandi Dalam Kloset Duduk dan Water Heater" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/KM-Lantai-bawah.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">KM Dalam &amp; Water Heater</p>
-              <span class="text-[10px] font-mono text-white/80">Higienis 24 Jam</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+      <!-- 3. Kamar Lantai Atas Bed 140 & Meja Kerja -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="kamar"
+        data-index="2"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/Kamar-lantai-atas-140.webp" 
+            alt="Kamar Lantai Atas Bed 140 Meja Kerja Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
           </div>
         </div>
-      </div>
 
-      <!-- Item 6: Balkon & Area Duduk Lantai Atas -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="upper outdoor" data-src="/image/balkon-lantai-atas.webp" data-title="Balkon &amp; Kursi Ukir Jati Atas" data-desc="Area santai lantai atas berlantai bersih dengan sofa ukir Jepara megah, meja kaca, dan lampu gantung antik Jawa">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Balkon dan Kursi Sofa Ukir Jati Lantai Atas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/balkon-lantai-atas.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Balkon &amp; Kursi Ukir Jati</p>
-              <span class="text-[10px] font-mono text-white/80">Lantai Atas</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
-          </div>
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Kamar Lantai Atas (Bed 140 &amp; Meja Kerja)
+          </h3>
         </div>
-      </div>
+      </article>
 
-      <!-- Item 7: Pendopo & Parkir Mobil Dalam Pagar -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="/image/parkir-pendopo.webp" data-title="Pendopo Joglo &amp; Parkir Pagar" data-desc="Pendopo bernuansa Jawa dengan tiang kayu jati ukir dan jalur paving mobil aman dalam pagar gerbang tertutup">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Pendopo Joglo dan Parkir Mobil Aman di Dalam Pagar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/parkir-pendopo.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Pendopo &amp; Parkir Mobil</p>
-              <span class="text-[10px] font-mono text-white/80">Aman Dalam Pagar</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+      <!-- 4. Mushola Syariah Tamu -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="ibadah"
+        data-index="3"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/mushola.webp" 
+            alt="Mushola Syariah Khusus Tamu Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
           </div>
         </div>
-      </div>
 
-      <!-- Item 8: Fasad Tampak Depan Properti -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="/image/hero-section.webp" data-title="Fasad Grha Vege Jawi Syariah" data-desc="Tampak depan guesthouse resmi dengan pilar batu alam, plang neon box merah, dan pepohonan asri">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Fasad Bangunan Grha Vege Jawi Syariah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/hero-section.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Fasad Tampak Depan</p>
-              <span class="text-[10px] font-mono text-white/80">Neon Box Resmi</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
-          </div>
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Mushola Syariah Tamu
+          </h3>
         </div>
-      </div>
+      </article>
 
-      <!-- Item 9: Gerbang Masuk & Pagar Keamanan -->
-      <div class="gallery-item bezel-shell p-1.5 shadow-xs cursor-pointer group" data-category="outdoor" data-src="/image/gerbang-masuk.webp" data-title="Gerbang Masuk &amp; Pagar Keamanan" data-desc="Pintu gerbang masuk kokoh berpagar dengan atap Joglo dan papan nama resmi Griya Vege Jawi Syariah">
-        <div class="bezel-core overflow-hidden relative aspect-[4/3] bg-surface-muted">
-          <img alt="Gerbang Masuk Griya Vege Jawi Syariah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/image/gerbang-masuk.webp"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-3.5 left-4 right-4 text-white flex items-center justify-between">
-            <div>
-              <p class="font-serif text-sm font-medium">Gerbang Masuk &amp; Pagar</p>
-              <span class="text-[10px] font-mono text-white/80">Aman &amp; Terjaga</span>
-            </div>
-            <span class="material-symbols-outlined text-[16px] text-white/80">zoom_in</span>
+      <!-- 5. Kamar Mandi Dalam & Water Heater -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="ibadah"
+        data-index="4"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/KM-Lantai-bawah.webp" 
+            alt="Kamar Mandi Dalam Kloset Duduk Water Heater Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
           </div>
         </div>
-      </div>
+
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Kamar Mandi Dalam &amp; Water Heater
+          </h3>
+        </div>
+      </article>
+
+      <!-- 6. Balkon & Sofa Jati Lantai Atas -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="outdoor"
+        data-index="5"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/balkon-lantai-atas.webp" 
+            alt="Balkon dan Sofa Jati Lantai Atas Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Balkon &amp; Sofa Jati Lantai Atas
+          </h3>
+        </div>
+      </article>
+
+      <!-- 7. Pendopo Joglo & Parkir Mobil -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="outdoor"
+        data-index="6"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/parkir-pendopo.webp" 
+            alt="Pendopo Joglo dan Parkir Mobil Grha Vege Jawi"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+            />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Pendopo Joglo &amp; Parkir Mobil
+          </h3>
+        </div>
+      </article>
+
+      <!-- 8. Fasad Tampak Depan Properti -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="outdoor"
+        data-index="7"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/hero-section.webp" 
+            alt="Fasad Tampak Depan Grha Vege Jawi Syariah"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Fasad Tampak Depan Properti
+          </h3>
+        </div>
+      </article>
+
+      <!-- 9. Gerbang Masuk & Pagar Keamanan -->
+      <article 
+        class="mosaic-item group cursor-pointer"
+        data-category="outdoor"
+        data-index="8"
+      >
+        <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
+          <img 
+            src="/image/gerbang-masuk.webp" 
+            alt="Gerbang Masuk Griya Vege Jawi Syariah"
+            class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <span class="w-11 h-11 rounded-full bg-white/95 text-primary-deep flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 shadow-md">
+              <span class="material-symbols-outlined text-[22px]">zoom_in</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="mt-3 px-0.5">
+          <h3 class="font-serif text-base sm:text-lg font-normal text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Gerbang Masuk &amp; Pagar
+          </h3>
+        </div>
+      </article>
 
     </div>
+
   </div>
 </section>
 
-<!-- ==================== LIGHTBOX MODAL ==================== -->
-<div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
-  <div class="relative max-w-4xl w-full flex flex-col items-center">
-    <button id="lightbox-close" aria-label="Tutup Foto" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+<!-- ==================== THEATER LIGHTBOX MODAL (PURE CINEMA VIEW - CUMAN JUDUL SAJA) ==================== -->
+<div 
+  id="lightbox-modal" 
+  class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-2xl flex flex-col justify-between p-4 sm:p-6 lg:p-8 select-none transition-opacity duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Penampil Foto Galeri"
+>
+  
+  <!-- Top Bar: Clean Counter Capsule & Close Button -->
+  <div class="w-full max-w-6xl mx-auto flex items-center justify-between z-10 pt-1">
+    <div class="flex items-center gap-2">
+      <span class="px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-mono">
+        Foto <strong id="lightbox-counter-curr" class="text-syariah-gold font-semibold">1</strong> dari <span id="lightbox-counter-total">9</span>
+      </span>
+    </div>
+
+    <button 
+      id="lightbox-close" 
+      type="button"
+      aria-label="Tutup Penampil Foto (Esc)" 
+      class="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 hover:rotate-90 cursor-pointer active:scale-95 shadow-sm"
+    >
       <span class="material-symbols-outlined text-2xl">close</span>
     </button>
-    <div class="w-full max-h-[75vh] overflow-hidden rounded-2xl border border-white/15 bg-black/40 flex items-center justify-center">
-      <img id="lightbox-img" src="" alt="Foto Pembesaran" class="max-h-[75vh] w-auto object-contain"/>
-    </div>
-    <div class="mt-4 text-center text-white">
-      <h4 id="lightbox-title" class="font-serif text-xl font-normal"></h4>
-      <p id="lightbox-desc" class="text-xs text-white/70 mt-1 font-sans"></p>
-    </div>
   </div>
+
+  <!-- Center Stage: Main Image & Prev / Next Controls (No Borders, Max Height) -->
+  <div class="relative w-full max-w-5xl mx-auto flex-1 flex items-center justify-center py-2 sm:py-4">
+    
+    <!-- Prev Arrow Button -->
+    <button 
+      id="lightbox-prev"
+      type="button"
+      aria-label="Foto Sebelumnya (Panah Kiri)"
+      class="absolute left-0 sm:-left-4 lg:-left-6 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/70 hover:bg-black text-white backdrop-blur-md flex items-center justify-center transition-all duration-200 active:scale-90 hover:scale-105 cursor-pointer shadow-xl"
+    >
+      <span class="material-symbols-outlined text-2xl sm:text-3xl">chevron_left</span>
+    </button>
+
+    <!-- Photo Container -->
+    <div class="relative max-h-[82vh] w-auto max-w-full flex items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
+      <img 
+        id="lightbox-img" 
+        src="" 
+        alt="Foto Galeri Grha Vege Jawi" 
+        class="max-h-[80vh] w-auto max-w-full object-contain rounded-2xl transition-transform duration-300"
+      />
+    </div>
+
+    <!-- Next Arrow Button -->
+    <button 
+      id="lightbox-next"
+      type="button"
+      aria-label="Foto Selanjutnya (Panah Kanan)"
+      class="absolute right-0 sm:-right-4 lg:-right-6 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/70 hover:bg-black text-white backdrop-blur-md flex items-center justify-center transition-all duration-200 active:scale-90 hover:scale-105 cursor-pointer shadow-xl"
+    >
+      <span class="material-symbols-outlined text-2xl sm:text-3xl">chevron_right</span>
+    </button>
+
+  </div>
+
+  <!-- Bottom Bar: Cuman Judul Saja (Pure & Clean) -->
+  <div class="w-full max-w-3xl mx-auto text-center text-white pb-3 z-10">
+    <h3 id="lightbox-title" class="font-serif text-lg sm:text-2xl font-normal tracking-wide text-white/95"></h3>
+  </div>
+
 </div>
 
+<!-- Interactive Client-side Script: Lightbox & Filtering -->
 <script>
-  // Interactive Gallery Filter & Lightbox Engine
-  const galleryBtns = document.querySelectorAll('.gallery-filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  interface PhotoItem {
+    src: string;
+    title: string;
+    category: string;
+  }
+
+  const galleryData: PhotoItem[] = [
+    {
+      src: "/image/Kamar-lantai-bawah.webp",
+      title: "Kamar Lantai Bawah (Queen Bed 160)",
+      category: "kamar"
+    },
+    {
+      src: "/image/kamar-lantai-atas-160.webp",
+      title: "Kamar Lantai Atas (Bed 160)",
+      category: "kamar"
+    },
+    {
+      src: "/image/Kamar-lantai-atas-140.webp",
+      title: "Kamar Lantai Atas (Bed 140 & Meja Kerja)",
+      category: "kamar"
+    },
+    {
+      src: "/image/mushola.webp",
+      title: "Mushola Syariah Tamu",
+      category: "ibadah"
+    },
+    {
+      src: "/image/KM-Lantai-bawah.webp",
+      title: "Kamar Mandi Dalam & Water Heater",
+      category: "ibadah"
+    },
+    {
+      src: "/image/balkon-lantai-atas.webp",
+      title: "Balkon & Sofa Jati Lantai Atas",
+      category: "outdoor"
+    },
+    {
+      src: "/image/parkir-pendopo.webp",
+      title: "Pendopo Joglo & Parkir Mobil",
+      category: "outdoor"
+    },
+    {
+      src: "/image/hero-section.webp",
+      title: "Fasad Tampak Depan Properti",
+      category: "outdoor"
+    },
+    {
+      src: "/image/gerbang-masuk.webp",
+      title: "Gerbang Masuk & Pagar Keamanan",
+      category: "outdoor"
+    }
+  ];
+
+  // DOM Elements
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.gallery-filter-btn');
+  const mosaicItems = document.querySelectorAll<HTMLElement>('.mosaic-item');
+
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
   const lightboxTitle = document.getElementById('lightbox-title');
-  const lightboxDesc = document.getElementById('lightbox-desc');
+  const lightboxCounterCurr = document.getElementById('lightbox-counter-curr');
+  const lightboxCounterTotal = document.getElementById('lightbox-counter-total');
   const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
 
-  galleryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+  let currentLightboxIndex = 0;
 
-      galleryBtns.forEach(b => {
-        b.classList.remove('bg-primary', 'text-white', 'shadow-xs');
-        b.classList.add('bg-white', 'text-on-surface-variant', 'border', 'border-border-stone');
-      });
-      btn.classList.add('bg-primary', 'text-white', 'shadow-xs');
-      btn.classList.remove('bg-white', 'text-on-surface-variant');
+  if (lightboxCounterTotal) {
+    lightboxCounterTotal.textContent = galleryData.length.toString();
+  }
 
-      galleryItems.forEach(item => {
-        const category = item.getAttribute('data-category') || '';
-        const categories = category.split(' ');
-        if (filter === 'all' || categories.includes(filter)) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
-  });
+  // Render Lightbox State
+  function renderLightbox(index: number) {
+    if (index < 0) index = galleryData.length - 1;
+    if (index >= galleryData.length) index = 0;
+    currentLightboxIndex = index;
 
-  // Lightbox open
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.getAttribute('data-src');
-      const title = item.getAttribute('data-title');
-      const desc = item.getAttribute('data-desc');
+    const item = galleryData[currentLightboxIndex];
+    if (!item) return;
 
-      if (lightboxImg && lightboxTitle && lightboxDesc && lightboxModal && src) {
-        lightboxImg.src = src;
-        lightboxTitle.textContent = title || '';
-        lightboxDesc.textContent = desc || '';
-        lightboxModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
+    if (lightboxImg) lightboxImg.src = item.src;
+    if (lightboxTitle) lightboxTitle.textContent = item.title;
+    if (lightboxCounterCurr) lightboxCounterCurr.textContent = (currentLightboxIndex + 1).toString();
+  }
 
-  // Lightbox close
+  function openLightbox(index: number) {
+    renderLightbox(index);
+    if (lightboxModal) {
+      lightboxModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
   function closeLightbox() {
     if (lightboxModal) {
       lightboxModal.classList.add('hidden');
@@ -258,15 +506,118 @@
     }
   }
 
+  // Connect Items to Lightbox
+  mosaicItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const idx = parseInt(item.getAttribute('data-index') || '0', 10);
+      openLightbox(idx);
+    });
+  });
+
+  // Prev / Next Controls
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      renderLightbox(currentLightboxIndex - 1);
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      renderLightbox(currentLightboxIndex + 1);
+    });
+  }
+
   if (lightboxClose) {
     lightboxClose.addEventListener('click', closeLightbox);
   }
+
   if (lightboxModal) {
     lightboxModal.addEventListener('click', (e) => {
       if (e.target === lightboxModal) closeLightbox();
     });
   }
+
+  // Keyboard navigation: Escape, ArrowLeft, ArrowRight
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+    if (!lightboxModal || lightboxModal.classList.contains('hidden')) return;
+
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      renderLightbox(currentLightboxIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      renderLightbox(currentLightboxIndex + 1);
+    }
+  });
+
+  // Mobile Touch Swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          renderLightbox(currentLightboxIndex - 1);
+        } else {
+          renderLightbox(currentLightboxIndex + 1);
+        }
+      }
+    }, { passive: true });
+  }
+
+  // Category Scroll Buttons (Pojok Kiri & Kanan)
+  const filterScroll = document.getElementById('gallery-filter-scroll');
+  const filterPrev = document.getElementById('gallery-filter-prev');
+  const filterNext = document.getElementById('gallery-filter-next');
+
+  if (filterPrev && filterScroll) {
+    filterPrev.addEventListener('click', () => {
+      filterScroll.scrollBy({ left: -150, behavior: 'smooth' });
+    });
+  }
+
+  if (filterNext && filterScroll) {
+    filterNext.addEventListener('click', () => {
+      filterScroll.scrollBy({ left: 150, behavior: 'smooth' });
+    });
+  }
+
+  // Category Filtering
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Scroll selected button into center view
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
+      // Update active button state
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-primary', 'text-white', 'shadow-xs');
+        b.classList.add('text-stone-600', 'hover:text-primary', 'hover:bg-white/80');
+      });
+      btn.classList.add('active', 'bg-primary', 'text-white', 'shadow-xs');
+      btn.classList.remove('text-stone-600', 'hover:text-primary', 'hover:bg-white/80');
+
+      // Filter Cards
+      mosaicItems.forEach(item => {
+        const cat = item.getAttribute('data-category') || '';
+        if (filter === 'all' || cat === filter) {
+          item.classList.remove('hidden');
+          item.classList.add('block');
+        } else {
+          item.classList.add('hidden');
+          item.classList.remove('block');
+        }
+      });
+    });
   });
 </script>
