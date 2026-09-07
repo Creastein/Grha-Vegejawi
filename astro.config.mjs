@@ -6,7 +6,12 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://www.grhavegejawi.com',
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    isr: {
+      expiration: 600,
+      exclude: ['/api/pricing.json']
+    }
+  }),
   build: {
     inlineStylesheets: 'always',
   },
