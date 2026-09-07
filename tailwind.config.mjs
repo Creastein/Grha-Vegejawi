@@ -19,6 +19,7 @@ export default {
         'secondary': '#885039',
         'secondary-dark': '#70412E',
         'syariah-gold': '#C89D4B',
+        'syariah-gold-dark': '#8C5E13',
         'gold-soft': '#E2C382',
         'gold-subtle': '#F7EED9',
         'on-surface': '#1A1918',

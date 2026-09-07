@@ -28,7 +28,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
         <!-- Map Container with High-Res Satellite View -->
         <div 
           class="relative min-h-[400px] sm:min-h-[480px] lg:min-h-[520px] rounded-[calc(2rem-0.75rem)] overflow-hidden bg-cover bg-center border border-stone-200/50 flex flex-col justify-between p-4 sm:p-6 group/map"
-          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3TrA-ImBhQQCNqjZAd-H17IEe3zrD5VwvptQW2KUtcvHik7WSWf-Wl7tM5u1CnU3WHVwrcv4nmtEzlSjkc3GpIPYvc1aMOL05dSg63hQ3gd5uXHDh5jQzu--kvfEAJgGIUU1uo_8IjY93i3kMYmljWagrVuxFxG9jFEYmRFqXPuA4tZU-xOc01iqedLEyEiw-1PeknD5leHrXGRZB-8A4guG0Wn76fLdn4cvUZTsvgOhJbPWMLtq9dQ');"
+          style="background-image: url('/image/map-satellite.webp');"
         >
           <!-- Ambient Contrast Vignette -->
           <div class="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900/60 pointer-events-none"></div>
@@ -297,33 +297,33 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
 
       <!-- Quick Facts Semantic Grid (Direct RAG Extraction Target) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6 text-xs text-on-surface-variant">
-        <!-- Item 1: Nama & Kategori -->
+        <!-- Item 1: Nama & Tipe -->
         <div class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">apartment</span>
+          <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified</span>
           <div>
-            <span class="font-mono text-[10px] uppercase text-stone-500 block">Nama &amp; Jenis Entitas</span>
+            <span class="font-mono text-[10px] uppercase text-stone-600 font-medium block">Nama &amp; Jenis Entitas</span>
             <strong class="text-on-surface text-xs font-semibold block mt-0.5">Grha Vege Jawi Syariah</strong>
-            <span class="text-[11px] text-stone-500">Guesthouse / Hotel Syariah Khusus Muhrim &amp; Keluarga</span>
+            <span class="text-[11px] text-stone-600 font-medium">Guesthouse / Hotel Syariah Khusus Muhrim &amp; Keluarga</span>
           </div>
         </div>
 
-        <!-- Item 2: Rating & Ulasan -->
+        <!-- Item 2: Status & Legalitas -->
         <div class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-amber-500 text-[18px] shrink-0 mt-0.5">star</span>
+          <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">star</span>
           <div>
-            <span class="font-mono text-[10px] uppercase text-stone-500 block">Social Proof &amp; Akreditasi</span>
-            <strong class="text-on-surface text-xs font-semibold block mt-0.5">Rating 4,6 / 5.0 (308 Ulasan Google)</strong>
-            <span class="text-[11px] text-stone-500">Skor 4,9/5 di platform OTA historis</span>
+            <span class="font-mono text-[10px] uppercase text-stone-600 font-medium block">Social Proof &amp; Akreditasi</span>
+            <strong class="text-on-surface text-xs font-semibold block mt-0.5">Rating Google Maps 4,6 / 5 (308+ Ulasan Asli)</strong>
+            <span class="text-[11px] text-stone-600 font-medium">Skor 4,9/5 di platform OTA historis</span>
           </div>
         </div>
 
-        <!-- Item 3: Alamat Resmi -->
+        <!-- Item 3: Alamat Lengkap Fisik -->
         <div class="flex items-start gap-3">
           <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">pin_drop</span>
           <div>
-            <span class="font-mono text-[10px] uppercase text-stone-500 block">Alamat Fisik Resmi</span>
-            <strong class="text-on-surface text-xs font-semibold block mt-0.5">Jl. Turonggo No.125, Banguntapan</strong>
-            <span class="text-[11px] text-stone-500">Kec. Banguntapan, Bantul, D.I. Yogyakarta 55189</span>
+            <span class="font-mono text-[10px] uppercase text-stone-600 font-medium block">Alamat Fisik Resmi</span>
+            <strong class="text-on-surface text-xs font-semibold block mt-0.5">Jl. Karang Bendo No. 64B, Sorowajan, Banguntapan</strong>
+            <span class="text-[11px] text-stone-600 font-medium">Kec. Banguntapan, Bantul, D.I. Yogyakarta 55189</span>
           </div>
         </div>
 
@@ -331,9 +331,9 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
         <div class="flex items-start gap-3">
           <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">radar</span>
           <div>
-            <span class="font-mono text-[10px] uppercase text-stone-500 block">Plus Code &amp; Koordinat GPS</span>
+            <span class="font-mono text-[10px] uppercase text-stone-600 font-medium block">Plus Code &amp; Koordinat GPS</span>
             <strong class="text-on-surface text-xs font-semibold block mt-0.5 font-mono">6C53+65 Banguntapan, Bantul</strong>
-            <span class="text-[11px] text-stone-500 font-mono">-7.7919649, 110.4029812</span>
+            <span class="text-[11px] text-stone-600 font-medium font-mono">-7.7919649, 110.4029812</span>
           </div>
         </div>
 
@@ -341,19 +341,19 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
         <div class="flex items-start gap-3">
           <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">hotel</span>
           <div>
-            <span class="font-mono text-[10px] uppercase text-stone-500 block">Kapasitas &amp; Fasilitas</span>
+            <span class="font-mono text-[10px] uppercase text-stone-600 font-medium block">Kapasitas &amp; Fasilitas</span>
             <strong class="text-on-surface text-xs font-semibold block mt-0.5">Total 6 Kamar Tidur Privat</strong>
-            <span class="text-[11px] text-stone-500">AC, Kamar Mandi Dalam Air Panas 24 Jam, Mushola, Parkir Pagar</span>
+            <span class="text-[11px] text-stone-600 font-medium">AC, Kamar Mandi Dalam Air Panas 24 Jam, Mushola, Parkir Pagar</span>
           </div>
         </div>
 
         <!-- Item 6: Pengelola & Kontak Langsung -->
         <div class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-syariah-gold text-[18px] shrink-0 mt-0.5">support_agent</span>
+          <span class="material-symbols-outlined text-syariah-gold-dark text-[18px] shrink-0 mt-0.5">support_agent</span>
           <div>
-            <span class="font-mono text-[10px] uppercase text-stone-500 block">Pemilik &amp; Pengelola (Host)</span>
+            <span class="font-mono text-[10px] uppercase text-stone-600 font-medium block">Pemilik &amp; Pengelola (Host)</span>
             <strong class="text-on-surface text-xs font-semibold block mt-0.5">Ibu Agnesia Hari Kardyantini</strong>
-            <span class="text-[11px] text-stone-500 font-mono">WhatsApp: +62 812-2729-637 (Reservasi Langsung)</span>
+            <span class="text-[11px] text-stone-600 font-medium font-mono">WhatsApp: +62 812-2729-637 (Reservasi Langsung)</span>
           </div>
         </div>
       </div>

@@ -132,7 +132,7 @@ const reviews = [
                   {Array.from({ length: rev.rating }).map(() => (
                     <span>★</span>
                   ))}
-                  <span class="text-[11px] font-mono font-semibold text-amber-700 ml-1.5">5.0</span>
+                  <span class="text-[11px] font-mono font-bold text-amber-900 ml-1.5">5.0</span>
                 </div>
                 
                 <span class="text-[10px] font-mono text-primary font-semibold bg-primary-light px-2.5 py-0.5 rounded-full border border-primary/20">
@@ -142,7 +142,7 @@ const reviews = [
 
               <!-- Highlight Quote Badge -->
               <div class="mb-3">
-                <span class="text-xs font-serif font-medium text-syariah-gold block">
+                <span class="text-xs font-serif font-semibold text-syariah-gold-dark block">
                   "{rev.highlight}"
                 </span>
               </div>
@@ -160,7 +160,7 @@ const reviews = [
                   {rev.initial}
                 </div>
                 <div class="min-w-0">
-                  <h4 class="font-semibold text-xs text-on-surface truncate">{rev.name}</h4>
+                  <h3 class="font-semibold text-xs text-on-surface truncate">{rev.name}</h3>
                   <p class="text-[10px] font-mono text-on-surface-variant/80 truncate flex items-center gap-1">
                     <span>{rev.role}</span>
                   </p>
@@ -205,15 +205,18 @@ const reviews = [
       </button>
 
       <!-- Bagian Tengah: Dots Indikator & Counter -->
-      <div class="flex flex-col items-center gap-1.5 min-w-0">
-        <div class="flex items-center gap-1.5" id="review-dots-mobile">
+      <div class="flex flex-col items-center gap-0.5 min-w-0">
+        <div class="flex items-center" id="review-dots-mobile">
           {reviews.map((_, i) => (
             <button 
               type="button" 
-              class={`review-dot w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-6 bg-primary' : 'bg-stone-300 hover:bg-stone-400'}`} 
+              class="review-dot min-w-[38px] xs:min-w-[44px] min-h-[44px] p-2 flex items-center justify-center cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" 
               data-target={i} 
               aria-label={`Buka ulasan ke-${i + 1}`}
-            ></button>
+              aria-current={i === 0 ? "true" : undefined}
+            >
+              <span class={`review-dot-pill block h-2.5 rounded-full transition-all duration-300 pointer-events-none ${i === 0 ? 'w-6 bg-primary' : 'w-2.5 bg-stone-300 hover:bg-stone-400'}`} aria-hidden="true"></span>
+            </button>
           ))}
         </div>
         <div class="text-[11px] font-mono text-on-surface-variant text-center">
@@ -235,14 +238,17 @@ const reviews = [
 
     <!-- 2. DESKTOP CONTROLS BAR: Centered Dots & Slide Counter -->
     <div class="mt-8 hidden md:flex items-center justify-center gap-5 pt-2">
-      <div class="flex items-center gap-1.5" id="review-dots-desktop">
+      <div class="flex items-center" id="review-dots-desktop">
         {reviews.map((_, i) => (
           <button 
             type="button" 
-            class={`review-dot w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === 0 ? 'w-7 bg-primary' : 'bg-stone-300 hover:bg-stone-400'}`} 
+            class="review-dot min-w-[44px] min-h-[44px] p-2 flex items-center justify-center cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" 
             data-target={i} 
             aria-label={`Buka ulasan ke-${i + 1}`}
-          ></button>
+            aria-current={i === 0 ? "true" : undefined}
+          >
+            <span class={`review-dot-pill block h-2.5 rounded-full transition-all duration-300 pointer-events-none ${i === 0 ? 'w-7 bg-primary' : 'w-2.5 bg-stone-300 hover:bg-stone-400'}`} aria-hidden="true"></span>
+          </button>
         ))}
       </div>
       <div class="text-xs font-mono text-on-surface-variant">
@@ -304,12 +310,20 @@ const reviews = [
       // Update All Dots (Mobile & Desktop)
       dots.forEach((dot) => {
         const targetIdx = parseInt(dot.getAttribute('data-target') || '0', 10);
+        const pill = dot.querySelector<HTMLElement>('.review-dot-pill');
         if (targetIdx === activeIndex) {
-          dot.classList.remove('bg-stone-300', 'hover:bg-stone-400');
-          dot.classList.add('w-6', 'sm:w-7', 'bg-primary');
+          if (pill) {
+            pill.classList.remove('bg-stone-300', 'hover:bg-stone-400');
+            pill.classList.add('w-6', 'sm:w-7', 'bg-primary');
+            pill.classList.remove('w-2.5');
+          }
+          dot.setAttribute('aria-current', 'true');
         } else {
-          dot.classList.remove('w-6', 'w-7', 'sm:w-7', 'bg-primary');
-          dot.classList.add('w-2.5', 'bg-stone-300');
+          if (pill) {
+            pill.classList.remove('w-6', 'w-7', 'sm:w-7', 'bg-primary');
+            pill.classList.add('w-2.5', 'bg-stone-300');
+          }
+          dot.removeAttribute('aria-current');
         }
       });
 

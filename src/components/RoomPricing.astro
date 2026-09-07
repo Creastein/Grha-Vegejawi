@@ -31,7 +31,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
     
     <!-- 1. Header Section: Clean, Welcoming, Clear Value -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-medium tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold border border-syariah-gold/25 mb-3">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold-dark border border-syariah-gold/30 mb-3">
         Pilihan Kamar &amp; Tarif
       </span>
       <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface tracking-tight">
@@ -43,7 +43,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
 
       {pricing.promoBanner && (
         <div class="mt-3.5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-syariah-gold/15 text-primary-deep border border-syariah-gold/30 text-xs font-mono font-medium shadow-2xs">
-          <span class="material-symbols-outlined text-[16px] text-syariah-gold">campaign</span>
+          <span class="material-symbols-outlined text-[16px] text-syariah-gold-dark" aria-hidden="true">campaign</span>
           <span>{pricing.promoBanner}</span>
         </div>
       )}
@@ -57,7 +57,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           data-tab-target="daily-panel"
           class="stay-type-tab active w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 bg-primary text-white shadow-xs cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
         >
-          <span class="material-symbols-outlined text-[16px] shrink-0">hotel</span>
+          <span class="material-symbols-outlined text-[16px] shrink-0" aria-hidden="true">hotel</span>
           <span>Harian</span>
         </button>
 
@@ -66,7 +66,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           data-tab-target="monthly-panel"
           class="stay-type-tab w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 text-stone-700 hover:text-primary hover:bg-white/60 cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
         >
-          <span class="material-symbols-outlined text-[16px] shrink-0">calendar_month</span>
+          <span class="material-symbols-outlined text-[16px] shrink-0" aria-hidden="true">calendar_month</span>
           <span>Bulanan</span>
         </button>
 
@@ -75,7 +75,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           data-tab-target="fullhouse-panel"
           class="stay-type-tab w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 text-stone-700 hover:text-primary hover:bg-white/60 cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
         >
-          <span class="material-symbols-outlined text-[16px] shrink-0">groups</span>
+          <span class="material-symbols-outlined text-[16px] shrink-0" aria-hidden="true">groups</span>
           <span>Full House</span>
         </button>
       </div>
@@ -97,7 +97,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 <strong class="font-serif text-base sm:text-lg text-on-surface">Tarif Sewa Harian Resmi</strong>
                 <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-syariah-gold/15 text-primary-deep font-semibold">Sama Lantai 1 &amp; 2</span>
               </div>
-              <p class="text-[11px] sm:text-xs text-stone-500 font-mono mt-0.5">
+              <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-0.5 font-medium">
                 Maks. 2 orang/kamar • Termasuk AC, KM Dalam (Water Heater), TV, WiFi, &amp; Amenities
               </p>
             </div>
@@ -106,16 +106,16 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           <div class="flex items-center gap-3 shrink-0 font-mono">
             <!-- Weekday Pill -->
             <div class="px-3.5 py-2 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
-              <span class="text-[10px] uppercase text-stone-500 block font-medium">Weekday (Sen–Kam)</span>
+              <span class="text-[10px] uppercase text-stone-600 block font-semibold">Weekday (Sen–Kam)</span>
               <div class="font-serif text-base sm:text-lg font-normal text-primary leading-tight mt-0.5">{weekdayFormatted}</div>
-              <span class="text-[9px] text-stone-400 block">/ kamar / malam</span>
+              <span class="text-[9px] text-stone-600 block font-medium">/ kamar / malam</span>
             </div>
 
             <!-- Weekend Pill -->
             <div class="px-3.5 py-2 rounded-xl bg-amber-50/80 border border-amber-200/70 text-center">
-              <span class="text-[10px] uppercase text-amber-800 block font-medium">Weekend (Jum–Min)</span>
+              <span class="text-[10px] uppercase text-amber-900 block font-semibold">Weekend (Jum–Min)</span>
               <div class="font-serif text-base sm:text-lg font-normal text-amber-900 leading-tight mt-0.5">{weekendFormatted}</div>
-              <span class="text-[9px] text-amber-700/80 block">/ kamar / malam</span>
+              <span class="text-[9px] text-amber-900 block font-medium">/ kamar / malam</span>
             </div>
           </div>
 
@@ -136,6 +136,9 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                   alt="Kamar Lantai Bawah Grha Vege Jawi Syariah"
                   class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="1089"
                 />
                 <span class="absolute top-3.5 left-3.5 bg-black/65 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-xs">
                   <span class="material-symbols-outlined text-[13px] text-emerald-400">check_circle</span>
@@ -150,7 +153,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
               <div class="p-5 sm:p-7">
                 <div class="flex items-center justify-between gap-2">
                   <h3 class="font-serif text-xl sm:text-2xl font-normal text-on-surface">Kamar Lantai Bawah</h3>
-                  <span class="text-[11px] font-mono text-stone-400">Queen Bed 160</span>
+                  <span class="text-[11px] font-mono text-stone-600 font-medium">Queen Bed 160</span>
                 </div>
                 
                 <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
@@ -160,19 +163,19 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 <!-- Key Specs (2x2 Grid with Subtle Pills) -->
                 <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-2 gap-2 text-xs text-stone-600 font-mono">
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">king_bed</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">king_bed</span>
                     <span>Queen Bed 160</span>
                   </div>
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">shower</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">shower</span>
                     <span>KM Dalam &amp; Heater</span>
                   </div>
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">ac_unit</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">ac_unit</span>
                     <span>AC Dingin &amp; TV</span>
                   </div>
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">meeting_room</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">meeting_room</span>
                     <span>Dekat Carport</span>
                   </div>
                 </div>
@@ -183,10 +186,10 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             <div class="p-5 sm:p-7 pt-0">
               <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
-                  <span class="text-[10px] font-mono uppercase text-stone-400 block">Mulai dari:</span>
+                  <span class="text-[10px] font-mono uppercase text-stone-600 block font-medium">Mulai dari:</span>
                   <div class="flex items-baseline gap-1">
                     <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{weekdayFormatted}</span>
-                    <span class="text-[10px] font-mono text-stone-400">/malam</span>
+                    <span class="text-[10px] font-mono text-stone-600 font-medium">/malam</span>
                   </div>
                 </div>
 
@@ -197,7 +200,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                   class="group/btn inline-flex items-center justify-between gap-2.5 bg-primary hover:bg-primary-deep text-white pl-4 pr-1.5 py-1.5 rounded-full text-xs font-mono font-medium shadow-xs hover:shadow-md transition-all duration-300 active:scale-[0.98] shrink-0"
                 >
                   <span>Pesan Lantai 1</span>
-                  <span class="w-7 h-7 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0">
+                  <span class="w-7 h-7 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0" aria-hidden="true">
                     <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
                   </span>
                 </a>
@@ -218,9 +221,12 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                   alt="Kamar Lantai Atas Grha Vege Jawi Syariah"
                   class="w-full h-full object-cover transition-all duration-500"
                   loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="1067"
                 />
                 <span class="absolute top-3.5 left-3.5 bg-black/65 backdrop-blur-md text-white text-[11px] font-mono px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-xs">
-                  <span class="material-symbols-outlined text-[13px] text-syariah-gold">deck</span>
+                  <span class="material-symbols-outlined text-[13px] text-syariah-gold" aria-hidden="true">deck</span>
                   <span>Lantai 2 • 4 Unit</span>
                 </span>
                 <span class="absolute top-3.5 right-3.5 bg-emerald-800/90 backdrop-blur-md text-white text-[11px] font-mono font-medium px-2.5 py-1 rounded-full shadow-xs">
@@ -229,26 +235,26 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
               </div>
 
               <!-- Interactive Photo Switcher Chips -->
-              <div class="px-5 sm:px-7 pt-3 flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-mono">
-                <span class="text-stone-400">Lihat Sudut:</span>
+              <div class="px-5 sm:px-7 pt-3 flex flex-wrap items-center gap-2 text-[10px] sm:text-[11px] font-mono">
+                <span class="text-stone-600 font-medium">Lihat Sudut:</span>
                 <button 
                   type="button" 
                   data-photo="/image/kamar-lantai-atas-160.webp"
-                  class="upper-photo-btn active px-3 py-1 rounded-full bg-primary text-white transition-all duration-200 cursor-pointer shadow-2xs"
+                  class="upper-photo-btn active min-h-[38px] px-3.5 py-1.5 inline-flex items-center justify-center rounded-full bg-primary text-white transition-all duration-200 cursor-pointer shadow-2xs"
                 >
                   Bed 160
                 </button>
                 <button 
                   type="button" 
                   data-photo="/image/Kamar-lantai-atas-140.webp"
-                  class="upper-photo-btn px-3 py-1 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all duration-200 cursor-pointer"
+                  class="upper-photo-btn min-h-[38px] px-3.5 py-1.5 inline-flex items-center justify-center rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all duration-200 cursor-pointer font-medium"
                 >
                   Bed 140
                 </button>
                 <button 
                   type="button" 
                   data-photo="/image/balkon-lantai-atas.webp"
-                  class="upper-photo-btn px-3 py-1 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all duration-200 cursor-pointer"
+                  class="upper-photo-btn min-h-[38px] px-3.5 py-1.5 inline-flex items-center justify-center rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all duration-200 cursor-pointer font-medium"
                 >
                   Balkon
                 </button>
@@ -258,7 +264,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
               <div class="p-5 sm:p-7 pt-3 sm:pt-4">
                 <div class="flex items-center justify-between gap-2">
                   <h3 class="font-serif text-xl sm:text-2xl font-normal text-on-surface">Kamar Lantai Atas</h3>
-                  <span class="text-[11px] font-mono text-stone-400">Bed 160 / 140</span>
+                  <span class="text-[11px] font-mono text-stone-600 font-medium">Bed 160 / 140</span>
                 </div>
                 
                 <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
@@ -268,19 +274,19 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 <!-- Key Specs (2x2 Grid with Subtle Pills) -->
                 <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-2 gap-2 text-xs text-stone-600 font-mono">
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">bed</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">bed</span>
                     <span>Bed 160 / 140</span>
                   </div>
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">shower</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">shower</span>
                     <span>KM Dalam &amp; Heater</span>
                   </div>
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">laptop_mac</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">laptop_mac</span>
                     <span>Meja Kerja Pribadi</span>
                   </div>
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
-                    <span class="material-symbols-outlined text-[16px] text-primary">deck</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">deck</span>
                     <span>Balkon Sofa Jati</span>
                   </div>
                 </div>
@@ -291,10 +297,10 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             <div class="p-5 sm:p-7 pt-0">
               <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
-                  <span class="text-[10px] font-mono uppercase text-stone-400 block">Mulai dari:</span>
+                  <span class="text-[10px] font-mono uppercase text-stone-600 block font-medium">Mulai dari:</span>
                   <div class="flex items-baseline gap-1">
                     <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{weekdayFormatted}</span>
-                    <span class="text-[10px] font-mono text-stone-400">/malam</span>
+                    <span class="text-[10px] font-mono text-stone-600 font-medium">/malam</span>
                   </div>
                 </div>
 
@@ -338,9 +344,9 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             </div>
 
             <div class="sm:text-right shrink-0">
-              <span class="text-[11px] font-mono text-stone-500 block">Tarif Sewa Bulanan:</span>
+              <span class="text-[11px] font-mono text-stone-600 font-medium block">Tarif Sewa Bulanan:</span>
               <div class="font-serif text-3xl font-medium text-primary">{monthlyFormatted}</div>
-              <span class="text-[11px] font-mono text-stone-400">/ kamar / bulan (termasuk pajak daerah)</span>
+              <span class="text-[11px] font-mono text-stone-600 font-medium">/ kamar / bulan (termasuk pajak daerah)</span>
             </div>
           </div>
 
@@ -348,28 +354,28 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
               <div class="flex items-center gap-2 text-emerald-900 font-mono font-semibold text-xs mb-3 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-[18px]">verified</span>
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">verified</span>
                 <span>Sudah Termasuk Sewa:</span>
               </div>
               <ul class="space-y-2.5 text-xs font-mono text-emerald-950">
                 <li class="flex items-start gap-2">
-                  <span class="text-emerald-600 font-bold">•</span>
+                  <span class="text-emerald-700 font-bold">•</span>
                   <span>Kamar privat AC &amp; kamar mandi dalam</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-emerald-600 font-bold">•</span>
+                  <span class="text-emerald-700 font-bold">•</span>
                   <span>Water heater, springbed, lemari, meja rias</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-emerald-600 font-bold">•</span>
+                  <span class="text-emerald-700 font-bold">•</span>
                   <span>Gratis WiFi fiber kecepatan tinggi</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-emerald-600 font-bold">•</span>
+                  <span class="text-emerald-700 font-bold">•</span>
                   <span>Akses dapur bersama, kulkas, &amp; dispenser</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-emerald-600 font-bold">•</span>
+                  <span class="text-emerald-700 font-bold">•</span>
                   <span>Sudah termasuk biaya pajak daerah</span>
                 </li>
               </ul>
@@ -378,29 +384,29 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/60 flex flex-col justify-between">
               <div>
                 <div class="flex items-center gap-2 text-amber-900 font-mono font-semibold text-xs mb-3 uppercase tracking-wider">
-                  <span class="material-symbols-outlined text-[18px]">info</span>
+                  <span class="material-symbols-outlined text-[18px]" aria-hidden="true">info</span>
                   <span>Biaya Pemakaian Mandiri:</span>
                 </div>
                 <ul class="space-y-2.5 text-xs font-mono text-amber-950">
                   <li class="flex items-start gap-2">
-                    <span class="text-amber-600 font-bold">•</span>
+                    <span class="text-amber-700 font-bold">•</span>
                     <span><strong>Listrik Kamar:</strong> Beli token PLN sendiri sesuai penggunaan AC &amp; elektronik pribadi.</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="text-amber-600 font-bold">•</span>
+                    <span class="text-amber-700 font-bold">•</span>
                     <span><strong>Gas Water Heater:</strong> Pengisian tabung gas air panas mandiri.</span>
                   </li>
                 </ul>
               </div>
 
-              <div class="mt-4 pt-3 border-t border-amber-200/50 text-[11px] font-mono text-amber-900">
+              <div class="mt-4 pt-3 border-t border-amber-200/50 text-[11px] font-mono text-amber-950 font-medium">
                 Kebijakan transparan tanpa biaya titipan tersembunyi.
               </div>
             </div>
           </div>
 
           <div class="mt-6 pt-5 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div class="text-xs font-mono text-stone-500">
+            <div class="text-xs font-mono text-stone-600 font-medium">
               Ketersediaan unit terbatas. Disarankan konfirmasi ketersediaan 1–2 minggu sebelumnya.
             </div>
 
@@ -442,9 +448,9 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             </div>
 
             <div class="sm:text-right shrink-0">
-              <span class="text-[11px] font-mono text-stone-400 block">Kapasitas Maksimal:</span>
+              <span class="text-[11px] font-mono text-stone-300 block">Kapasitas Maksimal:</span>
               <div class="font-serif text-3xl font-medium text-syariah-gold">12–15 Tamu</div>
-              <span class="text-[11px] font-mono text-stone-400">Total 6 Kamar Tidur Privat AC</span>
+              <span class="text-[11px] font-mono text-stone-300">Total 6 Kamar Tidur Privat AC</span>
             </div>
           </div>
 
@@ -476,7 +482,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           </div>
 
           <div class="mt-6 pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div class="text-xs font-mono text-stone-400">
+            <div class="text-xs font-mono text-stone-300">
               Tarif fleksibel disesuaikan dengan jumlah kamar yang digunakan dan durasi menginap rombongan.
             </div>
 
@@ -502,8 +508,8 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       <div class="p-6 sm:p-10 rounded-[calc(2.5rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
         
         <div class="max-w-2xl">
-          <div class="flex items-center gap-2 text-syariah-gold mb-2.5">
-            <span class="material-symbols-outlined text-[18px] sm:text-[20px]">format_quote</span>
+          <div class="flex items-center gap-2 text-syariah-gold-dark mb-2.5 font-semibold">
+            <span class="material-symbols-outlined text-[18px] sm:text-[20px]" aria-hidden="true">format_quote</span>
             <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest font-semibold">Komitmen Tuan Rumah</span>
           </div>
 
@@ -511,14 +517,14 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             &ldquo;Kami tidak mengatakan kami paling murah. Namun jika dibandingkan dengan kualitas yang sama, tidak ada yang memberikan lebih baik dari kami.&rdquo;
           </blockquote>
 
-          <p class="text-xs sm:text-sm text-stone-500 mt-2 leading-relaxed">
+          <p class="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed font-medium">
             Bukan sekadar soal harga, melainkan apakah tempat ini benar-benar memberikan ketenangan, kebersihan, dan kenyamanan istirahat terbaik untuk Anda dan keluarga.
           </p>
 
           <div class="mt-3.5 pt-3.5 border-t border-stone-100 flex items-center gap-2 text-[11px] sm:text-xs font-mono">
             <strong class="text-primary font-semibold">Ibu Agnesia Hari Kardyantini</strong>
-            <span class="text-stone-300">•</span>
-            <span class="text-stone-500">Pemilik &amp; Pengelola Grha Vege Jawi Syariah</span>
+            <span class="text-stone-500" aria-hidden="true">•</span>
+            <span class="text-stone-600 font-medium">Pemilik &amp; Pengelola Grha Vege Jawi Syariah</span>
           </div>
         </div>
 

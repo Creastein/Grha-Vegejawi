@@ -15,7 +15,7 @@
     <!-- Section Header (Clean, Minimalist, No Lines) -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 sm:mb-12">
       <div>
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-medium tracking-[0.2em] uppercase bg-syariah-gold/15 text-syariah-gold mb-2.5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold-dark border border-syariah-gold/30 mb-2.5">
           Galeri Foto Properti
         </span>
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface tracking-tight">
@@ -30,39 +30,39 @@
           id="gallery-filter-prev" 
           type="button"
           aria-label="Geser Kategori ke Kiri"
-          class="w-8 h-8 rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer shrink-0 shadow-2xs"
+          class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer shrink-0 shadow-2xs"
         >
           <span class="material-symbols-outlined text-[18px]">chevron_left</span>
         </button>
 
         <!-- Scrollable Category Filter Pills -->
         <div id="gallery-filter-scroll" class="overflow-x-auto no-scrollbar scroll-smooth py-1 flex-1 min-w-0">
-          <div class="inline-flex p-1 rounded-full bg-stone-200/50 gap-1">
+          <div class="inline-flex p-1 rounded-full bg-stone-200/50 gap-1.5">
             <button 
               type="button"
               data-filter="all" 
-              class="gallery-filter-btn active px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 bg-primary text-white shadow-xs whitespace-nowrap cursor-pointer active:scale-[0.96]"
+              class="gallery-filter-btn active min-h-[40px] px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 bg-primary text-white shadow-xs whitespace-nowrap cursor-pointer active:scale-[0.96] inline-flex items-center justify-center"
             >
               Semua (9)
             </button>
             <button 
               type="button"
               data-filter="kamar" 
-              class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96]"
+              class="gallery-filter-btn min-h-[40px] px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96] inline-flex items-center justify-center"
             >
               Kamar Tidur (3)
             </button>
             <button 
               type="button"
               data-filter="ibadah" 
-              class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96]"
+              class="gallery-filter-btn min-h-[40px] px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96] inline-flex items-center justify-center"
             >
               Mushola &amp; Sanitasi (2)
             </button>
             <button 
               type="button"
               data-filter="outdoor" 
-              class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96]"
+              class="gallery-filter-btn min-h-[40px] px-4 py-2 rounded-full text-xs font-mono font-medium transition-all duration-300 text-stone-600 hover:text-primary hover:bg-white/80 whitespace-nowrap cursor-pointer active:scale-[0.96] inline-flex items-center justify-center"
             >
               Fasilitas &amp; Luar (4)
             </button>
@@ -74,7 +74,7 @@
           id="gallery-filter-next" 
           type="button"
           aria-label="Geser Kategori ke Kanan"
-          class="w-8 h-8 rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer shrink-0 shadow-2xs"
+          class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-all duration-200 active:scale-90 cursor-pointer shrink-0 shadow-2xs"
         >
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </button>

@@ -14,7 +14,7 @@ const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20d
     
     <!-- Section Header (Editorial Luxury) -->
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold border border-syariah-gold/25 shadow-2xs">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold-dark border border-syariah-gold/30 shadow-2xs">
         <span class="w-1.5 h-1.5 rounded-full bg-syariah-gold animate-pulse" aria-hidden="true"></span>
         Adab &amp; Informasi Menginap
       </span>
@@ -40,11 +40,11 @@ const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20d
             <!-- Card Header -->
             <div class="pb-5 border-b border-stone-100 flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-syariah-gold/15 text-syariah-gold border border-syariah-gold/25 flex items-center justify-center shrink-0 shadow-2xs">
-                  <span class="material-symbols-outlined text-[22px]">verified_user</span>
+                <div class="w-10 h-10 rounded-2xl bg-syariah-gold/15 text-syariah-gold-dark border border-syariah-gold/25 flex items-center justify-center shrink-0 shadow-2xs">
+                  <span class="material-symbols-outlined text-[22px]" aria-hidden="true">verified_user</span>
                 </div>
                 <div>
-                  <span class="text-[10px] font-mono font-semibold uppercase tracking-wider text-syariah-gold block">Pedoman Tamu</span>
+                  <span class="text-[10px] font-mono font-semibold uppercase tracking-wider text-syariah-gold-dark block">Pedoman Tamu</span>
                   <h3 class="font-serif text-lg sm:text-xl font-medium text-on-surface">Ketentuan Hunian Syariah</h3>
                 </div>
               </div>
@@ -57,60 +57,51 @@ const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20d
               <!-- Rule 1: Pasangan Sah & Keluarga -->
               <div class="py-4 sm:py-4.5 flex items-start gap-3.5">
                 <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                  <span class="material-symbols-outlined text-[17px]">family_restroom</span>
+                  <span class="material-symbols-outlined text-[17px]" aria-hidden="true">family_restroom</span>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-center justify-between gap-2">
-                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Khusus Pasangan Sah &amp; Keluarga</h4>
-                    <span class="text-[10px] font-mono text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full shrink-0">Muhrim</span>
-                  </div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Khusus Pasangan Sah &amp; Keluarga</h4>
                   <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
-                    Tamu berpasangan berlainan jenis wajib menunjukkan e-KTP alamat sama atau Buku Nikah resmi saat check-in. Kami tidak melayani pasangan non-muhrim.
+                    Wajib menunjukkan dokumen sah (KTP beralamat sama / Buku Nikah KUA / Akta Nikah Catatan Sipil) saat check-in.
                   </p>
                 </div>
               </div>
 
-              <!-- Rule 2: Bebas Asap Rokok & Miras -->
+              <!-- Rule 2: Bebas Rokok & Miras -->
               <div class="py-4 sm:py-4.5 flex items-start gap-3.5">
-                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                  <span class="material-symbols-outlined text-[17px]">smoke_free</span>
+                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-secondary-dark flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <span class="material-symbols-outlined text-[17px]" aria-hidden="true">smoke_free</span>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-center justify-between gap-2">
-                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">100% Bebas Asap Rokok &amp; Miras</h4>
-                    <span class="text-[10px] font-mono text-secondary font-medium bg-secondary/10 px-2 py-0.5 rounded-full shrink-0">Zona Bersih</span>
-                  </div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Bebas Asap Rokok, Miras &amp; Narkoba</h4>
                   <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
-                    Seluruh kamar tidur, koridor dalam, dan mushola bebas asap rokok. Dilarang keras membawa minuman beralkohol serta zat terlarang.
+                    Dilarang keras merokok di seluruh kamar &amp; koridor demi menjaga aroma ruangan tetap wangi higienis bagi anak &amp; bayi.
                   </p>
                 </div>
               </div>
 
-              <!-- Rule 3: Jam Hening Malam 22.00 WIB -->
+              <!-- Rule 3: Jam Tenang Malam -->
               <div class="py-4 sm:py-4.5 flex items-start gap-3.5">
                 <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                  <span class="material-symbols-outlined text-[17px]">nightlight</span>
+                  <span class="material-symbols-outlined text-[17px]" aria-hidden="true">nightlight</span>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-center justify-between gap-2">
-                    <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Waktu Hening Mulai 22.00 WIB</h4>
-                    <span class="text-[10px] font-mono text-stone-600 font-medium bg-stone-100 px-2 py-0.5 rounded-full shrink-0">Tenang</span>
-                  </div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Jam Tenang Istirahat Malam (22.00 WIB)</h4>
                   <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
-                    Menghormati hak istirahat seluruh keluarga dan warga sekitar dengan meminimalkan suara setelah pukul 22.00 WIB serta berbusana santun.
+                    Menjaga ketenangan bersama agar seluruh tamu dapat tidur nyenyak tanpa gangguan kebisingan audio atau suara keras.
                   </p>
                 </div>
               </div>
 
               <!-- Rule 4: Jadwal Check-in & Check-out -->
               <div class="pt-4 sm:pt-4.5 flex items-start gap-3.5">
-                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-syariah-gold flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                  <span class="material-symbols-outlined text-[17px]">schedule</span>
+                <div class="w-8 h-8 rounded-xl bg-surface-subtle border border-border-stone text-syariah-gold-dark flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <span class="material-symbols-outlined text-[17px]" aria-hidden="true">schedule</span>
                 </div>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center justify-between gap-2">
                     <h4 class="text-xs sm:text-sm font-semibold text-on-surface">Waktu Check-In &amp; Check-Out</h4>
-                    <span class="text-[10px] font-mono text-syariah-gold font-medium bg-gold-subtle px-2 py-0.5 rounded-full shrink-0">14.00 - 12.00</span>
+                    <span class="text-[10px] font-mono text-syariah-gold-dark font-semibold bg-gold-subtle/80 px-2 py-0.5 rounded-full shrink-0">14.00 - 12.00</span>
                   </div>
                   <p class="text-[11px] sm:text-xs text-on-surface-variant mt-1 leading-relaxed">
                     Check-in mulai 14.00 WIB dan check-out maksimal 12.00 WIB. Kebutuhan fleksibel dapat dikoordinasikan langsung bersama Ibu Agnesia.
@@ -230,7 +221,7 @@ const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20d
               aria-expanded="false"
             >
               <div class="flex items-center gap-2.5 min-w-0">
-                <span class="text-[10px] font-mono uppercase tracking-wider text-syariah-gold font-semibold bg-syariah-gold/10 px-2 py-0.5 rounded-md shrink-0">Fasilitas</span>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-syariah-gold-dark font-semibold bg-syariah-gold/15 px-2 py-0.5 rounded-md shrink-0">Fasilitas</span>
                 <span class="font-serif text-xs sm:text-sm font-semibold text-on-surface truncate sm:whitespace-normal">Apa saja fasilitas yang tersedia di dalam kamar dan area bersama?</span>
               </div>
               <div class="w-7 h-7 rounded-full bg-surface-subtle border border-stone-200/80 text-primary flex items-center justify-center shrink-0 transition-transform duration-300 faq-icon-box">
