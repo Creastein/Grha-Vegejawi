@@ -7,6 +7,9 @@ export default defineConfig({
   site: 'https://www.grhavegejawi.com',
   output: 'server',
   adapter: vercel(),
+  build: {
+    inlineStylesheets: 'always',
+  },
   integrations: [tailwind({
     applyBaseStyles: false
   })],

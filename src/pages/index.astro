@@ -16,6 +16,12 @@ import { getPricing } from '../lib/pricing';
 
 // Fetch dynamic pricing data dari Google Sheets (dengan proteksi fallback & SWR cache)
 const pricing = await getPricing();
+
+// Edge CDN Caching (Vercel ISR): TTFB < 50ms, refresh background tiap 10 menit
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, max-age=0, s-maxage=600, stale-while-revalidate=86400'
+);
 ---
 
 <Layout>
