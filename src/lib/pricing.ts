@@ -12,7 +12,7 @@ export const DEFAULT_PRICING: PricingData = {
   weekdayPrice: 165000,
   weekendPrice: 220000,
   longWeekendPrice: 250000,
-  monthlyPrice: 1870000,
+  monthlyPrice: 1650000,
   promoBanner: 'Promo Reservasi Langsung — Tanpa Biaya Layanan OTA',
   isLiveFromSheet: false,
   lastChecked: new Date().toISOString()

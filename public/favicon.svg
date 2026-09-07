@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C158"/>
+      <stop offset="50%" stop-color="#C89D4B"/>
+      <stop offset="100%" stop-color="#9E762E"/>
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28362B"/>
+      <stop offset="100%" stop-color="#1B241D"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Shield -->
+  <rect width="64" height="64" rx="16" fill="url(#bg-grad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#C89D4B" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Syariah Arch / Dome Silhouette -->
+  <path d="M32 12 C28 20 20 25 20 37 C20 44 25.5 49 32 49 C38.5 49 44 44 44 37 C44 25 36 20 32 12 Z" fill="none" stroke="url(#gold-grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Inner Star / Moon Crescent Accent -->
+  <circle cx="32" cy="34" r="5" fill="url(#gold-grad)"/>
+  <circle cx="33.5" cy="32.5" r="4.2" fill="#28362B"/>
+  <path d="M32 20 L32.5 22.5 L35 23 L32.5 23.5 L32 26 L31.5 23.5 L29 23 L31.5 22.5 Z" fill="url(#gold-grad)"/>
+</svg>

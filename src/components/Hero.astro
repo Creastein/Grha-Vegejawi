@@ -10,21 +10,30 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
 ---
 
 <!-- ==================== HERO SECTION: EDGE-TO-EDGE FULL SCREEN IMAGE HERO ==================== -->
-<section id="beranda" class="relative min-h-[100dvh] w-full flex flex-col justify-between pt-20 xs:pt-24 sm:pt-28 pb-5 sm:pb-8 overflow-hidden">
+<section id="beranda" class="relative min-h-[100dvh] w-full flex flex-col justify-between pt-20 xs:pt-24 sm:pt-28 pb-4 sm:pb-6 overflow-hidden bg-stone-950">
   
-  <!-- Full-Bleed Background Image -->
-  <img alt="Kamar Tidur Utama Grha Vege Jawi Syariah" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQAVD96ll8fPgRb_apKwpUdL-rIsHN1XNHSWj62wAsHdwOqs_rgADFoakANgAb_xaa0dYN1DfWS8I2DM5DJhvDecO22_O4U1soIDU_VBiMqcgJAy4mpnm8ZVt11ByIV86umurLzafdoeVOgaGoKDgNCkCgaSfWI6rvPAvDh5ug8HneoHMopYRvqhVfYIX2jesKyR3asbjqO6bgnfdrgFZDlCeDaxqUxFbe_mf7vWAmhwFrglWSXwKbYQ"/>
+  <!-- Full-Bleed Background Image (Edge-to-Edge Full Screen, Unzoomed Top-Aligned Focus) -->
+  <img 
+    alt="Fasad Tampak Depan Grha Vege Jawi Syariah Yogyakarta" 
+    class="absolute inset-0 w-full h-full object-cover object-[center_top] sm:object-[center_12%] md:object-[center_16%] pointer-events-none" 
+    src="/image/hero-section.webp"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    width="1086"
+    height="1448"
+  />
   
-  <!-- Luxury Dark Vignette Gradient Overlays -->
-  <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/65"></div>
-  <div class="absolute inset-0 bg-black/20"></div>
+  <!-- Vignette Gradients: High Readability for Text, Clear View of the Building -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/60"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
 
   <!-- Main Hero Content Container -->
-  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 w-full flex-1 flex flex-col justify-center relative z-10 my-auto py-3 sm:py-0">
-    <div class="max-w-3xl flex flex-col items-start text-left">
+  <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 w-full flex-1 flex flex-col justify-center relative z-10 my-auto py-4 sm:py-0">
+    <div class="max-w-2xl sm:max-w-3xl flex flex-col items-start text-left">
       
       <!-- Sharia Eyebrow Badge (Clean, Mobile Optimized) -->
-      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-syariah-gold/60 text-[10px] xs:text-[11px] font-mono text-gold-soft font-medium tracking-wider uppercase shadow-lg mb-3 sm:mb-4">
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-syariah-gold/60 text-[10px] xs:text-[11px] font-mono text-gold-soft font-medium tracking-wider uppercase shadow-lg mb-3 sm:mb-4">
         <span class="text-syariah-gold text-xs" aria-hidden="true">●</span>
         <span>Guesthouse Syariah Resmi Yogyakarta</span>
       </div>
@@ -39,7 +48,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
       </p>
 
       <!-- 1 Concise Value Proposition (Emotional Relief & Hospitality) -->
-      <p class="font-sans text-xs xs:text-sm sm:text-base text-white/90 font-normal mt-3 sm:mt-4 max-w-xl leading-relaxed drop-shadow">
+      <p class="font-sans text-xs xs:text-sm sm:text-base text-white/95 font-normal mt-3 sm:mt-4 max-w-xl leading-relaxed drop-shadow">
         Guesthouse syariah yang asri dan tenang di kawasan strategis Yogyakarta. Pilihan tepat untuk istirahat lelap keluarga dan akademisi dengan fasilitas lengkap, kamar ber-AC &amp; air hangat, serta parkir mobil aman di dalam pagar.
       </p>
 
@@ -59,7 +68,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
           </div>
         </a>
 
-        <!-- Secondary Explore Button (points directly to section 2 #fasilitas) -->
+        <!-- Secondary Explore Button -->
         <a 
           class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-medium px-5 py-2.5 rounded-full border border-white/40 backdrop-blur-md shadow-lg transition-all text-xs xs:text-sm hover:border-white/70 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
           href="#fasilitas"
@@ -90,6 +99,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   </div>
 
 </section>
+
 
 <!-- ==================== MONOLITHIC KEY INFO RIBBON STRIP ==================== -->
 <section id="key-stats" class="py-6 sm:py-8 bg-surface-subtle/60 border-b border-border-stone">

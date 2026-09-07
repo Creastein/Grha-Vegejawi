@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Grha Vege Jawi Syariah - Hunian yang Nyaman dan Tenang di Yogyakarta",
-  description = "Grha Vegejawi Syariah, hunian yang nyaman dan tenang di Banguntapan, Bantul, Yogyakarta. Total 6 kamar (2 di lantai bawah, 4 di lantai atas) bisa untuk keluarga. Dilengkapi kamar mandi dalam, AC, TV, WiFi, dapur mini, dental kit, dan parkir mobil."
+  title = "Grha Vege Jawi Syariah - Penginapan Nyaman Dekat JEC Jogja",
+  description = "Guesthouse syariah resmi di Banguntapan, Bantul, Yogyakarta. 6 kamar tidur ber-AC, water heater 24 jam, mushola bersih & parkir mobil aman. 5 menit ke JEC & Gembira Loka."
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, 'https://grhavegejawi.com').href;
@@ -22,7 +22,18 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>{title}</title>
   <meta name="description" content={description}/>
+  
+  <!-- Indexing & Crawlers Rules -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Geographic & Local SEO Target Tags -->
+  <meta name="geo.region" content="ID-YO" />
+  <meta name="geo.placename" content="Banguntapan, Bantul, Daerah Istimewa Yogyakarta" />
+  <meta name="geo.position" content="-7.7919649;110.4029812" />
+  <meta name="ICBM" content="-7.7919649, 110.4029812" />
 
   <!-- Open Graph / Meta Sosial -->
   <meta property="og:type" content="website" />
@@ -31,6 +42,16 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:locale" content="id_ID" />
   <meta property="og:site_name" content="Grha Vege Jawi Syariah" />
+  <meta property="og:image" content="https://grhavegejawi.com/image/hero-section.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:alt" content="Fasad Depan Grha Vege Jawi Syariah Yogyakarta" />
+
+  <!-- Twitter / X Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://grhavegejawi.com/image/hero-section.webp" />
 
   <!-- Google Fonts: Editorial Serif + Modern Grotesk + Monospace -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,44 +61,171 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   <!-- Material Symbols Outlined -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
-  <!-- Schema.org JSON-LD (Hotel / Lodging Syariah dengan Koordinat & Rating Terverifikasi) -->
+  <!-- Schema.org JSON-LD (@graph Multi-Entity: LodgingBusiness, Person, WebSite, BreadcrumbList, FAQPage) -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": ["LodgingBusiness", "Hotel"],
-    "name": "Grha Vege Jawi Syariah",
-    "description": description,
-    "telephone": "+628122729637",
-    "priceRange": "Rp 165.000 - Rp 1.870.000",
-    "hasMap": gmapsUrl,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Turonggo No.125, Jaranan, Banguntapan",
-      "addressLocality": "Kec. Banguntapan, Kabupaten Bantul",
-      "addressRegion": "Daerah Istimewa Yogyakarta",
-      "postalCode": "55189",
-      "addressCountry": "ID"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -7.7919649,
-      "longitude": 110.4029812
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.6",
-      "reviewCount": "308",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "AC", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Kamar Mandi Dalam Air Panas 24 Jam", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Mushola Representatif Bersih", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Free High-Speed Wi-Fi", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Parkir Mobil Aman di Dalam Pagar", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Dapur Mini & Dispenser Galon", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Dental Kit", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Kopi, Teh, Gula & Air Mineral", "value": true }
+    "@graph": [
+      {
+        "@type": ["LodgingBusiness", "Hotel", "BedAndBreakfast"],
+        "@id": "https://grhavegejawi.com/#lodging",
+        "name": "Grha Vege Jawi Syariah",
+        "alternateName": "Grha Vegejawi Syariah",
+        "description": description,
+        "url": "https://grhavegejawi.com",
+        "telephone": "+628122729637",
+        "priceRange": "Rp 165.000 - Rp 1.650.000",
+        "currenciesAccepted": "IDR",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "image": [
+          "https://grhavegejawi.com/image/hero-section.webp",
+          "https://grhavegejawi.com/image/kamar-lantai-bawah.webp",
+          "https://grhavegejawi.com/image/kamar-lantai-atas-160.webp",
+          "https://grhavegejawi.com/image/kamar-lantai-atas-140.webp",
+          "https://grhavegejawi.com/image/balkon-lantai-atas.webp",
+          "https://grhavegejawi.com/image/km-lantai-bawah.webp",
+          "https://grhavegejawi.com/image/mushola.webp",
+          "https://grhavegejawi.com/image/parkir-pendopo.webp",
+          "https://grhavegejawi.com/image/gerbang-masuk.webp"
+        ],
+        "hasMap": gmapsUrl,
+        "checkinTime": "14:00",
+        "checkoutTime": "12:00",
+        "numberOfRooms": 6,
+        "petsAllowed": false,
+        "smokingAllowed": false,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Turonggo No.125, Jaranan, Banguntapan",
+          "addressLocality": "Banguntapan, Bantul",
+          "addressRegion": "Daerah Istimewa Yogyakarta",
+          "postalCode": "55189",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.7919649,
+          "longitude": 110.4029812
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "reviewCount": "308",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "founder": {
+          "@id": "https://grhavegejawi.com/#owner"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "AC", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Kamar Mandi Dalam Air Panas 24 Jam", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Mushola Representatif Bersih", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Free High-Speed Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Parkir Mobil Aman di Dalam Pagar", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Dapur Mini & Dispenser Galon", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Dental Kit Higienis", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Kopi, Teh, Gula & Air Mineral", "value": true }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://grhavegejawi.com/#owner",
+        "name": "Ibu Agnesia Hari Kardyantini",
+        "jobTitle": "Pengelola & Pemilik Properti",
+        "worksFor": {
+          "@id": "https://grhavegejawi.com/#lodging"
+        },
+        "telephone": "+628122729637"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://grhavegejawi.com/#website",
+        "url": "https://grhavegejawi.com",
+        "name": "Grha Vege Jawi Syariah",
+        "inLanguage": "id-ID",
+        "description": "Website Resmi Grha Vege Jawi Syariah - Guesthouse Khusus Pasangan Sah & Keluarga di Banguntapan Bantul Yogyakarta",
+        "publisher": {
+          "@id": "https://grhavegejawi.com/#lodging"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://grhavegejawi.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://grhavegejawi.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Penginapan Syariah Yogyakarta",
+            "item": "https://grhavegejawi.com/#tentang"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Grha Vege Jawi Syariah",
+            "item": "https://grhavegejawi.com/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://grhavegejawi.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Bisakah memesan kamar untuk rombongan keluarga besar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sangat bisa. Kami memiliki total 6 kamar tidur privat (2 unit di lantai bawah bebas tangga yang ramah lansia/anak, dan 4 unit di lantai atas dengan balkon asri semilir). Anda bebas memesan 1 kamar, 2 kamar, 4 kamar, maupun memborong seluruh 6 kamar sekaligus untuk privasi utuh keluarga saat acara wisuda kampus, liburan bersama, atau hajatan di Yogyakarta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apa saja fasilitas yang tersedia di dalam kamar dan area bersama?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Satu kamar standar untuk 2 orang dilengkapi 9 fasilitas utama: kamar mandi dalam dengan water heater air panas 24 jam, unit AC dingin, WiFi fiber kencang, TV, dental kit higienis baru, serta fasilitas gula pasir, teh, kopi, dan air mineral. Tamu juga bebas menggunakan fasilitas bersama: parkir mobil aman di dalam pagar, dapur mini bersama (kompor & kulkas), dan dispenser galon higienis gratis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Berapa tarif menginap per malam (weekday, weekend & long weekend)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tarif sewa kamar harian (isi 2 orang): Weekday mulai dari Rp 165.000/malam (Senin–Kamis), dan Weekend mulai dari Rp 220.000/malam (Jumat–Minggu). Untuk periode Long Weekend dan libur nasional, tarif berlaku dinamis menyesuaikan ketersediaan, silakan langsung konfirmasi ke WhatsApp Ibu Agnesia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana ketentuan dan biaya untuk sewa bulanan (kost)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sewa kamar bulanan mulai dari Rp 1.650.000/bulan (sudah termasuk pajak daerah). Biaya sewa bulanan sudah gratis WiFi fiber kecepatan tinggi dan unit AC. Sementara untuk pengisian listrik (token PLN) dan gas water heater dikelola dan dibayar secara mandiri oleh penyewa sesuai pemakaian pribadi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana akses jalan mobil dan kemudahan pesan antar makanan online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Akses jalan lingkungan beraspal dan paving halus yang sangat leluasa untuk papasan dua mobil langsung masuk ke halaman parkir aman di dalam pagar. Berada di kawasan kampus, titik lokasi sangat akurat di Google Maps sehingga kurir ojek online (GoFood, GrabFood, ShopeeFood) maupun taksi online dapat mengantar dan menjemput tepat di depan gerbang penginapan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dokumen apa saja yang diperlukan saat check-in bagi pasangan suami istri?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cukup menunjukkan e-KTP dengan alamat domisili yang sama, atau foto/buku fisik Buku Nikah resmi dari KUA / Akta Perkawinan catatan sipil. Kami senantiasa menjaga lingkungan hunian syariah yang santun, amanah, dan nyaman bagi seluruh keluarga."
+            }
+          }
+        ]
+      }
     ]
   })} />
 </head>
