@@ -11,7 +11,7 @@ const {
   description = "Guesthouse syariah resmi di Banguntapan, Bantul, Yogyakarta. 6 kamar tidur ber-AC, water heater 24 jam, mushola bersih & parkir mobil aman. 5 menit ke JEC & Gembira Loka."
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, 'https://grhavegejawi.com').href;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://www.grhavegejawi.com').href;
 const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7919649,110.4029812,747m/data=!3m2!1e3!4b1!4m9!3m8!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!16s%2Fg%2F11f773xm6s";
 ---
 
@@ -29,6 +29,32 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   <link rel="canonical" href={canonicalUrl} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="8kQ1l3oGtY9gzfK29Kjm-_bB9OukkPvPbx6D-gwbuOU" />
+
+  <!-- Google tag (gtag.js) GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KFSYF5TER"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4KFSYF5TER');
+
+    // WhatsApp Booking Lead Conversion Tracking
+    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('click', function(e) {
+        var target = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+        if (target && typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            event_category: 'booking',
+            event_label: target.innerText ? target.innerText.trim() : 'whatsapp_click',
+            link_url: target.href
+          });
+        }
+      });
+    });
+  </script>
+
   <!-- Geographic & Local SEO Target Tags -->
   <meta name="geo.region" content="ID-YO" />
   <meta name="geo.placename" content="Banguntapan, Bantul, Daerah Istimewa Yogyakarta" />
@@ -42,7 +68,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:locale" content="id_ID" />
   <meta property="og:site_name" content="Grha Vege Jawi Syariah" />
-  <meta property="og:image" content="https://grhavegejawi.com/image/hero.webp" />
+  <meta property="og:image" content="https://www.grhavegejawi.com/image/hero.webp" />
   <meta property="og:image:width" content="1447" />
   <meta property="og:image:height" content="1087" />
   <meta property="og:image:alt" content="Fasad Depan Grha Vege Jawi Syariah Yogyakarta" />
@@ -51,7 +77,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content="https://grhavegejawi.com/image/hero.webp" />
+  <meta name="twitter:image" content="https://www.grhavegejawi.com/image/hero.webp" />
 
   <!-- Google Fonts: Editorial Serif + Modern Grotesk + Monospace -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,25 +93,25 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
     "@graph": [
       {
         "@type": ["LodgingBusiness", "Hotel", "BedAndBreakfast"],
-        "@id": "https://grhavegejawi.com/#lodging",
+        "@id": "https://www.grhavegejawi.com/#lodging",
         "name": "Grha Vege Jawi Syariah",
         "alternateName": "Grha Vegejawi Syariah",
         "description": description,
-        "url": "https://grhavegejawi.com",
+        "url": "https://www.grhavegejawi.com",
         "telephone": "+628122729637",
         "priceRange": "Rp 165.000 - Rp 1.650.000",
         "currenciesAccepted": "IDR",
         "paymentAccepted": "Cash, Bank Transfer",
         "image": [
-          "https://grhavegejawi.com/image/hero.webp",
-          "https://grhavegejawi.com/image/kamar-lantai-bawah.webp",
-          "https://grhavegejawi.com/image/kamar-lantai-atas-160.webp",
-          "https://grhavegejawi.com/image/kamar-lantai-atas-140.webp",
-          "https://grhavegejawi.com/image/balkon-lantai-atas.webp",
-          "https://grhavegejawi.com/image/km-lantai-bawah.webp",
-          "https://grhavegejawi.com/image/mushola.webp",
-          "https://grhavegejawi.com/image/parkir-pendopo.webp",
-          "https://grhavegejawi.com/image/gerbang-masuk.webp"
+          "https://www.grhavegejawi.com/image/hero.webp",
+          "https://www.grhavegejawi.com/image/kamar-lantai-bawah.webp",
+          "https://www.grhavegejawi.com/image/kamar-lantai-atas-160.webp",
+          "https://www.grhavegejawi.com/image/kamar-lantai-atas-140.webp",
+          "https://www.grhavegejawi.com/image/balkon-lantai-atas.webp",
+          "https://www.grhavegejawi.com/image/km-lantai-bawah.webp",
+          "https://www.grhavegejawi.com/image/mushola.webp",
+          "https://www.grhavegejawi.com/image/parkir-pendopo.webp",
+          "https://www.grhavegejawi.com/image/gerbang-masuk.webp"
         ],
         "hasMap": gmapsUrl,
         "checkinTime": "14:00",
@@ -114,7 +140,7 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
           "worstRating": "1"
         },
         "founder": {
-          "@id": "https://grhavegejawi.com/#owner"
+          "@id": "https://www.grhavegejawi.com/#owner"
         },
         "amenityFeature": [
           { "@type": "LocationFeatureSpecification", "name": "AC", "value": true },
@@ -129,52 +155,52 @@ const gmapsUrl = "https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7
       },
       {
         "@type": "Person",
-        "@id": "https://grhavegejawi.com/#owner",
+        "@id": "https://www.grhavegejawi.com/#owner",
         "name": "Ibu Agnesia Hari Kardyantini",
         "jobTitle": "Pengelola & Pemilik Properti",
         "worksFor": {
-          "@id": "https://grhavegejawi.com/#lodging"
+          "@id": "https://www.grhavegejawi.com/#lodging"
         },
         "telephone": "+628122729637"
       },
       {
         "@type": "WebSite",
-        "@id": "https://grhavegejawi.com/#website",
-        "url": "https://grhavegejawi.com",
+        "@id": "https://www.grhavegejawi.com/#website",
+        "url": "https://www.grhavegejawi.com",
         "name": "Grha Vege Jawi Syariah",
         "inLanguage": "id-ID",
         "description": "Website Resmi Grha Vege Jawi Syariah - Guesthouse Khusus Pasangan Sah & Keluarga di Banguntapan Bantul Yogyakarta",
         "publisher": {
-          "@id": "https://grhavegejawi.com/#lodging"
+          "@id": "https://www.grhavegejawi.com/#lodging"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://grhavegejawi.com/#breadcrumb",
+        "@id": "https://www.grhavegejawi.com/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Beranda",
-            "item": "https://grhavegejawi.com/"
+            "item": "https://www.grhavegejawi.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Penginapan Syariah Yogyakarta",
-            "item": "https://grhavegejawi.com/#tentang"
+            "item": "https://www.grhavegejawi.com/#tentang"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Grha Vege Jawi Syariah",
-            "item": "https://grhavegejawi.com/"
+            "item": "https://www.grhavegejawi.com/"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://grhavegejawi.com/#faq",
+        "@id": "https://www.grhavegejawi.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",

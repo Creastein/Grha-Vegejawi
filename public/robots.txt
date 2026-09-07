@@ -1,5 +1,5 @@
 # Robots.txt for Grha Vege Jawi Syariah
-# URL: https://grhavegejawi.com
+# URL: https://www.grhavegejawi.com
 
 User-agent: *
 Allow: /
@@ -35,4 +35,5 @@ Allow: /
 # ----------------------------------------------------
 # Sitemap XML
 # ----------------------------------------------------
-Sitemap: https://grhavegejawi.com/sitemap.xml
+Sitemap: https://www.grhavegejawi.com/sitemap.xml
+
