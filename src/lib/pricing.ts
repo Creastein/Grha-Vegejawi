@@ -10,9 +10,9 @@ export interface PricingData {
 
 export const DEFAULT_PRICING: PricingData = {
   weekdayPrice: 165000,
-  weekendPrice: 220000,
-  longWeekendPrice: 250000,
-  monthlyPrice: 1650000,
+  weekendPrice: 165000,
+  longWeekendPrice: 165000,
+  monthlyPrice: 1500000,
   promoBanner: 'Promo Reservasi Langsung — Tanpa Biaya Layanan OTA',
   isLiveFromSheet: false,
   lastChecked: new Date().toISOString()

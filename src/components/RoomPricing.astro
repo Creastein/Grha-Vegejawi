@@ -9,13 +9,12 @@ interface Props {
 
 const { pricing } = Astro.props;
 
-const weekdayFormatted = formatRupiah(pricing.weekdayPrice);
-const weekendFormatted = formatRupiah(pricing.weekendPrice);
+const dailyFormatted = formatRupiah(pricing.weekdayPrice);
 const monthlyFormatted = formatRupiah(pricing.monthlyPrice);
 
-const waGroundLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan dan pesan Kamar Lantai Bawah (mulai ${weekdayFormatted})`)}`;
-const waUpperLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan dan pesan Kamar Lantai Atas (mulai ${weekdayFormatted})`)}`;
-const waMonthlyLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan sewa Kamar Bulanan (${monthlyFormatted}/bulan)`)}`;
+const waGroundLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan dan pesan Kamar Lantai Bawah (mulai ${dailyFormatted}/malam)`)}`;
+const waUpperLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan dan pesan Kamar Lantai Atas (mulai ${dailyFormatted}/malam)`)}`;
+const waMonthlyLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan sewa Kamar Bulanan (mulai ${monthlyFormatted}/bulan)`)}`;
 const waFullHouseLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin tanya ketersediaan sewa Full House (6 Kamar Rombongan)`)}`;
 const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin konsultasi kebutuhan menginap`)}`;
 ---
@@ -86,42 +85,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
     <!-- ========================================================================= -->
     <div id="daily-panel" class="stay-panel block transition-opacity duration-300">
       
-      <!-- STRATEGIC UNIFIED RATE STRIP (Terhubung langsung ke Google Sheets) -->
-      <div class="mb-8 p-2 rounded-[2rem] bg-stone-200/40 ring-1 ring-stone-300/60 shadow-xs">
-        <div class="p-4 sm:px-6 sm:py-4 rounded-[calc(2rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col md:flex-row md:items-center justify-between gap-4">
-          
-          <div class="flex items-center gap-2.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-            <div>
-              <div class="flex items-center gap-2">
-                <strong class="font-serif text-base sm:text-lg text-on-surface">Tarif Sewa Harian Resmi</strong>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-syariah-gold/15 text-primary-deep font-semibold">Sama Lantai 1 &amp; 2</span>
-              </div>
-              <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-0.5 font-medium">
-                Maks. 2 orang/kamar • Termasuk AC, KM Dalam (Water Heater), TV, WiFi, &amp; Amenities
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 shrink-0 font-mono">
-            <!-- Weekday Pill -->
-            <div class="px-3.5 py-2 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
-              <span class="text-[10px] uppercase text-stone-600 block font-semibold">Weekday (Sen–Kam)</span>
-              <div class="font-serif text-base sm:text-lg font-normal text-primary leading-tight mt-0.5">{weekdayFormatted}</div>
-              <span class="text-[9px] text-stone-600 block font-medium">/ kamar / malam</span>
-            </div>
-
-            <!-- Weekend Pill -->
-            <div class="px-3.5 py-2 rounded-xl bg-amber-50/80 border border-amber-200/70 text-center">
-              <span class="text-[10px] uppercase text-amber-900 block font-semibold">Weekend (Jum–Min)</span>
-              <div class="font-serif text-base sm:text-lg font-normal text-amber-900 leading-tight mt-0.5">{weekendFormatted}</div>
-              <span class="text-[9px] text-amber-900 block font-medium">/ kamar / malam</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
       <!-- Cards Grid: Side-by-side di Desktop, Natural Stack di Mobile (UI/UX Friendly Tanpa Toggle Tersembunyi) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         
@@ -188,7 +151,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 <div>
                   <span class="text-[10px] font-mono uppercase text-stone-600 block font-medium">Mulai dari:</span>
                   <div class="flex items-baseline gap-1">
-                    <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{weekdayFormatted}</span>
+                    <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{dailyFormatted}</span>
                     <span class="text-[10px] font-mono text-stone-600 font-medium">/malam</span>
                   </div>
                 </div>
@@ -299,7 +262,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 <div>
                   <span class="text-[10px] font-mono uppercase text-stone-600 block font-medium">Mulai dari:</span>
                   <div class="flex items-baseline gap-1">
-                    <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{weekdayFormatted}</span>
+                    <span class="font-serif text-xl sm:text-2xl font-normal text-primary">{dailyFormatted}</span>
                     <span class="text-[10px] font-mono text-stone-600 font-medium">/malam</span>
                   </div>
                 </div>
@@ -344,9 +307,9 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             </div>
 
             <div class="sm:text-right shrink-0">
-              <span class="text-[11px] font-mono text-stone-600 font-medium block">Tarif Sewa Bulanan:</span>
+              <span class="text-[11px] font-mono text-stone-600 font-medium block">Tarif Sewa Bulanan Mulai:</span>
               <div class="font-serif text-3xl font-medium text-primary">{monthlyFormatted}</div>
-              <span class="text-[11px] font-mono text-stone-600 font-medium">/ kamar / bulan (termasuk pajak daerah)</span>
+              <span class="text-[11px] font-mono text-stone-600 font-medium">/ kamar / bulan</span>
             </div>
           </div>
 
@@ -376,7 +339,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-700 font-bold">•</span>
-                  <span>Sudah termasuk biaya pajak daerah</span>
+                  <span>Kebersihan area umum &amp; pembuangan sampah</span>
                 </li>
               </ul>
             </div>
@@ -390,17 +353,21 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 <ul class="space-y-2.5 text-xs font-mono text-amber-950">
                   <li class="flex items-start gap-2">
                     <span class="text-amber-700 font-bold">•</span>
-                    <span><strong>Listrik Kamar:</strong> Beli token PLN sendiri sesuai penggunaan AC &amp; elektronik pribadi.</span>
+                    <span><strong>Listrik Kamar:</strong> Beli token PLN sendiri sesuai pemakaian AC &amp; elektronik pribadi.</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-amber-700 font-bold">•</span>
                     <span><strong>Gas Water Heater:</strong> Pengisian tabung gas air panas mandiri.</span>
                   </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-amber-700 font-bold">•</span>
+                    <span><strong>Pajak Daerah:</strong> Dibayarkan sendiri oleh penyewa kost.</span>
+                  </li>
                 </ul>
               </div>
 
               <div class="mt-4 pt-3 border-t border-amber-200/50 text-[11px] font-mono text-amber-950 font-medium">
-                Kebijakan transparan tanpa biaya titipan tersembunyi.
+                Transparan, adil, dan sesuai dengan pemakaian riil penghuni kos.
               </div>
             </div>
           </div>
