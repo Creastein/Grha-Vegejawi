@@ -154,7 +154,7 @@ Website ini dirancang sebagai landing page direct-booking syariah berkinerja tin
 | :--- | :--- | :--- | :--- | :---: |
 | **TC-FAQ-01** | Buka/Tutup Accordion FAQ | Klik salah satu pertanyaan FAQ | Jawaban terbuka dengan transisi smooth; atribut `aria-expanded` berubah menjadi `true` | **P1** |
 | **TC-FAQ-02** | Keyboard Navigation FAQ | Navigasi menggunakan tombol `Tab`, tekan `Enter` atau `Space` | Accordion merespons fokus keyboard dan membuka/menutup konten dengan benar | **P1** |
-| **TC-FAQ-03** | Aturan Syariah Jelas | Cek bagian ketentuan guesthouse | Ketentuan pasangan sah (surat nikah/KTP sealamat), larangan merokok, dan waktu check-in/out (14.00 / 12.00) tertera tegas | **P0** |
+| **TC-FAQ-03** | Aturan Syariah Jelas | Cek bagian ketentuan guesthouse | Ketentuan pasangan sah (surat nikah/KTP sealamat), tamu sejenis (cowok/cewek semua), penerimaan tamu non-muslim, larangan merokok, dan waktu check-in/out (14.00 / 12.00) tertera tegas | **P0** |
 
 ---
 

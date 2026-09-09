@@ -33,7 +33,7 @@ Admin/Pemilik properti (Ibu Agnesia) yang mengelola harga kamar dari HP atau lap
   - Bandara Internasional Adisutjipto: 5 km (± 10–12 menit)
   - Jogja Expo Center (JEC): Dekat di kawasan Banguntapan (± 5 menit)
 - **Catatan Historis & Konsep**:
-  - Dahulu memiliki restoran keluarga / vege, kini difokuskan penuh sebagai **penginapan syariah murni** dengan mushola representatif di dalam rumah, suasana hening, bebas rokok, dan amanah khusus pasangan sah/keluarga.
+  - Dahulu memiliki restoran keluarga / vege, kini difokuskan penuh sebagai **penginapan syariah murni** dengan mushola representatif di dalam rumah, suasana hening, bebas rokok, dan amanah (menerima tamu Muslim & Non-Muslim: pasangan sah/keluarga atau sesama jenis dalam satu kamar).
 
 ## 5. Fitur & Scope
 
