@@ -144,7 +144,7 @@ Website ini dirancang sebagai landing page direct-booking syariah berkinerja tin
 | :--- | :--- | :--- | :--- | :---: |
 | **TC-LOC-01** | Akurasi Alamat Resmi | Cek alamat yang tertulis | *Jl. Turonggo No.125, Jaranan, Banguntapan, Bantul, DIY 55189* tertulis lengkap dan benar | **P0** |
 | **TC-LOC-02** | Landmark Jarak & Aksesibilitas | Cek jarak landmark transit | Kebun Binatang Gembira Loka (2 km / 5 mnt), Affandi (3 km), Bandara (5 km), JEC tampil akurat | **P1** |
-| **TC-LOC-03** | Tombol Navigasi Google Maps | Klik tombol *"Buka Petunjuk Arah Google Maps"* | Mengarahkan aplikasi Google Maps / browser ke koordinat `-7.7919649, 110.4029812` | **P0** |
+| **TC-LOC-03** | Tombol Navigasi Google Maps | Klik tombol *"Petunjuk Arah Gerbang"* | Mengarahkan aplikasi Google Maps / browser ke koordinat Pintu Gerbang Utama `-7.7922036, 110.4028339` (7°47'31.2"S 110°24'10.8"E) | **P0** |
 
 ---
 

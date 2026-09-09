@@ -94,13 +94,13 @@ if (allWaNumbersCorrect && waLinkMatches.length > 0) {
   assert(true, `100% tautan WhatsApp (${waLinkMatches.length} tautan) mengarah ke nomor resmi ${expectedPhone}`);
 }
 
-// Google Maps URL checks
-const expectedGeoLat = '-7.7919649';
-const expectedGeoLng = '110.4029812';
+// Google Maps URL & Gate Coordinates checks
+const expectedGateLat = '-7.7922036';
+const expectedGateLng = '110.4028339';
 assert(
-  allComponentCode.includes(expectedGeoLat) && allComponentCode.includes(expectedGeoLng),
-  `Koordinat Google Maps (${expectedGeoLat}, ${expectedGeoLng}) terpasang akurat pada kode`,
-  'Koordinat presisi properti tidak ditemukan dalam komponen'
+  allComponentCode.includes(expectedGateLat) && allComponentCode.includes(expectedGateLng),
+  `Koordinat Pintu Gerbang Utama (${expectedGateLat}, ${expectedGateLng}) terpasang akurat pada kode`,
+  'Koordinat presisi Pintu Gerbang tidak ditemukan dalam komponen'
 );
 
 // -------------------------------------------------------------

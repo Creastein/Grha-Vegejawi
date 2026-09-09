@@ -22,8 +22,8 @@ Admin/Pemilik properti (Ibu Agnesia) yang mengelola harga kamar dari HP atau lap
 - **Rating & Ulasan**: ⭐ **4,6 / 5** dari **308 ulasan Google** (dan 4,9/5 di OYO)
 - **Alamat Resmi**: Jl. Turonggo No.125, Jaranan, Banguntapan, Kec. Banguntapan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55189
 - **Plus Code**: `6C53+65 Banguntapan, Kabupaten Bantul, Daerah Istimewa Yogyakarta`
-- **Koordinat**: `-7.7919649, 110.4029812`
-- **URL Google Maps**: [Buka Listing Google Maps](https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7919649,110.4029812,747m/data=!3m2!1e3!4b1!4m9!3m8!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!16s%2Fg%2F11f773xm6s)
+- **Koordinat Pintu Gerbang Utama**: `-7.7922036, 110.4028339` (7°47'31.2"S 110°24'10.8"E)
+- **URL Google Maps**: [Pintu Gerbang Utama](https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B024'10.8%22E/@-7.7922036,110.4028339,19z) | [Listing Profil Bisnis 308 Ulasan](https://www.google.com/maps/place/Grha+Vege+Jawi+Syariah/@-7.7919649,110.4029812,747m/data=!3m2!1e3!4b1!4m9!3m8!1s0x2e7a59f05b3c9853:0xec78eefc19d7a5a8!5m2!4m1!1i2!8m2!3d-7.7919649!4d110.4029812!16s%2Fg%2F11f773xm6s)
 - **Waktu Operasional**:
   - Check-in: Mulai 14.00 WIB
   - Check-out: Maksimal 12.00 WIB
