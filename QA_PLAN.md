@@ -85,7 +85,7 @@ Website ini dirancang sebagai landing page direct-booking syariah berkinerja tin
 | Test Case ID | Skenario Uji | Langkah Pengujian | Hasil yang Diharapkan | Prioritas |
 | :--- | :--- | :--- | :--- | :---: |
 | **TC-HERO-01** | Render Gambar Latar Belakang `hero.webp` | Buka homepage pada desktop & mobile | Gambar `hero.webp` dimuat tajam, tidak pecah, menutupi area 100dvh tanpa CLS, objek fasad dan plang terbaca jelas | **P0** |
-| **TC-HERO-02** | Eyebrow Badge Syariah | Periksa badge di atas judul utama | Teks *"Guesthouse Syariah Resmi Yogyakarta"* tampil dengan styling pill, border gold, dan kontras yang jelas | **P1** |
+| **TC-HERO-02** | Eyebrow Badge Syariah | Periksa badge di atas judul utama | Teks *"Guesthouse Syariah Yogyakarta"* tampil dengan styling pill, border gold, dan kontras yang jelas | **P1** |
 | **TC-HERO-03** | CTA WhatsApp Button | Klik tombol *"Tanya Ketersediaan / Reservasi"* | Mengarahkan ke `wa.me/628122729637` dengan pesan pembuka sopan kepada Ibu Agnesia | **P0** |
 | **TC-HERO-04** | CTA Buka Peta Lokasi | Klik tombol *"Buka Peta Lokasi"* | Mengarahkan ke listing resmi Google Maps Grha Vege Jawi Syariah pada tab baru (`target="_blank"`) | **P0** |
 | **TC-HERO-05** | Ribbon Key Stats | Periksa pita metrik di bawah CTA | Menampilkan tarif mulai Rp 165rb, kapasitas 6 kamar, dan rating 4.6★ Google Maps | **P1** |
