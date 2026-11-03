@@ -1,18 +1,12 @@
 ---
-// src/components/GalleryLightbox.astro
-// Clean Architectural Gallery: Seamless, Borderless Visual Grid + Pure Cinema Lightbox
 ---
 
-<!-- ==================== SEKSI GALERI ARSITEKTURAL ==================== -->
 <section class="py-20 sm:py-28 bg-surface-canvas border-b border-stone-200/60 scroll-mt-20 relative overflow-hidden" id="galeri">
-  
-  <!-- Subtle Ambient Luxury Glows -->
   <div class="absolute top-1/4 -right-32 w-96 h-96 rounded-full bg-syariah-gold/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
   <div class="absolute bottom-10 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 relative z-10">
     
-    <!-- Section Header (Clean, Minimalist, No Lines) -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 sm:mb-12">
       <div>
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold-dark border border-syariah-gold/30 mb-2.5">
@@ -23,9 +17,7 @@
         </h2>
       </div>
 
-      <!-- Category Filter Bar with Left & Right Arrow Buttons -->
       <div class="flex items-center gap-1.5 sm:gap-2 max-w-full">
-        <!-- Left Arrow Button -->
         <button 
           id="gallery-filter-prev" 
           type="button"
@@ -35,7 +27,6 @@
           <span class="material-symbols-outlined text-[18px]">chevron_left</span>
         </button>
 
-        <!-- Scrollable Category Filter Pills -->
         <div id="gallery-filter-scroll" class="overflow-x-auto no-scrollbar scroll-smooth py-1 flex-1 min-w-0">
           <div class="inline-flex p-1 rounded-full bg-stone-200/50 gap-1.5">
             <button 
@@ -69,7 +60,6 @@
           </div>
         </div>
 
-        <!-- Right Arrow Button -->
         <button 
           id="gallery-filter-next" 
           type="button"
@@ -81,7 +71,6 @@
       </div>
     </div>
 
-    <!-- ==================== CLEAN BALANCED GRID (HARMONIOUS 3-COLUMN, NO BORDER LINES) ==================== -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="gallery-mosaic">
       
       <!-- 1. Kamar Lantai Bawah -->
@@ -90,7 +79,6 @@
         data-category="kamar"
         data-index="0"
       >
-        <!-- Pure Borderless Photo Frame -->
         <div class="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
           <img 
             src="/image/Kamar-lantai-bawah.webp" 
@@ -333,7 +321,7 @@
   </div>
 </section>
 
-<!-- ==================== THEATER LIGHTBOX MODAL (PURE CINEMA VIEW - CUMAN JUDUL SAJA) ==================== -->
+<!-- Modal Lightbox -->
 <div 
   id="lightbox-modal" 
   class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-2xl flex flex-col justify-between p-4 sm:p-6 lg:p-8 select-none transition-opacity duration-300"
@@ -342,7 +330,6 @@
   aria-label="Penampil Foto Galeri"
 >
   
-  <!-- Top Bar: Clean Counter Capsule & Close Button -->
   <div class="w-full max-w-6xl mx-auto flex items-center justify-between z-10 pt-1">
     <div class="flex items-center gap-2">
       <span class="px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-mono">
@@ -360,10 +347,8 @@
     </button>
   </div>
 
-  <!-- Center Stage: Main Image & Prev / Next Controls (No Borders, Max Height) -->
   <div class="relative w-full max-w-5xl mx-auto flex-1 flex items-center justify-center py-2 sm:py-4">
     
-    <!-- Prev Arrow Button -->
     <button 
       id="lightbox-prev"
       type="button"
@@ -373,7 +358,6 @@
       <span class="material-symbols-outlined text-2xl sm:text-3xl">chevron_left</span>
     </button>
 
-    <!-- Photo Container -->
     <div class="relative max-h-[82vh] w-auto max-w-full flex items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
       <img 
         id="lightbox-img" 
@@ -383,7 +367,6 @@
       />
     </div>
 
-    <!-- Next Arrow Button -->
     <button 
       id="lightbox-next"
       type="button"
@@ -395,14 +378,12 @@
 
   </div>
 
-  <!-- Bottom Bar: Cuman Judul Saja (Pure & Clean) -->
   <div class="w-full max-w-3xl mx-auto text-center text-white pb-3 z-10">
     <h3 id="lightbox-title" class="font-serif text-lg sm:text-2xl font-normal tracking-wide text-white/95"></h3>
   </div>
 
 </div>
 
-<!-- Interactive Client-side Script: Lightbox & Filtering -->
 <script>
   interface PhotoItem {
     src: string;
@@ -458,7 +439,6 @@
     }
   ];
 
-  // DOM Elements
   const filterBtns = document.querySelectorAll<HTMLButtonElement>('.gallery-filter-btn');
   const mosaicItems = document.querySelectorAll<HTMLElement>('.mosaic-item');
 
@@ -477,7 +457,6 @@
     lightboxCounterTotal.textContent = galleryData.length.toString();
   }
 
-  // Render Lightbox State
   function renderLightbox(index: number) {
     if (index < 0) index = galleryData.length - 1;
     if (index >= galleryData.length) index = 0;
@@ -506,7 +485,6 @@
     }
   }
 
-  // Connect Items to Lightbox
   mosaicItems.forEach(item => {
     item.addEventListener('click', () => {
       const idx = parseInt(item.getAttribute('data-index') || '0', 10);
@@ -514,7 +492,6 @@
     });
   });
 
-  // Prev / Next Controls
   if (lightboxPrev) {
     lightboxPrev.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -539,7 +516,7 @@
     });
   }
 
-  // Keyboard navigation: Escape, ArrowLeft, ArrowRight
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightboxModal || lightboxModal.classList.contains('hidden')) return;
 
@@ -574,7 +551,7 @@
     }, { passive: true });
   }
 
-  // Category Scroll Buttons (Pojok Kiri & Kanan)
+  // Filter scroll
   const filterScroll = document.getElementById('gallery-filter-scroll');
   const filterPrev = document.getElementById('gallery-filter-prev');
   const filterNext = document.getElementById('gallery-filter-next');
@@ -596,10 +573,8 @@
     btn.addEventListener('click', () => {
       const filter = btn.getAttribute('data-filter');
 
-      // Scroll selected button into center view
       btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
-      // Update active button state
       filterBtns.forEach(b => {
         b.classList.remove('active', 'bg-primary', 'text-white', 'shadow-xs');
         b.classList.add('text-stone-600', 'hover:text-primary', 'hover:bg-white/80');
@@ -607,7 +582,6 @@
       btn.classList.add('active', 'bg-primary', 'text-white', 'shadow-xs');
       btn.classList.remove('text-stone-600', 'hover:text-primary', 'hover:bg-white/80');
 
-      // Filter Cards
       mosaicItems.forEach(item => {
         const cat = item.getAttribute('data-category') || '';
         if (filter === 'all' || cat === filter) {

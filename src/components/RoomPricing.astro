@@ -1,6 +1,4 @@
 ---
-// src/components/RoomPricing.astro
-// High-End, UI/UX Friendly Room & Pricing Showcase for Desktop and Mobile
 import { type PricingData, formatRupiah } from '../lib/pricing';
 
 interface Props {
@@ -19,16 +17,13 @@ const waFullHouseLink = `https://wa.me/628122729637?text=${encodeURIComponent(`H
 const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Halo Ibu Agnesia, saya dari website Grha Vege Jawi, ingin konsultasi kebutuhan menginap`)}`;
 ---
 
-<!-- ==================== KAMAR & TARIF TERPADU (UI/UX FRIENDLY) ==================== -->
 <section class="py-16 sm:py-24 bg-surface-subtle/50 border-b border-border-stone scroll-mt-20 relative overflow-hidden" id="kamar">
   
-  <!-- Subtle Ambient Glows -->
   <div class="absolute top-10 -left-40 w-96 h-96 rounded-full bg-syariah-gold/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
   <div class="absolute bottom-10 -right-40 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
 
   <div class="max-w-6xl mx-auto px-4 xs:px-6 lg:px-8 relative z-10">
     
-    <!-- 1. Header Section: Clean, Welcoming, Clear Value -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
       <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-[0.2em] uppercase bg-syariah-gold/10 text-syariah-gold-dark border border-syariah-gold/30 mb-3">
         Pilihan Kamar &amp; Tarif
@@ -48,11 +43,11 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       )}
     </div>
 
-    <!-- 2. Main Intent Switcher Tabs: Harian vs Bulanan vs Full House (Double-Bezel Track) -->
+    <!-- Switcher Tabs: Harian / Bulanan / Full House -->
     <div class="w-full max-w-md mx-auto mb-8 sm:mb-10 px-2" id="tarif">
       <div class="p-1.5 rounded-full bg-stone-200/70 ring-1 ring-stone-300/80 shadow-inner grid grid-cols-3 gap-1">
         <button 
-          type="button"
+          type="button" 
           data-tab-target="daily-panel"
           class="stay-type-tab active w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 bg-primary text-white shadow-xs cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
         >
@@ -61,7 +56,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
         </button>
 
         <button 
-          type="button"
+          type="button" 
           data-tab-target="monthly-panel"
           class="stay-type-tab w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 text-stone-700 hover:text-primary hover:bg-white/60 cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
         >
@@ -70,7 +65,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
         </button>
 
         <button 
-          type="button"
+          type="button" 
           data-tab-target="fullhouse-panel"
           class="stay-type-tab w-full py-2.5 px-3 rounded-full text-xs sm:text-sm font-mono font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-1.5 text-stone-700 hover:text-primary hover:bg-white/60 cursor-pointer text-center whitespace-nowrap active:scale-[0.98]"
         >
@@ -80,19 +75,14 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       </div>
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- PANEL 1: SEWA HARIAN (DEFAULT ACTIVE) -->
-    <!-- ========================================================================= -->
+    <!-- Panel 1: Sewa Harian -->
     <div id="daily-panel" class="stay-panel block transition-opacity duration-300">
-      
-      <!-- Cards Grid: Side-by-side di Desktop, Natural Stack di Mobile (UI/UX Friendly Tanpa Toggle Tersembunyi) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         
-        <!-- CARD 1: LANTAI BAWAH -->
+        <!-- Kamar Lantai Bawah -->
         <article class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-200/40 ring-1 ring-stone-300/60 hover:ring-syariah-gold/35 hover:bg-syariah-gold/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_24px_50px_-12px_rgba(40,54,43,0.15)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 flex flex-col justify-between">
           <div class="rounded-[calc(2.5rem-0.5rem)] bg-white overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col justify-between h-full">
             <div>
-              <!-- Photo Container -->
               <div class="relative aspect-[16/10] bg-stone-100 overflow-hidden group">
                 <img 
                   src="/image/Kamar-lantai-bawah.webp" 
@@ -112,7 +102,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 </span>
               </div>
 
-              <!-- Room Content -->
               <div class="p-5 sm:p-7">
                 <div class="flex items-center justify-between gap-2">
                   <h3 class="font-serif text-xl sm:text-2xl font-normal text-on-surface">Kamar Lantai Bawah</h3>
@@ -123,7 +112,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                   Akses datar ramah lansia tanpa tangga. Dekat carport, mushola, ruang tamu, dan dapur mini keluarga.
                 </p>
 
-                <!-- Key Specs (2x2 Grid with Subtle Pills) -->
                 <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-2 gap-2 text-xs text-stone-600 font-mono">
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
                     <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">king_bed</span>
@@ -145,7 +133,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
               </div>
             </div>
 
-            <!-- Card Footer: Strategic Pricing & Direct Booking Bar -->
             <div class="p-5 sm:p-7 pt-0">
               <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
@@ -172,14 +159,13 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
           </div>
         </article>
 
-        <!-- CARD 2: LANTAI ATAS -->
+        <!-- Kamar Lantai Atas -->
         <article class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-200/40 ring-1 ring-stone-300/60 hover:ring-syariah-gold/35 hover:bg-syariah-gold/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_24px_50px_-12px_rgba(40,54,43,0.15)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 flex flex-col justify-between">
           <div class="rounded-[calc(2.5rem-0.5rem)] bg-white overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col justify-between h-full">
             <div>
-              <!-- Photo Container with Interactive View Selector -->
               <div class="relative aspect-[16/10] bg-stone-100 overflow-hidden group">
                 <img 
-                  id="upper-floor-img"
+                  id="upper-floor-img" 
                   src="/image/kamar-lantai-atas-160.webp" 
                   alt="Kamar Lantai Atas Grha Vege Jawi Syariah"
                   class="w-full h-full object-cover transition-all duration-500"
@@ -197,7 +183,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 </span>
               </div>
 
-              <!-- Interactive Photo Switcher Chips -->
               <div class="px-5 sm:px-7 pt-3 flex flex-wrap items-center gap-2 text-[10px] sm:text-[11px] font-mono">
                 <span class="text-stone-600 font-medium">Lihat Sudut:</span>
                 <button 
@@ -223,7 +208,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                 </button>
               </div>
 
-              <!-- Room Content -->
               <div class="p-5 sm:p-7 pt-3 sm:pt-4">
                 <div class="flex items-center justify-between gap-2">
                   <h3 class="font-serif text-xl sm:text-2xl font-normal text-on-surface">Kamar Lantai Atas</h3>
@@ -234,7 +218,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                   Suasana hening dengan semilir angin balkon. Dilengkapi opsi meja kerja pribadi dan koridor bersantai sofa ukir jati.
                 </p>
 
-                <!-- Key Specs (2x2 Grid with Subtle Pills) -->
                 <div class="mt-4 pt-4 border-t border-stone-100 grid grid-cols-2 gap-2 text-xs text-stone-600 font-mono">
                   <div class="flex items-center gap-2 p-2 rounded-xl bg-stone-50 border border-stone-100">
                     <span class="material-symbols-outlined text-[16px] text-primary" aria-hidden="true">bed</span>
@@ -256,7 +239,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
               </div>
             </div>
 
-            <!-- Card Footer: Strategic Pricing & Direct Booking Bar -->
             <div class="p-5 sm:p-7 pt-0">
               <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
@@ -274,7 +256,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
                   class="group/btn inline-flex items-center justify-between gap-2.5 bg-primary hover:bg-primary-deep text-white pl-4 pr-1.5 py-1.5 rounded-full text-xs font-mono font-medium shadow-xs hover:shadow-md transition-all duration-300 active:scale-[0.98] shrink-0"
                 >
                   <span>Pesan Lantai 2</span>
-                  <span class="w-7 h-7 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0">
+                  <span class="w-7 h-7 rounded-full bg-white/15 group-hover/btn:bg-syariah-gold group-hover/btn:text-primary-deep flex items-center justify-center text-white transition-all duration-300 group-hover/btn:translate-x-0.5 shrink-0" aria-hidden="true">
                     <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
                   </span>
                 </a>
@@ -286,9 +268,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       </div>
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- PANEL 2: KOST BULANAN (DOUBLE-BEZEL LUXURY) -->
-    <!-- ========================================================================= -->
+    <!-- Panel 2: Kost Bulanan -->
     <div id="monthly-panel" class="stay-panel hidden transition-opacity duration-300">
       <div class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-200/40 ring-1 ring-stone-300/60 shadow-sm max-w-4xl mx-auto">
         <div class="rounded-[calc(2.5rem-0.5rem)] bg-white p-6 sm:p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
@@ -313,7 +293,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             </div>
           </div>
 
-          <!-- Rincian Termasuk vs Mandiri -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
               <div class="flex items-center gap-2 text-emerald-900 font-mono font-semibold text-xs mb-3 uppercase tracking-wider">
@@ -394,9 +373,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       </div>
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- PANEL 3: FULL HOUSE (EDITORIAL OLED LUXURY) -->
-    <!-- ========================================================================= -->
+    <!-- Panel 3: Full House -->
     <div id="fullhouse-panel" class="stay-panel hidden transition-opacity duration-300">
       <div class="p-2 sm:p-2.5 rounded-[2.5rem] bg-stone-800/80 ring-1 ring-white/10 shadow-2xl max-w-4xl mx-auto">
         <div class="rounded-[calc(2.5rem-0.5rem)] bg-gradient-to-br from-stone-900 via-stone-900 to-stone-950 text-white p-6 sm:p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
@@ -421,7 +398,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
             </div>
           </div>
 
-          <!-- 3 Keunggulan Sewa Full House (Glass Cards) -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
             <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <span class="material-symbols-outlined text-[24px] text-syariah-gold mb-2 block">lock</span>
@@ -470,7 +446,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       </div>
     </div>
 
-    <!-- 4. Founder's Trust Card (Double-Bezel Golden Enclosure) -->
+    <!-- Komitmen Pengelola -->
     <div class="mt-12 sm:mt-16 p-2 sm:p-2.5 rounded-[2.5rem] bg-gradient-to-br from-amber-100/50 via-stone-200/40 to-emerald-100/40 ring-1 ring-syariah-gold/25 shadow-sm">
       <div class="p-6 sm:p-10 rounded-[calc(2.5rem-0.5rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
         
@@ -513,9 +489,7 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
   </div>
 </section>
 
-<!-- Client Script for Interactive Tabbing & Photo Switching -->
 <script>
-  // 1. Stay Type Switcher (Harian vs Bulanan vs Full House)
   const stayTabs = document.querySelectorAll<HTMLButtonElement>('.stay-type-tab');
   const stayPanels = document.querySelectorAll<HTMLElement>('.stay-panel');
 
@@ -523,7 +497,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
     tab.addEventListener('click', () => {
       const targetId = tab.getAttribute('data-tab-target');
 
-      // Update Tab Buttons
       stayTabs.forEach(t => {
         t.classList.remove('active', 'bg-primary', 'text-white', 'shadow-xs');
         t.classList.add('text-stone-700', 'hover:text-primary', 'hover:bg-white/60');
@@ -531,7 +504,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
       tab.classList.add('active', 'bg-primary', 'text-white', 'shadow-xs');
       tab.classList.remove('text-stone-700', 'hover:text-primary', 'hover:bg-white/60');
 
-      // Show Selected Panel
       stayPanels.forEach(panel => {
         if (panel.id === targetId) {
           panel.classList.remove('hidden');
@@ -544,7 +516,6 @@ const waConsultLink = `https://wa.me/628122729637?text=${encodeURIComponent(`Hal
     });
   });
 
-  // 2. Upper Floor Photo Selector (Bed 160 vs Bed 140 vs Balkon)
   const upperPhotoBtns = document.querySelectorAll<HTMLButtonElement>('.upper-photo-btn');
   const upperImg = document.getElementById('upper-floor-img') as HTMLImageElement | null;
 

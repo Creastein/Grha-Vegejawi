@@ -1,8 +1,6 @@
 ---
-// src/components/HeaderNav.astro
 const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20dari%20website%20Grha%20Vege%20Jawi,%20ingin%20tanya%20ketersediaan%20kamar";
 
-// Menu items matching the page section IDs in the approved sequence with dedicated icons for mobile
 const allNavLinks = [
   { label: "Beranda", href: "#beranda", id: "beranda", icon: "home" },
   { label: "Fasilitas", href: "#fasilitas", id: "fasilitas", icon: "hotel_class" },
@@ -14,7 +12,6 @@ const allNavLinks = [
   { label: "FAQ", href: "#faq", id: "faq", icon: "help_outline" },
 ];
 
-// Primary items for sleek desktop capsule nav (includes Testimoni and FAQ)
 const desktopNavLinks = [
   { label: "Beranda", href: "#beranda", id: "beranda" },
   { label: "Fasilitas", href: "#fasilitas", id: "fasilitas" },
@@ -27,23 +24,21 @@ const desktopNavLinks = [
 ];
 ---
 
-<!-- ==================== MOBILE BACKDROP DIMMER ==================== -->
+<!-- Mobile Backdrop Dimmer -->
 <div 
   id="mobile-backdrop" 
   class="fixed inset-0 bg-black/65 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden" 
   aria-hidden="true"
 ></div>
 
-<!-- ==================== ADAPTIVE EDGE TO PILL NAVBAR ==================== -->
+<!-- Main Navbar -->
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 w-full pointer-events-none transition-[padding] duration-500 ease-spring motion-reduce:transition-none py-2.5 sm:py-4 px-3 sm:px-6 lg:px-8">
-  
-  <!-- Outer Shell: Morphing Container from Edge-to-Edge to Floating Pill -->
   <div 
     id="navbar-shell" 
     class="pointer-events-auto w-full max-w-7xl mx-auto flex items-center justify-between gap-2.5 sm:gap-6 px-3 sm:px-6 py-2 sm:py-2.5 transition-[max-width,padding,background-color,border-color,box-shadow,border-radius] duration-500 ease-spring motion-reduce:transition-none relative z-50"
   >
     
-    <!-- Brand Logo: Sleek & Compact Emblem -->
+    <!-- Logo Brand -->
     <a 
       id="brand-logo-link"
       aria-label="Grha Vege Jawi Syariah - Kembali ke Beranda" 
@@ -62,7 +57,7 @@ const desktopNavLinks = [
       </span>
     </a>
 
-    <!-- Desktop Navigation Links with Kinetic ScrollSpy -->
+    <!-- Menu Desktop -->
     <nav 
       id="desktop-nav" 
       aria-label="Navigasi Utama" 
@@ -83,10 +78,8 @@ const desktopNavLinks = [
       ))}
     </nav>
 
-    <!-- Right Actions: Island Button-in-Button CTA & Mobile Hamburger -->
+    <!-- Tombol Aksi Kontak & Menu Mobile -->
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-      
-      <!-- Button-in-Button WhatsApp CTA -->
       <a 
         class="group inline-flex items-center gap-1.5 sm:gap-2.5 bg-syariah-gold hover:bg-[#b58c3f] text-on-surface text-xs font-medium pl-2.5 sm:pl-3.5 pr-1.5 py-1.5 rounded-full transition-[transform,background-color,box-shadow] duration-200 shadow-md hover:shadow-lg active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
         href={waLink} 
@@ -94,7 +87,6 @@ const desktopNavLinks = [
         target="_blank"
         aria-label="Hubungi WhatsApp Ibu Agnesia (0812-2729-637)"
       >
-        <!-- Availability Pulse Dot & Text -->
         <div class="flex items-center gap-1.5">
           <span class="relative flex h-2 w-2" aria-hidden="true">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -108,13 +100,12 @@ const desktopNavLinks = [
           </span>
         </div>
 
-        <!-- Nested Circle Icon with Magnetic Hover Physics -->
         <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-white shadow-xs" aria-hidden="true">
           <span class="material-symbols-outlined text-[14px] sm:text-[15px]" aria-hidden="true">chat</span>
         </div>
       </a>
 
-      <!-- Mobile Morphing Hamburger Toggle Button (44x44px touch target) -->
+      <!-- Tombol Hamburger Mobile -->
       <button 
         id="mobile-menu-btn" 
         type="button"
@@ -127,19 +118,17 @@ const desktopNavLinks = [
         <span class="w-4 h-0.5 bg-current transition-[opacity,transform] duration-300 rounded-full pointer-events-none" id="hamb-line-2" aria-hidden="true"></span>
         <span class="w-4 h-0.5 bg-current transition-transform duration-300 origin-center rounded-full pointer-events-none" id="hamb-line-3" aria-hidden="true"></span>
       </button>
-
     </div>
 
   </div>
 
-  <!-- Mobile Drawer Overlay (Pure Clean Navigation Menu) -->
+  <!-- Mobile Drawer -->
   <div 
     id="mobile-drawer" 
     role="dialog"
     aria-label="Menu Navigasi Mobile"
     class="hidden lg:hidden mt-2 max-w-lg mx-auto rounded-3xl p-2 sm:p-3 bg-white border border-stone-200/90 shadow-2xl transition-all duration-300 animate-drawer-in pointer-events-auto max-h-[calc(100dvh-4.75rem)] overflow-y-auto overscroll-contain relative z-50"
   >
-    <!-- Mobile Navigation List (Full-Width Linear Rows, Ergonomic Tap Targets) -->
     <nav class="flex flex-col divide-y divide-stone-100 text-sm font-medium text-stone-900" id="mobile-nav-items" aria-label="Daftar Menu Halaman">
       {allNavLinks.map((link) => (
         <a 
@@ -156,11 +145,9 @@ const desktopNavLinks = [
       ))}
     </nav>
   </div>
-
 </header>
 
 <script>
-  // State elements
   const mainHeader = document.getElementById('main-header');
   const navbarShell = document.getElementById('navbar-shell');
   const brandLogoLink = document.getElementById('brand-logo-link');
@@ -176,13 +163,10 @@ const desktopNavLinks = [
   let isScrolled = false;
   let isMenuOpen = false;
 
-  // ==================== 1. ADAPTIVE EDGE TO PILL ENGINE ====================
   function updateNavbarAppearance() {
-    // Only become a floating pill once user has scrolled past the hero section
     let shouldBePill = false;
     if (heroSection) {
       const heroRect = heroSection.getBoundingClientRect();
-      // Keep navbar in transparent edge mode throughout the entire hero section
       shouldBePill = heroRect.bottom <= 80;
     } else {
       shouldBePill = window.scrollY > 400;
@@ -192,7 +176,6 @@ const desktopNavLinks = [
       isScrolled = shouldBePill;
 
       if (isScrolled) {
-        // Morph into Floating Pill Capsule
         mainHeader?.classList.remove('py-3', 'sm:py-4');
         mainHeader?.classList.add('py-2', 'sm:py-3');
 
@@ -213,21 +196,17 @@ const desktopNavLinks = [
           'ring-black/[0.03]'
         );
 
-        // Mobile button becomes grounded on light glass
         mobileMenuBtn?.classList.remove('text-white', 'bg-white/20', 'border-white/25');
         mobileMenuBtn?.classList.add('text-primary', 'bg-surface-subtle', 'border-border-stone');
 
-        // Brand logo subtle refinement
         brandLogoLink?.classList.add('shadow-xs');
 
-        // Update nav item colors for light pill
         navItems.forEach(item => {
           const isActive = item.classList.contains('active');
           item.className = getNavItemClass(isActive, true);
         });
 
       } else {
-        // Expand back to Full-Width Transparent Edge
         mainHeader?.classList.remove('py-2', 'sm:py-3');
         mainHeader?.classList.add('py-3', 'sm:py-4');
 
@@ -248,11 +227,9 @@ const desktopNavLinks = [
         );
         navbarShell?.classList.add('w-full', 'max-w-7xl', 'px-3.5', 'sm:px-6');
 
-        // Mobile button returns to transparent frosted
         mobileMenuBtn?.classList.remove('text-primary', 'bg-surface-subtle', 'border-border-stone');
         mobileMenuBtn?.classList.add('text-white', 'bg-white/20', 'border-white/25');
 
-        // Update nav item colors for dark hero image
         navItems.forEach(item => {
           const isActive = item.classList.contains('active');
           item.className = getNavItemClass(isActive, false);
@@ -261,7 +238,6 @@ const desktopNavLinks = [
     }
   }
 
-  // Consistent class generator for navigation links
   function getNavItemClass(isActive: boolean, inPillMode: boolean): string {
     const base = 'nav-item px-3 py-1.5 rounded-full transition-colors duration-200 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold';
     if (inPillMode) {
@@ -275,13 +251,11 @@ const desktopNavLinks = [
     }
   }
 
-  // Optimized passive scroll and resize listener with requestAnimationFrame
   let ticking = false;
   function requestNavbarUpdate() {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         updateNavbarAppearance();
-        // Auto-close mobile drawer when viewport expands to desktop
         if (window.innerWidth >= 1024 && isMenuOpen) {
           toggleMobileMenu(false);
         }
@@ -294,10 +268,8 @@ const desktopNavLinks = [
   window.addEventListener('scroll', requestNavbarUpdate, { passive: true });
   window.addEventListener('resize', requestNavbarUpdate, { passive: true });
 
-  // Initial call
   updateNavbarAppearance();
 
-  // ==================== 2. KINETIC SCROLLSPY ENGINE ====================
   const sectionIds = ['beranda', 'fasilitas', 'tentang', 'kamar', 'galeri', 'testimoni', 'ulasan', 'lokasi', 'faq'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
 
@@ -309,7 +281,6 @@ const desktopNavLinks = [
       item.className = getNavItemClass(isActive, isScrolled);
     });
 
-    // Also highlight active item in mobile drawer if open
     document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link').forEach(link => {
       const targetId = link.getAttribute('data-target-id');
       if (targetId === normalizedId) {
@@ -320,7 +291,6 @@ const desktopNavLinks = [
     });
   }
 
-  // IntersectionObserver for robust section tracking
   if ('IntersectionObserver' in window && sections.length > 0) {
     const observerOptions = {
       root: null,
@@ -339,7 +309,6 @@ const desktopNavLinks = [
     sections.forEach(section => observer.observe(section));
   }
 
-  // ==================== 3. FLUID MOBILE DRAWER & MORPH ENGINE ====================
   function toggleMobileMenu(open?: boolean) {
     isMenuOpen = typeof open === 'boolean' ? open : !isMenuOpen;
     mobileMenuBtn?.setAttribute('aria-expanded', isMenuOpen ? 'true' : 'false');
@@ -349,11 +318,8 @@ const desktopNavLinks = [
       mobileDrawer?.classList.remove('hidden');
       mobileBackdrop?.classList.remove('opacity-0', 'pointer-events-none');
       mobileBackdrop?.classList.add('opacity-100', 'pointer-events-auto');
-
-      // Lock body scroll on mobile
       document.body.style.overflow = 'hidden';
 
-      // Morph hamburger icon to X
       hambLine1?.classList.add('rotate-45', 'translate-y-[6px]');
       hambLine2?.classList.add('opacity-0', 'scale-50');
       hambLine3?.classList.add('-rotate-45', '-translate-y-[6px]');
@@ -361,11 +327,8 @@ const desktopNavLinks = [
       mobileDrawer?.classList.add('hidden');
       mobileBackdrop?.classList.remove('opacity-100', 'pointer-events-auto');
       mobileBackdrop?.classList.add('opacity-0', 'pointer-events-none');
-
-      // Restore body scroll
       document.body.style.overflow = '';
 
-      // Morph X icon back to 3 lines
       hambLine1?.classList.remove('rotate-45', 'translate-y-[6px]');
       hambLine2?.classList.remove('opacity-0', 'scale-50');
       hambLine3?.classList.remove('-rotate-45', '-translate-y-[6px]');
@@ -375,12 +338,10 @@ const desktopNavLinks = [
   mobileMenuBtn?.addEventListener('click', () => toggleMobileMenu());
   mobileBackdrop?.addEventListener('click', () => toggleMobileMenu(false));
 
-  // Close mobile drawer when clicking any link
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => toggleMobileMenu(false));
   });
 
-  // Close mobile drawer when clicking outside
   document.addEventListener('click', (e) => {
     if (isMenuOpen && mobileDrawer && mobileMenuBtn) {
       const target = e.target as Node;
@@ -390,7 +351,6 @@ const desktopNavLinks = [
     }
   });
 
-  // Close mobile drawer on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isMenuOpen) {
       toggleMobileMenu(false);

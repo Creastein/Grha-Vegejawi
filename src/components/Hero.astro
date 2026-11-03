@@ -1,5 +1,4 @@
 ---
-// src/components/Hero.astro
 interface Props {
   startingPrice?: number;
 }
@@ -9,10 +8,8 @@ const waLink = "https://wa.me/628122729637?text=Halo%20Ibu%20Agnesia,%20saya%20d
 const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B024'10.8%22E/@-7.7922036,110.4028339,19z";
 ---
 
-<!-- ==================== HERO SECTION: EDGE-TO-EDGE FULL SCREEN IMAGE HERO ==================== -->
 <section id="beranda" class="relative min-h-[100dvh] w-full flex flex-col justify-between pt-20 xs:pt-24 sm:pt-28 pb-4 sm:pb-6 overflow-hidden bg-stone-950">
   
-  <!-- Full-Bleed Background Image (Edge-to-Edge Full Screen, Hero Focus) -->
   <img 
     alt="Fasad Tampak Depan Grha Vege Jawi Syariah Yogyakarta" 
     class="absolute inset-0 w-full h-full object-cover object-[center_top] sm:object-[center_12%] md:object-[center_16%] pointer-events-none" 
@@ -24,21 +21,17 @@ const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B0
     height="1008"
   />
   
-  <!-- Vignette Gradients: High Readability for Text, Clear View of the Building -->
   <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/60"></div>
   <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
 
-  <!-- Main Hero Content Container -->
   <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 w-full flex-1 flex flex-col justify-center relative z-10 my-auto py-4 sm:py-0">
     <div class="max-w-2xl sm:max-w-3xl flex flex-col items-start text-left">
       
-      <!-- Sharia Eyebrow Badge (Clean, Mobile Optimized) -->
       <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-syariah-gold/60 text-[10px] xs:text-[11px] font-mono text-gold-soft font-medium tracking-wider uppercase shadow-lg mb-3 sm:mb-4">
         <span class="text-syariah-gold text-xs" aria-hidden="true">●</span>
         <span>Kos Eksklusif Syariah Yogyakarta</span>
       </div>
 
-      <!-- Main Editorial Heading (Identity & Category) -->
       <h1 class="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-normal text-white leading-[1.18] sm:leading-[1.14] tracking-tight drop-shadow-md">
         Grha Vege Jawi Syariah
       </h1>
@@ -47,11 +40,7 @@ const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B0
         Tenang, Bersih, Sesuai Syariah.
       </p>
 
-      <!-- Value prop absorbed into subtitle + key stats ribbon below -->
-
-      <!-- Dual Action CTAs (Touch-First 48px Thumb Zone) -->
       <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mt-5 sm:mt-8">
-        <!-- Button-in-Button Main Action -->
         <a 
           class="group w-full sm:w-auto min-h-[48px] inline-flex items-center justify-between gap-3 bg-syariah-gold hover:bg-yellow-500 text-on-surface font-semibold pl-4 xs:pl-5 pr-1.5 py-1.5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-xs xs:text-sm active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
           href={waLink} 
@@ -65,7 +54,6 @@ const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B0
           </div>
         </a>
 
-        <!-- Secondary Explore Button -->
         <a 
           class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-medium px-5 py-2.5 rounded-full border border-white/40 backdrop-blur-md shadow-lg transition-all text-xs xs:text-sm hover:border-white/70 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-syariah-gold" 
           href="#fasilitas"
@@ -78,7 +66,7 @@ const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B0
     </div>
   </div>
 
-  <!-- Bottom Status Bar (Safe on Narrow Mobile Viewports) -->
+  <!-- Status Bar Bawah -->
   <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10 w-full relative z-10 flex items-center justify-between gap-2 text-[11px] sm:text-xs font-mono text-white/80 border-t border-white/15 pt-2.5 sm:pt-3">
     <div class="flex items-center gap-2 min-w-0">
       <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" aria-hidden="true"></span>
@@ -97,15 +85,12 @@ const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B0
 
 </section>
 
-
-<!-- ==================== MONOLITHIC KEY INFO RIBBON STRIP ==================== -->
+<!-- Ringkasan Info Utama -->
 <section id="key-stats" class="py-6 sm:py-8 bg-surface-subtle/60 border-b border-border-stone">
   <div class="max-w-7xl mx-auto px-4 xs:px-6 lg:px-10">
-    <!-- Clean Borderless Floating White Card -->
     <div class="bg-white rounded-3xl p-5 sm:p-7 shadow-[0_20px_45px_-12px_rgba(30,42,34,0.12),0_8px_20px_-6px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_55px_-12px_rgba(30,42,34,0.16)]">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-4 sm:gap-x-6 md:gap-x-8">
         
-        <!-- Item 1: Reputasi -->
         <div class="flex flex-col justify-between">
           <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Reputasi Terverifikasi</span>
           <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-primary mt-1 flex items-center gap-1.5">
@@ -114,21 +99,18 @@ const gmapsUrl = "https://www.google.com/maps/place/7%C2%B047'31.2%22S+110%C2%B0
           <span class="text-[11px] sm:text-xs text-on-surface-variant mt-0.5 font-sans">308 Ulasan Google</span>
         </div>
 
-        <!-- Item 2: Ibadah -->
         <div class="flex flex-col justify-between">
           <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-syariah-gold-dark font-semibold">Kenyamanan Ibadah</span>
           <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-primary mt-1">Mushola Khusus</span>
           <span class="text-[11px] sm:text-xs text-on-surface-variant mt-0.5 font-sans">Kran Wudhu Jernih</span>
         </div>
 
-        <!-- Item 3: Lokasi -->
         <div class="flex flex-col justify-between">
           <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-on-surface-variant font-medium">Lokasi Strategis</span>
           <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-primary mt-1">Banguntapan</span>
           <span class="text-[11px] sm:text-xs text-on-surface-variant mt-0.5 font-sans">2 km Gembira Loka</span>
         </div>
 
-        <!-- Item 4: Kenyamanan Kamar (Pengganti Tarif) -->
         <div class="flex flex-col justify-between">
           <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-secondary font-medium">Kenyamanan Kamar</span>
           <span class="font-serif text-lg xs:text-xl sm:text-2xl font-medium text-secondary mt-1">Water Heater 24 Jam</span>
